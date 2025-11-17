@@ -15,8 +15,8 @@ function Header() {
       } border-b transition-colors duration-300`}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12  rounded-lg flex items-center justify-center transform hover:rotate-12 transition-transform duration-300">
-              <img src="/hass-logo.png" alt="HASS Logo" className="w-14 h-14 text-white" />
+            <div className="w-36 h-18  rounded-lg flex items-center justify-center transform hover:rotate-12 transition-transform duration-300">
+              <img src="/hass-logo.png" alt="HASS Logo" className="w-36 h-18 text-white" />
             </div>
             <div>
               <div className={`text-2xl font-bold tracking-tight ${

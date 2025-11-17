@@ -13,49 +13,49 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Dr. Sarah Kimani",
-      role: "Laboratory Director",
-      organization: "Nairobi General Hospital",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&auto=format&fit=crop",
+      name: "Charles Ssengendo",
+      role: "Senior Lab Administrator ",
+      organization: "Case Hospital",
+      image: "./charles.png",
       gradient: "from-blue-600 to-blue-800",
       rating: 5,
-      text: "Hass Scientific has been our trusted partner for over 10 years. Their equipment quality is exceptional, and their technical support team is always available when we need them. The 24-hour uptime guarantee has been crucial for our emergency services.",
+      text: "I just wanted to share a quick note and let you know that you guys do a really good job. I'm glad I decided to work with you. Thank you so much for your excellent service and consideration.",
       highlight: "Outstanding technical support and reliability",
       icon: <Shield className="w-5 h-5" />
     },
-    {
-      name: "Dr. James Ochieng",
-      role: "Chief Pathologist",
-      organization: "East Africa Diagnostic Center",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&auto=format&fit=crop",
-      gradient: "from-gray-600 to-gray-800",
-      rating: 5,
-      text: "The clinical chemistry analyzers we purchased from Hass have transformed our laboratory operations. The accuracy and speed of results have significantly improved patient care. Their maintenance service is impeccable.",
-      highlight: "Transformative laboratory solutions",
-      icon: <Zap className="w-5 h-5" />
-    },
-    {
-      name: "Dr. Mary Wanjiru",
-      role: "Medical Laboratory Scientist",
-      organization: "Kampala Medical Centre",
-      image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&auto=format&fit=crop",
-      gradient: "from-blue-700 to-blue-900",
-      rating: 5,
-      text: "Professional installation, comprehensive training, and ongoing support - Hass Scientific delivers on all fronts. Their reagents and consumables are of the highest quality, ensuring consistent and reliable test results.",
-      highlight: "Complete end-to-end service",
-      icon: <Award className="w-5 h-5" />
-    },
-    {
-      name: "Dr. Peter Mwangi",
-      role: "Laboratory Manager",
-      organization: "Regional Referral Hospital",
-      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop",
-      gradient: "from-gray-700 to-gray-900",
-      rating: 5,
-      text: "We've equipped multiple departments with Hass's microbiology and immunology systems. The equipment performs flawlessly, and their spare parts availability ensures minimal downtime. Highly recommended for any serious healthcare facility.",
-      highlight: "Minimal downtime, maximum performance",
-      icon: <TrendingUp className="w-5 h-5" />
-    }
+    // {
+    //   name: "Dr. James Ochieng",
+    //   role: "Chief Pathologist",
+    //   organization: "East Africa Diagnostic Center",
+    //   image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&auto=format&fit=crop",
+    //   gradient: "from-gray-600 to-gray-800",
+    //   rating: 5,
+    //   text: "The clinical chemistry analyzers we purchased from Hass have transformed our laboratory operations. The accuracy and speed of results have significantly improved patient care. Their maintenance service is impeccable.",
+    //   highlight: "Transformative laboratory solutions",
+    //   icon: <Zap className="w-5 h-5" />
+    // },
+    // {
+    //   name: "Dr. Mary Wanjiru",
+    //   role: "Medical Laboratory Scientist",
+    //   organization: "Kampala Medical Centre",
+    //   image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&auto=format&fit=crop",
+    //   gradient: "from-blue-700 to-blue-900",
+    //   rating: 5,
+    //   text: "Professional installation, comprehensive training, and ongoing support - Hass Scientific delivers on all fronts. Their reagents and consumables are of the highest quality, ensuring consistent and reliable test results.",
+    //   highlight: "Complete end-to-end service",
+    //   icon: <Award className="w-5 h-5" />
+    // },
+    // {
+    //   name: "Dr. Peter Mwangi",
+    //   role: "Laboratory Manager",
+    //   organization: "Regional Referral Hospital",
+    //   image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&auto=format&fit=crop",
+    //   gradient: "from-gray-700 to-gray-900",
+    //   rating: 5,
+    //   text: "We've equipped multiple departments with Hass's microbiology and immunology systems. The equipment performs flawlessly, and their spare parts availability ensures minimal downtime. Highly recommended for any serious healthcare facility.",
+    //   highlight: "Minimal downtime, maximum performance",
+    //   icon: <TrendingUp className="w-5 h-5" />
+    // }
   ];
 
   const stats = [
