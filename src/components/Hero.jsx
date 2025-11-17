@@ -11,7 +11,7 @@ const Hero = () => {
   const [particleOffset, setParticleOffset] = useState(0);
 
   // Brand colors from Hass Uganda 
-  const brandRed = '#c41e3a';
+  const brandblue = '#c41e3a';
   const brandGray = '#2c3e50';
 
   useEffect(() => {
@@ -51,9 +51,9 @@ const Hero = () => {
   const dynamicWords = ['Innovation', 'Precision', 'Excellence', 'Technology'];
 
   const stats = [
-    { icon: <TrendingUp className="w-6 h-6" />, value: "30+", label: "Years Leading", color: "from-red-500 to-red-700" },
+    { icon: <TrendingUp className="w-6 h-6" />, value: "30+", label: "Years Leading", color: "from-blue-500 to-blue-700" },
     { icon: <Microscope className="w-6 h-6" />, value: "500+", label: "Labs Equipped", color: "from-gray-600 to-gray-800" },
-    { icon: <Activity className="w-6 h-6" />, value: "200+", label: "Hospitals", color: "from-red-600 to-red-800" },
+    { icon: <Activity className="w-6 h-6" />, value: "200+", label: "Hospitals", color: "from-blue-600 to-blue-800" },
     { icon: <CheckCircle className="w-6 h-6" />, value: "1000+", label: "Happy Clients", color: "from-gray-700 to-gray-900" }
   ];
 
@@ -62,7 +62,7 @@ const Hero = () => {
       icon: <Microscope className="w-8 h-8" />,
       title: "Clinical Chemistry",
       description: "Advanced photometric analyzers",
-      color: "from-red-500 to-red-700"
+      color: "from-blue-500 to-blue-700"
     },
     {
       icon: <Activity className="w-8 h-8" />,
@@ -74,7 +74,7 @@ const Hero = () => {
       icon: <Zap className="w-8 h-8" />,
       title: "Immunology",
       description: "Disease screening tech",
-      color: "from-red-600 to-red-800"
+      color: "from-blue-600 to-blue-800"
     },
     {
       icon: <Shield className="w-8 h-8" />,
@@ -95,7 +95,7 @@ const Hero = () => {
             style={{
               left: `${5 + i * 5}%`,
               top: `${50 + Math.sin((particleOffset + i * 18) * Math.PI / 180) * 40}%`,
-              background: i % 2 === 0 ? brandRed : brandGray,
+              background: i % 2 === 0 ? brandblue : brandGray,
               transform: `scale(${1 + Math.sin((particleOffset + i * 18) * Math.PI / 180) * 0.5})`,
               transition: 'all 0.05s linear'
             }}
@@ -118,7 +118,7 @@ const Hero = () => {
       <div 
         className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20"
         style={{
-          background: `radial-gradient(circle, ${brandRed} 0%, transparent 70%)`,
+          background: `radial-gradient(circle, ${brandblue} 0%, transparent 70%)`,
           transform: `translate(${mousePosition.x * 50}px, ${mousePosition.y * 50}px)`
         }}
       />
@@ -138,10 +138,10 @@ const Hero = () => {
           <div className="space-y-8">
             {/* Badge */}
             <div 
-              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-red-600/20 to-red-800/20 backdrop-blur-xl rounded-full border border-red-500/30 animate-fade-in"
+              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-blue-600/20 to-blue-800/20 backdrop-blur-xl rounded-full border border-blue-500/30 animate-fade-in"
             >
               
-              <span className="text-red-200 font-semibold text-sm">Leading East & Central Africa Since 1993</span>
+              <span className="text-blue-200 font-semibold text-sm">Leading East & Central Africa Since 1993</span>
             </div>
 
             {/* Main Heading with Dynamic Word */}
@@ -150,10 +150,10 @@ const Hero = () => {
                 Biomedical
                 <br />
                 <span className="relative inline-block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 animate-pulse">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-800 animate-pulse">
                     {dynamicWords[activeWord]}
                   </span>
-                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-transparent" />
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-transparent" />
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl">
@@ -163,15 +163,15 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 rounded-xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-600/50">
-                <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/50">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 <span className="relative flex items-center justify-center space-x-2">
                   <span>Explore Solutions</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </span>
               </button>
               
-              <button className="group px-8 py-4 border-2 border-gray-600 rounded-xl font-bold text-white hover:border-red-600 hover:bg-red-600/10 transition-all duration-300 flex items-center justify-center space-x-2">
+              <button className="group px-8 py-4 border-2 border-gray-600 rounded-xl font-bold text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all duration-300 flex items-center justify-center space-x-2">
                 <Play className="w-5 h-5" />
                 <span>Watch Demo</span>
               </button>
@@ -202,7 +202,7 @@ const Hero = () => {
               <div className="relative w-96 h-96">
                 {/* Rotating Ring */}
                 <div 
-                  className="absolute inset-0 rounded-full border-4 border-red-600/30"
+                  className="absolute inset-0 rounded-full border-4 border-blue-600/30"
                   style={{
                     animation: 'rotate 20s linear infinite',
                     boxShadow: `0 0 60px rgba(196, 30, 58, 0.3)`
@@ -245,7 +245,7 @@ const Hero = () => {
 
                 {/* Center Logo */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-red-600 to-red-900 rounded-2xl flex items-center justify-center shadow-2xl shadow-red-600/50 transform hover:rotate-12 transition-transform duration-300">
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-600/50 transform hover:rotate-12 transition-transform duration-300">
                     <Microscope className="w-12 h-12 text-white" />
                   </div>
                 </div>
@@ -260,7 +260,7 @@ const Hero = () => {
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  background: i % 2 === 0 ? brandRed : brandGray,
+                  background: i % 2 === 0 ? brandblue : brandGray,
                   animationDelay: `${Math.random() * 3}s`,
                   animationDuration: `${3 + Math.random() * 4}s`,
                   opacity: 0.3
@@ -275,7 +275,7 @@ const Hero = () => {
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
           <span className="text-gray-400 text-sm">Scroll to explore</span>
-          <ArrowDown className="w-6 h-6 text-red-500" />
+          <ArrowDown className="w-6 h-6 text-blue-500" />
         </div>
       </div>
 

@@ -21,10 +21,10 @@ import {
 const Footer = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [email, setEmail] = useState('');
-  const [hoveredLink, setHoveredLink] = useState(null);
+  const [hoveblueLink, setHoveblueLink] = useState(null);
   const currentYear = new Date().getFullYear();
 
-  const brandRed = '#c41e3a';
+  const brandblue = '#c41e3a';
   const brandGray = '#2c3e50';
 
   const scrollToTop = () => {
@@ -80,9 +80,9 @@ const Footer = () => {
   ];
 
   const certifications = [
-    { icon: <Award className="w-8 h-8" />, text: 'ISO Certified', color: 'red' },
-    { icon: <Shield className="w-8 h-8" />, text: 'Quality Assured', color: 'gray' },
-    { icon: <Clock className="w-8 h-8" />, text: '30+ Years', color: 'red' }
+    { icon: <Award className="w-8 h-8" />, text: 'ISO Certified', color: 'blue' },
+    { icon: <Shield className="w-8 h-8" />, text: 'Quality Assublue', color: 'gray' },
+    { icon: <Clock className="w-8 h-8" />, text: '30+ Years', color: 'blue' }
   ];
 
   const handleSubscribe = () => {
@@ -114,7 +114,7 @@ const Footer = () => {
           <div
             key={i}
             className={`absolute w-1 h-1 rounded-full animate-float ${
-              isDarkMode ? 'bg-red-500/10' : 'bg-red-500/5'
+              isDarkMode ? 'bg-blue-500/10' : 'bg-blue-500/5'
             }`}
             style={{
               left: `${Math.random() * 100}%`,
@@ -127,7 +127,7 @@ const Footer = () => {
       </div>
 
       {/* Top Decorative Wave */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-600 via-red-700 to-red-800" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800" />
 
       <div className="relative z-10">
         {/* Main Footer Content */}
@@ -150,7 +150,7 @@ const Footer = () => {
                       HASS
                     </h3>
                     <p className={`text-sm font-semibold -mt-1 ${
-                      isDarkMode ? 'text-red-400' : 'text-red-600'
+                      isDarkMode ? 'text-blue-400' : 'text-blue-600'
                     }`}>
                       Scientific & Medical
                     </p>
@@ -175,7 +175,7 @@ const Footer = () => {
                   }`}
                 >
                   <div className={`p-2 rounded-lg ${
-                    isDarkMode ? 'bg-red-600/20 text-red-400' : 'bg-red-100 text-red-600'
+                    isDarkMode ? 'bg-blue-600/20 text-blue-400' : 'bg-blue-100 text-blue-600'
                   }`}>
                     <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </div>
@@ -202,7 +202,7 @@ const Footer = () => {
                   isDarkMode ? 'text-gray-300' : 'text-gray-700'
                 }`}>
                   <div className={`p-2 rounded-lg ${
-                    isDarkMode ? 'bg-red-600/20 text-red-400' : 'bg-red-100 text-red-600'
+                    isDarkMode ? 'bg-blue-600/20 text-blue-400' : 'bg-blue-100 text-blue-600'
                   }`}>
                     <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
                   </div>
@@ -245,7 +245,7 @@ const Footer = () => {
               {/* Company Links */}
               <div>
                 <h4 className={`text-lg font-bold mb-6 ${
-                  isDarkMode ? 'text-red-400' : 'text-red-600'
+                  isDarkMode ? 'text-blue-400' : 'text-blue-600'
                 }`}>
                   Company
                 </h4>
@@ -254,8 +254,8 @@ const Footer = () => {
                     <li key={index}>
                       <a
                         href={link.href}
-                        onMouseEnter={() => setHoveredLink(`company-${index}`)}
-                        onMouseLeave={() => setHoveredLink(null)}
+                        onMouseEnter={() => setHoveblueLink(`company-${index}`)}
+                        onMouseLeave={() => setHoveblueLink(null)}
                         className={`group flex items-center space-x-2 transition-all duration-300 ${
                           isDarkMode 
                             ? 'text-gray-300 hover:text-white' 
@@ -263,10 +263,10 @@ const Footer = () => {
                         }`}
                       >
                         <ChevronRight className={`w-4 h-4 transition-all duration-300 ${
-                          hoveredLink === `company-${index}` ? 'translate-x-1 opacity-100' : 'opacity-0'
+                          hoveblueLink === `company-${index}` ? 'translate-x-1 opacity-100' : 'opacity-0'
                         }`} />
                         <span className={`transition-transform duration-300 ${
-                          hoveredLink === `company-${index}` ? 'translate-x-1' : ''
+                          hoveblueLink === `company-${index}` ? 'translate-x-1' : ''
                         }`}>
                           {link.name}
                         </span>
@@ -279,7 +279,7 @@ const Footer = () => {
               {/* Products Links */}
               <div>
                 <h4 className={`text-lg font-bold mb-6 ${
-                  isDarkMode ? 'text-red-400' : 'text-red-600'
+                  isDarkMode ? 'text-blue-400' : 'text-blue-600'
                 }`}>
                   Products
                 </h4>
@@ -288,8 +288,8 @@ const Footer = () => {
                     <li key={index}>
                       <a
                         href={link.href}
-                        onMouseEnter={() => setHoveredLink(`products-${index}`)}
-                        onMouseLeave={() => setHoveredLink(null)}
+                        onMouseEnter={() => setHoveblueLink(`products-${index}`)}
+                        onMouseLeave={() => setHoveblueLink(null)}
                         className={`group flex items-center space-x-2 transition-all duration-300 ${
                           isDarkMode 
                             ? 'text-gray-300 hover:text-white' 
@@ -297,10 +297,10 @@ const Footer = () => {
                         }`}
                       >
                         <ChevronRight className={`w-4 h-4 transition-all duration-300 ${
-                          hoveredLink === `products-${index}` ? 'translate-x-1 opacity-100' : 'opacity-0'
+                          hoveblueLink === `products-${index}` ? 'translate-x-1 opacity-100' : 'opacity-0'
                         }`} />
                         <span className={`transition-transform duration-300 ${
-                          hoveredLink === `products-${index}` ? 'translate-x-1' : ''
+                          hoveblueLink === `products-${index}` ? 'translate-x-1' : ''
                         }`}>
                           {link.name}
                         </span>
@@ -313,7 +313,7 @@ const Footer = () => {
               {/* Services Links */}
               <div>
                 <h4 className={`text-lg font-bold mb-6 ${
-                  isDarkMode ? 'text-red-400' : 'text-red-600'
+                  isDarkMode ? 'text-blue-400' : 'text-blue-600'
                 }`}>
                   Services
                 </h4>
@@ -322,8 +322,8 @@ const Footer = () => {
                     <li key={index}>
                       <a
                         href={link.href}
-                        onMouseEnter={() => setHoveredLink(`services-${index}`)}
-                        onMouseLeave={() => setHoveredLink(null)}
+                        onMouseEnter={() => setHoveblueLink(`services-${index}`)}
+                        onMouseLeave={() => setHoveblueLink(null)}
                         className={`group flex items-center text-white space-x-2 transition-all duration-300 ${
                           isDarkMode 
                             ? 'text-gray-300 hover:text-white' 
@@ -331,10 +331,10 @@ const Footer = () => {
                         }`}
                       >
                         <ChevronRight className={`w-4 h-4 transition-all duration-300 ${
-                          hoveredLink === `services-${index}` ? 'translate-x-1 opacity-100' : 'opacity-0'
+                          hoveblueLink === `services-${index}` ? 'translate-x-1 opacity-100' : 'opacity-0'
                         }`} />
                         <span className={`transition-transform duration-300 ${
-                          hoveredLink === `services-${index}` ? 'translate-x-1' : ''
+                          hoveblueLink === `services-${index}` ? 'translate-x-1' : ''
                         }`}>
                           {link.name}
                         </span>
@@ -356,13 +356,13 @@ const Footer = () => {
                   key={index}
                   className={`group flex items-center space-x-4 p-6 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 cursor-pointer ${
                     isDarkMode 
-                      ? 'bg-gray-800/50 border-gray-700 hover:border-red-600/50' 
-                      : 'bg-white border-gray-200 hover:border-red-500 shadow-lg hover:shadow-xl'
+                      ? 'bg-gray-800/50 border-gray-700 hover:border-blue-600/50' 
+                      : 'bg-white border-gray-200 hover:border-blue-500 shadow-lg hover:shadow-xl'
                   }`}
                 >
                   <div className={`p-3 rounded-xl ${
-                    cert.color === 'red'
-                      ? isDarkMode ? 'bg-red-600/20 text-red-400' : 'bg-red-100 text-red-600'
+                    cert.color === 'blue'
+                      ? isDarkMode ? 'bg-blue-600/20 text-blue-400' : 'bg-blue-100 text-blue-600'
                       : isDarkMode ? 'bg-gray-700 text-gray-400' : 'bg-gray-200 text-gray-600'
                   } group-hover:scale-110 transition-transform duration-300`}>
                     {cert.icon}
@@ -380,8 +380,8 @@ const Footer = () => {
           {/* Newsletter Section */}
           <div className={`rounded-3xl p-10 mb-10 relative overflow-hidden ${
             isDarkMode 
-              ? 'bg-gradient-to-r from-red-600 to-red-800' 
-              : 'bg-gradient-to-r from-red-500 to-red-700'
+              ? 'bg-gradient-to-r from-blue-600 to-blue-800' 
+              : 'bg-gradient-to-r from-blue-500 to-blue-700'
           }`}>
             <div className="absolute inset-0 bg-black/10" />
             <div className="relative z-10 grid md:grid-cols-2 gap-6 items-center">
@@ -403,7 +403,7 @@ const Footer = () => {
                 />
                 <button 
                   onClick={handleSubscribe}
-                  className="group px-6 py-4 bg-white rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 flex items-center space-x-2 text-red-700"
+                  className="group px-6 py-4 bg-white rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 flex items-center space-x-2 text-blue-700"
                 >
                   <span>Subscribe</span>
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -421,7 +421,7 @@ const Footer = () => {
                 isDarkMode ? 'text-gray-400' : 'text-gray-600'
               }`}>
                 <span>© {currentYear} Hass Scientific & Medical Supplies (U) Ltd.</span>
-                <Heart className="w-4 h-4 text-red-500 animate-pulse" />
+                <Heart className="w-4 h-4 text-blue-500 animate-pulse" />
                 <span>All rights reserved.</span>
               </p>
               <div className="flex flex-wrap justify-center items-center space-x-6 text-sm">
@@ -460,8 +460,8 @@ const Footer = () => {
         onClick={scrollToTop}
         className={`fixed bottom-8 right-8 p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 z-40 ${
           isDarkMode 
-            ? 'bg-gradient-to-r from-red-600 to-red-800 text-white hover:shadow-red-600/50' 
-            : 'bg-gradient-to-r from-red-500 to-red-700 text-white hover:shadow-red-500/50'
+            ? 'bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:shadow-blue-600/50' 
+            : 'bg-gradient-to-r from-blue-500 to-blue-700 text-white hover:shadow-blue-500/50'
         }`}
       >
         <ArrowUp className="w-6 h-6" />

@@ -3,10 +3,10 @@ import { Microscope, FlaskConical, Activity, Droplet, TestTube, ChevronRight, Sp
 
 const Products = () => {
   const [activeCategory, setActiveCategory] = useState(0);
-  const [hoveredProduct, setHoveredProduct] = useState(null);
+  const [hoveblueProduct, setHoveblueProduct] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const brandRed = '#c41e3a';
+  const brandblue = '#c41e3a';
   const brandGray = '#2c3e50';
 
   useEffect(() => {
@@ -24,8 +24,8 @@ const Products = () => {
       name: "Molecular Diagnostics",
       icon: <Droplet className="w-6 h-6" />,
       description: "Nucleic acid extraction and molecular testing",
-      color: "from-red-600 to-red-800",
-      bgGlow: "red"
+      color: "from-blue-600 to-blue-800",
+      bgGlow: "blue"
     },
     {
       name: "Microbiology",
@@ -38,8 +38,8 @@ const Products = () => {
       name: "Immunology",
       icon: <Activity className="w-6 h-6" />,
       description: "Immunoassay testing and infectious disease detection",
-      color: "from-red-700 to-red-900",
-      bgGlow: "red"
+      color: "from-blue-700 to-blue-900",
+      bgGlow: "blue"
     },
     {
       name: "Clinical Chemistry",
@@ -60,11 +60,11 @@ const Products = () => {
         "48 samples in 98 minutes",
         "2 independent 24-sample sections",
         "10 minutes hands-on time",
-        "5 predefined workflows"
+        "5 pblueefined workflows"
       ],
       specs: ["Sample Volume: 10µl-1000µl", "Elution: 25µl-200µl", "CE-IVD Certified"],
       image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&auto=format&fit=crop",
-      gradient: "from-red-500/20 to-red-900/20"
+      gradient: "from-blue-500/20 to-blue-900/20"
     },
     {
       category: 1,
@@ -94,7 +94,7 @@ const Products = () => {
       ],
       specs: ["Plastic bottles", "Triple-layer design", "Remote monitoring"],
       image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&auto=format&fit=crop",
-      gradient: "from-red-600/20 to-red-800/20"
+      gradient: "from-blue-600/20 to-blue-800/20"
     },
     {
       category: 2,
@@ -124,7 +124,7 @@ const Products = () => {
       ],
       specs: ["Photometric testing", "Colorimetric analysis", "High precision"],
       image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&auto=format&fit=crop",
-      gradient: "from-red-700/20 to-red-900/20"
+      gradient: "from-blue-700/20 to-blue-900/20"
     },
     {
       category: 3,
@@ -154,18 +154,18 @@ const Products = () => {
       ],
       specs: ["Coagulation testing", "PT, APTT, Fibrinogen", "D-Dimer"],
       image: "https://images.unsplash.com/photo-1582560475093-ba66accbc424?w=800&auto=format&fit=crop",
-      gradient: "from-red-800/20 to-red-950/20"
+      gradient: "from-blue-800/20 to-blue-950/20"
     }
   ];
 
-  const filteredProducts = products.filter(p => p.category === activeCategory);
+  const filteblueProducts = products.filter(p => p.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-gray-900">
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-800 z-50">
         <div 
-          className="h-full bg-gradient-to-r from-red-600 to-red-800 transition-all duration-300"
+          className="h-full bg-gradient-to-r from-blue-600 to-blue-800 transition-all duration-300"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -175,7 +175,7 @@ const Products = () => {
         {[...Array(30)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-red-500 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-blue-500 rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -190,15 +190,15 @@ const Products = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-red-600/20 to-red-800/20 backdrop-blur-xl rounded-full border border-red-500/30 mb-6">
-              {/* <Sparkles className="w-4 h-4 text-red-400" /> */}
-              <span className="text-red-200 font-semibold text-sm">Premium Medical Equipment</span>
+            <div className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-blue-600/20 to-blue-800/20 backdrop-blur-xl rounded-full border border-blue-500/30 mb-6">
+              {/* <Sparkles className="w-4 h-4 text-blue-400" /> */}
+              <span className="text-blue-200 font-semibold text-sm">Premium Medical Equipment</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               Advanced Laboratory
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-800">
                 Solutions
               </span>
             </h1>
@@ -222,7 +222,7 @@ const Products = () => {
                   }`}
                   style={{
                     boxShadow: activeCategory === index 
-                      ? `0 20px 60px -15px ${category.bgGlow === 'red' ? 'rgba(196, 30, 58, 0.5)' : 'rgba(44, 62, 80, 0.5)'}`
+                      ? `0 20px 60px -15px ${category.bgGlow === 'blue' ? 'rgba(196, 30, 58, 0.5)' : 'rgba(44, 62, 80, 0.5)'}`
                       : 'none'
                   }}
                 >
@@ -249,16 +249,16 @@ const Products = () => {
 
           {/* Products Grid */}
           <div className="grid lg:grid-cols-2 gap-8">
-            {filteredProducts.map((product, index) => (
+            {filteblueProducts.map((product, index) => (
               <div
                 key={index}
-                onMouseEnter={() => setHoveredProduct(index)}
-                onMouseLeave={() => setHoveredProduct(null)}
-                className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-700 hover:border-red-600/50 transition-all duration-500 backdrop-blur-xl"
+                onMouseEnter={() => setHoveblueProduct(index)}
+                onMouseLeave={() => setHoveblueProduct(null)}
+                className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-3xl overflow-hidden border border-gray-700 hover:border-blue-600/50 transition-all duration-500 backdrop-blur-xl"
                 style={{
                   animationDelay: `${index * 0.1}s`,
-                  transform: hoveredProduct === index ? 'translateY(-10px) scale(1.02)' : 'translateY(0) scale(1)',
-                  boxShadow: hoveredProduct === index 
+                  transform: hoveblueProduct === index ? 'translateY(-10px) scale(1.02)' : 'translateY(0) scale(1)',
+                  boxShadow: hoveblueProduct === index 
                     ? '0 30px 60px -15px rgba(196, 30, 58, 0.4)' 
                     : '0 10px 30px -15px rgba(0, 0, 0, 0.3)'
                 }}
@@ -278,7 +278,7 @@ const Products = () => {
                   </div>
 
                   {/* Premium Badge */}
-                  <div className="absolute top-4 right-4 px-3 py-1.5 bg-gradient-to-r from-red-600 to-red-800 rounded-full">
+                  <div className="absolute top-4 right-4 px-3 py-1.5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">
                     <div className="flex items-center space-x-1">
                       <Shield className="w-3 h-3 text-white" />
                       <span className="text-white font-bold text-xs">Certified</span>
@@ -296,7 +296,7 @@ const Products = () => {
                 {/* Content Section */}
                 <div className="p-8">
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-red-400 transition-colors duration-300">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
                     {product.name}
                   </h3>
 
@@ -312,7 +312,7 @@ const Products = () => {
                         key={fIndex}
                         className="flex items-start space-x-2 text-sm"
                       >
-                        <CheckCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
                         <span className="text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -332,7 +332,7 @@ const Products = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <button className={`flex-1 py-3.5 bg-gradient-to-r ${categories[activeCategory].color} text-white rounded-xl font-bold flex items-center justify-center space-x-2 hover:shadow-2xl hover:shadow-red-600/50 transition-all duration-300 group-hover:scale-105`}>
+                    <button className={`flex-1 py-3.5 bg-gradient-to-r ${categories[activeCategory].color} text-white rounded-xl font-bold flex items-center justify-center space-x-2 hover:shadow-2xl hover:shadow-blue-600/50 transition-all duration-300 group-hover:scale-105`}>
                       <span>Learn More</span>
                       <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </button>
@@ -344,7 +344,7 @@ const Products = () => {
 
                 {/* Hover Glow Effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-transparent" />
                 </div>
               </div>
             ))}
@@ -353,10 +353,10 @@ const Products = () => {
           {/* Bottom CTA */}
           <div className="mt-20 text-center">
             <div className="inline-block relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 blur-3xl opacity-30" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 blur-3xl opacity-30" />
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-3xl p-12 max-w-3xl backdrop-blur-xl">
                 <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 rounded-2xl flex items-center justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center">
                     <Zap className="w-8 h-8 text-white" />
                   </div>
                 </div>
@@ -367,10 +367,10 @@ const Products = () => {
                   Our team of specialists can help you find the perfect laboratory equipment for your specific needs. Contact us for personalized consultation.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-red-600/50 transition-all duration-300 hover:scale-105">
+                  <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-blue-600/50 transition-all duration-300 hover:scale-105">
                     Request Consultation
                   </button>
-                  <button className="px-8 py-4 border-2 border-gray-600 text-white rounded-xl font-bold hover:border-red-600 hover:bg-red-600/10 transition-all duration-300">
+                  <button className="px-8 py-4 border-2 border-gray-600 text-white rounded-xl font-bold hover:border-blue-600 hover:bg-blue-600/10 transition-all duration-300">
                     Download Catalog
                   </button>
                 </div>

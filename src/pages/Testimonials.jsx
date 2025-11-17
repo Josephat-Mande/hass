@@ -5,10 +5,10 @@ const Testimonials = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [hoveredStat, setHoveredStat] = useState(null);
+  const [hoveblueStat, setHoveblueStat] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  const brandRed = '#c41e3a';
+  const brandblue = '#c41e3a';
   const brandGray = '#2c3e50';
 
   const testimonials = [
@@ -17,7 +17,7 @@ const Testimonials = () => {
       role: "Laboratory Director",
       organization: "Nairobi General Hospital",
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&auto=format&fit=crop",
-      gradient: "from-red-600 to-red-800",
+      gradient: "from-blue-600 to-blue-800",
       rating: 5,
       text: "Hass Scientific has been our trusted partner for over 10 years. Their equipment quality is exceptional, and their technical support team is always available when we need them. The 24-hour uptime guarantee has been crucial for our emergency services.",
       highlight: "Outstanding technical support and reliability",
@@ -39,7 +39,7 @@ const Testimonials = () => {
       role: "Medical Laboratory Scientist",
       organization: "Kampala Medical Centre",
       image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&auto=format&fit=crop",
-      gradient: "from-red-700 to-red-900",
+      gradient: "from-blue-700 to-blue-900",
       rating: 5,
       text: "Professional installation, comprehensive training, and ongoing support - Hass Scientific delivers on all fronts. Their reagents and consumables are of the highest quality, ensuring consistent and reliable test results.",
       highlight: "Complete end-to-end service",
@@ -59,9 +59,9 @@ const Testimonials = () => {
   ];
 
   const stats = [
-    { value: "1000+", label: "Happy Clients", icon: <Heart className="w-6 h-6" />, color: "red" },
+    { value: "1000+", label: "Happy Clients", icon: <Heart className="w-6 h-6" />, color: "blue" },
     { value: "98%", label: "Satisfaction Rate", icon: <Star className="w-6 h-6" />, color: "gray" },
-    { value: "24/7", label: "Support Available", icon: <Shield className="w-6 h-6" />, color: "red" },
+    { value: "24/7", label: "Support Available", icon: <Shield className="w-6 h-6" />, color: "blue" },
     { value: "30+", label: "Years Experience", icon: <Award className="w-6 h-6" />, color: "gray" }
   ];
 
@@ -116,7 +116,7 @@ const Testimonials = () => {
       {/* Progress Bar */}
       <div className={`fixed top-0 left-0 right-0 h-1 z-50 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'}`}>
         <div 
-          className="h-full bg-gradient-to-r from-red-600 to-red-800 transition-all duration-300"
+          className="h-full bg-gradient-to-r from-blue-600 to-blue-800 transition-all duration-300"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -127,7 +127,7 @@ const Testimonials = () => {
           <div
             key={i}
             className={`absolute w-1 h-1 rounded-full animate-float ${
-              isDarkMode ? 'bg-red-500/20' : 'bg-red-500/10'
+              isDarkMode ? 'bg-blue-500/20' : 'bg-blue-500/10'
             }`}
             style={{
               left: `${Math.random() * 100}%`,
@@ -143,7 +143,7 @@ const Testimonials = () => {
         {/* Animated Blobs */}
         <div className="absolute inset-0">
           <div className={`absolute top-20 left-10 w-96 h-96 rounded-full filter blur-3xl opacity-20 animate-blob ${
-            isDarkMode ? 'bg-red-600' : 'bg-red-300'
+            isDarkMode ? 'bg-blue-600' : 'bg-blue-300'
           }`} />
           <div className={`absolute bottom-20 right-10 w-96 h-96 rounded-full filter blur-3xl opacity-20 animate-blob ${
             isDarkMode ? 'bg-gray-600' : 'bg-gray-300'
@@ -155,8 +155,8 @@ const Testimonials = () => {
           <div className="text-center mb-20 animate-fade-in">
             <div className={`inline-flex items-center space-x-2 px-5 py-2.5 rounded-full font-semibold text-sm mb-6 backdrop-blur-xl ${
               isDarkMode 
-                ? 'bg-red-600/20 border border-red-500/30 text-red-300' 
-                : 'bg-red-100 border border-red-200 text-red-700'
+                ? 'bg-blue-600/20 border border-blue-500/30 text-blue-300' 
+                : 'bg-blue-100 border border-blue-200 text-blue-700'
             }`}>
               <Star className="w-4 h-4 fill-current" />
               <span>Client Testimonials</span>
@@ -167,7 +167,7 @@ const Testimonials = () => {
             }`}>
               Trusted by
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-800">
                 Healthcare Professionals
               </span>
             </h1>
@@ -227,7 +227,7 @@ const Testimonials = () => {
                       </h3>
                       
                       <p className={`font-semibold mb-2 text-lg ${
-                        isDarkMode ? 'text-red-400' : 'text-red-600'
+                        isDarkMode ? 'text-blue-400' : 'text-blue-600'
                       }`}>
                         {testimonial.role}
                       </p>
@@ -255,8 +255,8 @@ const Testimonials = () => {
                     <div className="lg:col-span-2">
                       <div className={`inline-flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-semibold mb-6 ${
                         isDarkMode 
-                          ? 'bg-red-600/20 text-red-300 border border-red-500/30' 
-                          : 'bg-red-100 text-red-700 border border-red-200'
+                          ? 'bg-blue-600/20 text-blue-300 border border-blue-500/30' 
+                          : 'bg-blue-100 text-blue-700 border border-blue-200'
                       }`}>
                         {testimonial.icon}
                         <span>{testimonial.highlight}</span>
@@ -350,20 +350,20 @@ const Testimonials = () => {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                onMouseEnter={() => setHoveredStat(index)}
-                onMouseLeave={() => setHoveredStat(null)}
+                onMouseEnter={() => setHoveblueStat(index)}
+                onMouseLeave={() => setHoveblueStat(null)}
                 className={`group relative p-8 rounded-2xl transition-all duration-500 hover:scale-110 cursor-pointer ${
                   isDarkMode 
-                    ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 hover:border-red-600/50' 
-                    : 'bg-white border border-gray-200 hover:border-red-500 shadow-lg hover:shadow-2xl'
+                    ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 hover:border-blue-600/50' 
+                    : 'bg-white border border-gray-200 hover:border-blue-500 shadow-lg hover:shadow-2xl'
                 }`}
                 style={{
-                  transform: hoveredStat === index ? 'translateY(-10px) scale(1.05)' : 'translateY(0) scale(1)'
+                  transform: hoveblueStat === index ? 'translateY(-10px) scale(1.05)' : 'translateY(0) scale(1)'
                 }}
               >
                 <div className={`mb-4 ${
-                  stat.color === 'red' 
-                    ? isDarkMode ? 'text-red-500' : 'text-red-600'
+                  stat.color === 'blue' 
+                    ? isDarkMode ? 'text-blue-500' : 'text-blue-600'
                     : isDarkMode ? 'text-gray-400' : 'text-gray-600'
                 } group-hover:scale-110 transition-transform duration-300`}>
                   {stat.icon}
@@ -383,7 +383,7 @@ const Testimonials = () => {
 
                 {/* Glow Effect */}
                 <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl ${
-                  stat.color === 'red' ? 'bg-red-600/20' : 'bg-gray-600/20'
+                  stat.color === 'blue' ? 'bg-blue-600/20' : 'bg-gray-600/20'
                 }`} />
               </div>
             ))}
@@ -392,7 +392,7 @@ const Testimonials = () => {
           {/* CTA Section */}
           <div className="mt-20 text-center">
             <div className="inline-block relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 blur-3xl opacity-30" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 blur-3xl opacity-30" />
               <div className={`relative rounded-3xl p-10 max-w-2xl backdrop-blur-xl ${
                 isDarkMode 
                   ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700' 
@@ -408,7 +408,7 @@ const Testimonials = () => {
                 }`}>
                   Experience the same exceptional service that our clients rave about
                 </p>
-                <button className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-red-600/50 transition-all duration-300 hover:scale-105">
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-blue-600/50 transition-all duration-300 hover:scale-105">
                   Get Started Today
                 </button>
               </div>

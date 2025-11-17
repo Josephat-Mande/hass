@@ -4,12 +4,12 @@ import { Building2, MapPin, Award, TrendingUp, CheckCircle, Users, Globe, Target
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [hoveredFeature, setHoveredFeature] = useState(null);
+  const [hoveblueFeature, setHoveblueFeature] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [counterValues, setCounterValues] = useState({ years: 0, labs: 0, hospitals: 0, clients: 0 });
   const sectionRef = useRef(null);
 
-  const brandRed = '#c41e3a';
+  const brandblue = '#c41e3a';
   const brandGray = '#2c3e50';
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const About = () => {
       icon: <Building2 className="w-8 h-8" />,
       title: "Established Since 1993",
       description: "Over 30 years of excellence in medical laboratory equipment supply across Africa",
-      color: "from-red-600 to-red-800",
+      color: "from-blue-600 to-blue-800",
       stat: `${counterValues.years}+`
     },
     {
@@ -96,7 +96,7 @@ const About = () => {
       icon: <Award className="w-8 h-8" />,
       title: "Trusted Partner",
       description: "Leading diagnostics partner across East & Central Africa with ISO certification",
-      color: "from-red-700 to-red-900",
+      color: "from-blue-700 to-blue-900",
       stat: "ISO"
     },
     {
@@ -109,9 +109,9 @@ const About = () => {
   ];
 
   const stats = [
-    { icon: <TrendingUp className="w-6 h-6" />, value: `${counterValues.years}+`, label: "Years Experience", color: "red" },
+    { icon: <TrendingUp className="w-6 h-6" />, value: `${counterValues.years}+`, label: "Years Experience", color: "blue" },
     { icon: <Building2 className="w-6 h-6" />, value: `${counterValues.labs}+`, label: "Laboratories", color: "gray" },
-    { icon: <Users className="w-6 h-6" />, value: `${counterValues.hospitals}+`, label: "Hospitals", color: "red" },
+    { icon: <Users className="w-6 h-6" />, value: `${counterValues.hospitals}+`, label: "Hospitals", color: "blue" },
     { icon: <Globe className="w-6 h-6" />, value: `${counterValues.clients}+`, label: "Happy Clients", color: "gray" }
   ];
 
@@ -163,7 +163,7 @@ const About = () => {
       {/* Progress Bar */}
       <div className={`fixed top-0 left-0 right-0 h-1 z-50 ${isDarkMode ? 'bg-gray-800' : 'bg-gray-200'}`}>
         <div 
-          className="h-full bg-gradient-to-r from-red-600 to-red-800 transition-all duration-300"
+          className="h-full bg-gradient-to-r from-blue-600 to-blue-800 transition-all duration-300"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -174,7 +174,7 @@ const About = () => {
           <div
             key={i}
             className={`absolute w-2 h-2 rounded-full animate-float ${
-              isDarkMode ? 'bg-red-500/20' : 'bg-red-500/10'
+              isDarkMode ? 'bg-blue-500/20' : 'bg-blue-500/10'
             }`}
             style={{
               left: `${Math.random() * 100}%`,
@@ -192,8 +192,8 @@ const About = () => {
           <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className={`inline-flex items-center space-x-2 px-5 py-2.5 rounded-full font-semibold text-sm mb-6 backdrop-blur-xl ${
               isDarkMode 
-                ? 'bg-red-600/20 border border-red-500/30 text-red-300' 
-                : 'bg-red-100 border border-red-200 text-red-700'
+                ? 'bg-blue-600/20 border border-blue-500/30 text-blue-300' 
+                : 'bg-blue-100 border border-blue-200 text-blue-700'
             }`}>
               {/* <Award className="w-4 h-4" /> */}
               <span>About Hass Scientific</span>
@@ -204,7 +204,7 @@ const About = () => {
             }`}>
               Your Leading
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-800">
                 Diagnostics Partner
               </span>
             </h1>
@@ -223,14 +223,14 @@ const About = () => {
                 key={index}
                 className={`group relative p-8 rounded-2xl transition-all duration-500 hover:scale-110 cursor-pointer ${
                   isDarkMode 
-                    ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 hover:border-red-600/50' 
-                    : 'bg-white border border-gray-200 hover:border-red-500 shadow-lg hover:shadow-2xl'
+                    ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 hover:border-blue-600/50' 
+                    : 'bg-white border border-gray-200 hover:border-blue-500 shadow-lg hover:shadow-2xl'
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`mb-4 ${
-                  stat.color === 'red' 
-                    ? isDarkMode ? 'text-red-500' : 'text-red-600'
+                  stat.color === 'blue' 
+                    ? isDarkMode ? 'text-blue-500' : 'text-blue-600'
                     : isDarkMode ? 'text-gray-400' : 'text-gray-600'
                 } group-hover:scale-110 transition-transform duration-300`}>
                   {stat.icon}
@@ -248,7 +248,7 @@ const About = () => {
                 
                 {/* Glow Effect */}
                 <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl ${
-                  stat.color === 'red' ? 'bg-red-600/20' : 'bg-gray-600/20'
+                  stat.color === 'blue' ? 'bg-blue-600/20' : 'bg-gray-600/20'
                 }`} />
               </div>
             ))}
@@ -259,7 +259,7 @@ const About = () => {
             {/* Left Column - Story */}
             <div className={`space-y-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
               <div className="relative">
-                <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-red-600 to-red-800 rounded-full" />
+                <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-600 to-blue-800 rounded-full" />
                 <div className="pl-8 space-y-8">
                   <div>
                     <h2 className={`text-3xl font-bold mb-4 ${
@@ -270,7 +270,13 @@ const About = () => {
                     <p className={`text-lg leading-relaxed ${
                       isDarkMode ? 'text-gray-300' : 'text-gray-700'
                     }`}>
-                      Hass Scientific & Medical Supplies (U) Ltd was incorporated in 1993. The company's head office is located in the upmarket Hurlingham area along Argwings Kodhek Road at Hass Biotechnology Centre in Nairobi, Kenya.
+                      Hass Scientific & Medical Supplies (U) Ltd was incorporated in 1993.
+The company's head office is located in the up market Hurligham area along Argwings Kodhek Road at Hass Biotechnology Centre in Nairobi - Kenya, which is wholly owned by Hass Scientific & Medical Supplies (U) Ltd.
+
+It is an ultra modern centre with adequate facilities eg.coldroom, conference /demonstration room that support the effective promotion of diagnostic products and internal trainings.
+We also have an East African regional business network, with branches in Kampala - Uganda and Kigali - Rwanda.
+
+At Hass Scientific & Medical Supplies (U) Ltd., we deal with the procurement and supply of Medical Equipments, Reagents and Consumables used in the clinical laboratory. Our core functions include marketing and delivery of supplies, services and maintenance of a vast range of laboratory equipments.
                     </p>
                   </div>
 
@@ -289,17 +295,19 @@ const About = () => {
 
                   <div className={`p-8 rounded-2xl relative overflow-hidden ${
                     isDarkMode 
-                      ? 'bg-gradient-to-br from-red-900/30 to-red-800/30 border border-red-700/50' 
-                      : 'bg-gradient-to-br from-red-50 to-red-100 border border-red-200'
+                      ? 'bg-gradient-to-br from-blue-900/30 to-blue-800/30 border border-blue-700/50' 
+                      : 'bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200'
                   }`}>
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl" />
                     <p className={`text-xl font-bold italic relative z-10 ${
                       isDarkMode ? 'text-white' : 'text-gray-900'
                     }`}>
-                      "Committed to providing cutting-edge diagnostic solutions that empower healthcare professionals to deliver exceptional patient care."
+                      -   To supply world class diagnostic reagents and equipments. <br />
+                      -   To provide consultancy in good laboratory practice (GLP). <br />
+                      -   To developing capacity of our human resource base, to support the services that we provide.
                     </p>
                     <div className={`mt-4 flex items-center space-x-2 ${
-                      isDarkMode ? 'text-red-400' : 'text-red-600'
+                      isDarkMode ? 'text-blue-400' : 'text-blue-600'
                     }`}>
                       <Zap className="w-5 h-5" />
                       <span className="font-semibold">Our Mission</span>
@@ -309,20 +317,22 @@ const About = () => {
               </div>
             </div>
 
+            
+
             {/* Right Column - Features Grid */}
             <div className={`grid sm:grid-cols-2 gap-6 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  onMouseEnter={() => setHoveredFeature(index)}
-                  onMouseLeave={() => setHoveredFeature(null)}
+                  onMouseEnter={() => setHoveblueFeature(index)}
+                  onMouseLeave={() => setHoveblueFeature(null)}
                   className={`group relative p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer ${
                     isDarkMode 
-                      ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 hover:border-red-600/50' 
-                      : 'bg-white border border-gray-200 hover:border-red-500 shadow-lg hover:shadow-2xl'
+                      ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 hover:border-blue-600/50' 
+                      : 'bg-white border border-gray-200 hover:border-blue-500 shadow-lg hover:shadow-2xl'
                   }`}
                   style={{
-                    transform: hoveredFeature === index ? 'translateY(-10px) scale(1.05)' : 'translateY(0) scale(1)'
+                    transform: hoveblueFeature === index ? 'translateY(-10px) scale(1.05)' : 'translateY(0) scale(1)'
                   }}
                 >
                   {/* Icon */}
@@ -335,8 +345,8 @@ const About = () => {
                   {/* Stat Badge */}
                   <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold ${
                     isDarkMode 
-                      ? 'bg-red-600/20 text-red-400 border border-red-500/30' 
-                      : 'bg-red-100 text-red-700 border border-red-200'
+                      ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30' 
+                      : 'bg-blue-100 text-blue-700 border border-blue-200'
                   }`}>
                     {feature.stat}
                   </div>
@@ -354,7 +364,7 @@ const About = () => {
                   </p>
 
                   {/* Hover Glow */}
-                  <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl bg-gradient-to-br ${feature.color}`} style={{ opacity: hoveredFeature === index ? 0.2 : 0 }} />
+                  <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl bg-gradient-to-br ${feature.color}`} style={{ opacity: hoveblueFeature === index ? 0.2 : 0 }} />
                 </div>
               ))}
             </div>
@@ -381,12 +391,12 @@ const About = () => {
                   key={index}
                   className={`group p-8 rounded-2xl transition-all duration-500 hover:scale-105 ${
                     isDarkMode 
-                      ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 hover:border-red-600/50' 
-                      : 'bg-gradient-to-br from-white to-gray-50 border border-gray-200 hover:border-red-500 shadow-lg hover:shadow-2xl'
+                      ? 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 hover:border-blue-600/50' 
+                      : 'bg-gradient-to-br from-white to-gray-50 border border-gray-200 hover:border-blue-500 shadow-lg hover:shadow-2xl'
                   }`}
                 >
                   <div className={`mb-6 ${
-                    isDarkMode ? 'text-red-500' : 'text-red-600'
+                    isDarkMode ? 'text-blue-500' : 'text-blue-600'
                   } group-hover:scale-110 transition-transform duration-300`}>
                     {value.icon}
                   </div>
@@ -430,7 +440,7 @@ const About = () => {
                   <p className={`text-lg max-w-2xl mx-auto ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    Comprehensive laboratory solutions tailored to meet the highest standards of medical diagnostics
+                    Comprehensive laboratory solutions tailoblue to meet the highest standards of medical diagnostics
                   </p>
                 </div>
 
@@ -440,13 +450,13 @@ const About = () => {
                       key={index}
                       className={`group flex items-start space-x-3 p-5 rounded-xl transition-all duration-300 hover:scale-105 ${
                         isDarkMode 
-                          ? 'bg-gray-800/50 border border-gray-700 hover:border-red-600/50' 
-                          : 'bg-white border border-gray-200 hover:border-red-500 hover:shadow-lg'
+                          ? 'bg-gray-800/50 border border-gray-700 hover:border-blue-600/50' 
+                          : 'bg-white border border-gray-200 hover:border-blue-500 hover:shadow-lg'
                       }`}
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <div className={`flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300 ${
-                        isDarkMode ? 'text-red-500' : 'text-red-600'
+                        isDarkMode ? 'text-blue-500' : 'text-blue-600'
                       }`}>
                         {service.icon}
                       </div>
@@ -460,7 +470,7 @@ const About = () => {
                 </div>
 
                 <div className="mt-12 text-center">
-                  <button className="group px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-red-600/50 transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2">
+                  <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-blue-600/50 transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2">
                     <span>Learn More About Our Services</span>
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>

@@ -28,27 +28,27 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: "Visit Us",
-      details: ["Hass Biotechnology Centre", "Argwings Kodhek Road, Hurlingham", "Nairobi, Kenya"],
-      color: "from-blue-500 to-cyan-600"
+      title: "Uganda Office",
+      details: ["Plot 2236, Tank Hill Road,", "Muyenga - Kampala", "P.O Box 1735, Kampala."],
+      color: "from blue-500 to-indigo-600"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: ["256 (0)414 250 655", "+256 (0)753 250 655", "24/7 Support Available"],
-      color: "from-teal-500 to-green-600"
+      details: ["256 (0)414 250 655", "+256 (0)753 250 655", "Mon to Fri →   9:00 AM to 6:00 PM"],
+      color: "blue-400 to-blue-600"
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
       details: ["info@hassuganda.co.ug", "support@hassuganda.co.ug", "sales@hassuganda.co.ug"],
-      color: "from-purple-500 to-pink-600"
+      color: "blue-500 to-indigo-600"
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: "Business Hours",
       details: ["Mon - Fri: 8:00 AM - 5:00 PM", "Sat: 9:00 AM - 1:00 PM", "Emergency: 24/7"],
-      color: "from-orange-500 to-red-600"
+      color: "blue-400 to-blue-600"
     }
   ];
 
@@ -234,7 +234,7 @@ const Contact = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="group w-full py-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                    className="group w-full py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
                   >
                     <span>Send Message</span>
                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -279,7 +279,7 @@ const Contact = () => {
               </div>
 
               {/* Support Badge */}
-              <div className="bg-gradient-to-r from-red-600 to-red-800 rounded-2xl p-6 text-white text-center">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-6 text-white text-center">
                 <Clock className="w-12 h-12 mx-auto mb-3" />
                 <h3 className="text-xl font-bold mb-2">24/7 Support</h3>
                 <p className="text-sm opacity-90">

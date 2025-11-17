@@ -52,7 +52,7 @@ function Header() {
             <ThemeToggle />
             <Link
               to="/contact"
-              className="px-6 py-2.5 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-red-600/50 transition-all duration-300 hover:scale-105"
+              className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-600/50 transition-all duration-300 hover:scale-105"
             >
               Contact Us
             </Link>

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Wrench, Clock, Truck, Headphones, Shield, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Wrench, Clock, Truck, Headphones, Shield, Zap, CheckCircle2, ArrowRight, Image } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import PageLayout from '../components/PageLayout';
 
 const Services = () => {
   const { isDarkMode } = useTheme();
-  const [hoveredService, setHoveredService] = useState(null);
+  const [hoveblueService, setHoveblueService] = useState(null);
 
   const mainServices = [
     {
@@ -18,7 +18,7 @@ const Services = () => {
         "Calibration and validation",
         "Performance optimization"
       ],
-      color: "from-blue-500 to-cyan-600",
+      Image: <Image src="./service.png" alt="Service Image" />,
       bgColor: "bg-blue-50"
     },
     {
@@ -31,7 +31,7 @@ const Services = () => {
         "Spare parts availability",
         "Extended warranty options"
       ],
-      color: "from-teal-500 to-green-600",
+      Image: "from-teal-500 to-green-600",
       bgColor: "bg-teal-50"
     },
     {
@@ -44,7 +44,7 @@ const Services = () => {
         "Staff training programs",
         "Documentation and certification"
       ],
-      color: "from-purple-500 to-pink-600",
+      Image: "./installation.png",
       bgColor: "bg-purple-50"
     },
     {
@@ -57,7 +57,7 @@ const Services = () => {
         "On-site troubleshooting",
         "Software updates"
       ],
-      color: "from-orange-500 to-red-600",
+      color: "from-orange-500 to-blue-600",
       bgColor: "bg-orange-50"
     }
   ];
@@ -114,16 +114,16 @@ const Services = () => {
             {mainServices.map((service, index) => (
               <div
                 key={index}
-                onMouseEnter={() => setHoveredService(index)}
-                onMouseLeave={() => setHoveredService(null)}
-                className={`group relative rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border overflow-hidden ${isDarkMode ? 'bg-gray-800/50 border-gray-700' : 'bg-white border-gray-100'} ${hoveredService === index ? 'scale-105' : ''}`}
+                onMouseEnter={() => setHoveblueService(index)}
+                onMouseLeave={() => setHoveblueService(null)}
+                className={`group relative rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border overflow-hidden ${isDarkMode ? 'bg-gray-800/50 border-gray-700' : 'bg-white border-gray-100'} ${hoveblueService === index ? 'scale-105' : ''}`}
               >
                 {/* Background Gradient on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.Image} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
                 {/* Icon Circle */}
                 <div className={`relative inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
-                  <div className={`text-transparent bg-gradient-to-r ${service.color} bg-clip-text`}>
+                  <div className={`text-transparent bg-gradient-to-r ${service.Image} bg-clip-text`}>
                     {service.icon}
                   </div>
                 </div>
@@ -144,8 +144,8 @@ const Services = () => {
                         key={fIndex} 
                         className={`flex items-start space-x-3 ${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}
                         style={{ 
-                          opacity: hoveredService === index ? 1 : 0.8,
-                          transform: hoveredService === index ? 'translateX(10px)' : 'translateX(0)',
+                          opacity: hoveblueService === index ? 1 : 0.8,
+                          transform: hoveblueService === index ? 'translateX(10px)' : 'translateX(0)',
                           transition: `all 0.3s ease ${fIndex * 0.1}s`
                         }}
                       >
@@ -156,7 +156,7 @@ const Services = () => {
                   </ul>
 
                   {/* Learn More Button */}
-                  <button className="flex items-center space-x-2 bg-gradient-to-r from-red-600 to-red-800 text-white font-semibold px-4 py-2 rounded-lg group-hover:gap-3 transition-all duration-300">
+                  <button className="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold px-4 py-2 rounded-lg group-hover:gap-3 transition-all duration-300">
                     <span>Learn More</span>
                     <ArrowRight className="w-5 h-5" />
                   </button>
@@ -210,7 +210,7 @@ const Services = () => {
                   Need immediate assistance or want to discuss a service contract?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105">
+                  <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
                     Contact Support Team
                   </button>
                   <button className={`px-8 py-4 border-2 rounded-lg font-semibold transition-all duration-300 ${isDarkMode ? 'border-white/30 text-white hover:bg-white/10 hover:border-white' : 'border-gray-300 text-black hover:bg-gray-100 hover:border-gray-400'}`}>
