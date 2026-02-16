@@ -34,46 +34,46 @@ const Footer = () => {
   const footerLinks = {
     company: [
       { name: 'About Us', href: '/about' },
-      { name: 'Our Team', href: '#team' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'News & Updates', href: '#news' }
+      { name: 'Our Team', href: '/about' },
+      // { name: 'Careers', href: '#careers' },
+      // { name: 'News & Updates', href: '#news' }
     ],
     products: [
-      { name: 'Clinical Chemistry', href: '#chemistry' },
-      { name: 'Microbiology', href: '#microbiology' },
-      { name: 'Immunology', href: '#immunology' },
-      { name: 'Reagents', href: '#reagents' }
+      { name: 'Clinical Chemistry', href: '/products' },
+      { name: 'Microbiology', href: '/products' },
+      { name: 'Immunology', href: '/products' },
+      { name: 'Reagents', href: '/products' }
     ],
     services: [
-      { name: 'Equipment Maintenance', href: '#maintenance' },
-      { name: 'Installation', href: '#installation' },
-      { name: 'Technical Support', href: '#support' },
-      { name: 'Training', href: '#training' }
+      { name: 'Equipment Maintenance', href: '/services' },
+      { name: 'Installation', href: '/services' },
+      { name: 'Technical Support', href: '/services' },
+      { name: 'Training', href: '/services' }
     ]
   };
 
   const socialLinks = [
     { 
       icon: <Facebook className="w-5 h-5" />, 
-      href: '#', 
+      href: 'www.facebook.com/pages/Hass-Scientific-Medical-Supplies', 
       color: isDarkMode ? 'hover:bg-blue-600' : 'hover:bg-blue-500',
       label: 'Facebook'
     },
     { 
       icon: <Twitter className="w-5 h-5" />, 
-      href: '#', 
+      href: 'www.twitter.com/HassScientific', 
       color: isDarkMode ? 'hover:bg-sky-500' : 'hover:bg-sky-400',
       label: 'Twitter'
     },
     { 
       icon: <Linkedin className="w-5 h-5" />, 
-      href: '#', 
+      href: 'www.linkedin.com/company/hass-scientific-medical-supplies', 
       color: isDarkMode ? 'hover:bg-blue-700' : 'hover:bg-blue-600',
       label: 'LinkedIn'
     },
     { 
       icon: <Instagram className="w-5 h-5" />, 
-      href: '#', 
+      href: 'www.instagram.com/HassScientific', 
       color: isDarkMode ? 'hover:bg-pink-600' : 'hover:bg-pink-500',
       label: 'Instagram'
     }
@@ -81,7 +81,7 @@ const Footer = () => {
 
   const certifications = [
     { icon: <Award className="w-8 h-8" />, text: 'ISO Certified', color: 'blue' },
-    { icon: <Shield className="w-8 h-8" />, text: 'Quality Assublue', color: 'gray' },
+    { icon: <Shield className="w-8 h-8" />, text: 'Quality Assured', color: 'gray' },
     { icon: <Clock className="w-8 h-8" />, text: '30+ Years', color: 'blue' }
   ];
 
