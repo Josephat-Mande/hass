@@ -179,7 +179,7 @@ const Footer = () => {
                   }`}>
                     <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </div>
-                  <span className="font-medium">customerservice@hassuganda.co.ug</span>
+                  <span className="font-medium">customerservice@hassuganda.co.ug / sales@hassuganda.co.ug</span>
                 </a>
 
                 <a 
@@ -347,52 +347,15 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className=" grid-cols-2 space-y-4 mb-8">
-                <a 
-                  href="mailto:info@hassuganda.co.ug" 
-                  className={`group flex items-center space-x-3 p-3 rounded-xl transition-all duration-300 ${
-                    isDarkMode 
-                      ? 'hover:bg-gray-800/50 text-gray-300 hover:text-white' 
-                      : 'hover:bg-gray-100 text-gray-700 hover:text-gray-900'
-                  }`}
-                >
-                  <div className={`p-2 rounded-lg ${
-                    isDarkMode ? 'bg-blue-600/20 text-blue-400' : 'bg-blue-100 text-blue-600'
-                  }`}>
-                    <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="font-medium">info@hassuganda.co.ug</span>
-                </a>
+          <div>
 
-                <a 
-                  href="tel:256 (0)414 250 655" 
-                  className={`group flex items-center space-x-3 p-3 rounded-xl transition-all duration-300 ${
-                    isDarkMode 
-                      ? 'hover:bg-gray-800/50 text-gray-300 hover:text-white' 
-                      : 'hover:bg-gray-100 text-gray-700 hover:text-gray-900'
-                  }`}
-                >
-                  <div className={`p-2 rounded-lg ${
-                    isDarkMode ? 'bg-gray-700 text-gray-400' : 'bg-gray-200 text-gray-600'
-                  }`}>
-                    <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  </div>
-                  <span className="font-medium">256 (0)414 250 655</span>
-                </a>
+          <div>
 
-                <div className={`flex items-start space-x-3 p-3 rounded-xl ${
-                  isDarkMode ? 'text-gray-300' : 'text-gray-700'
-                }`}>
-                  <div className={`p-2 rounded-lg ${
-                    isDarkMode ? 'bg-blue-600/20 text-blue-400' : 'bg-blue-100 text-blue-600'
-                  }`}>
-                    <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                  </div>
-                  <div className="font-medium">
-                    <div>Hass Biotechnology Centre</div>
-                    <div>Argwings Kodhek Road, Hurlingham</div>
-                    <div>Nairobi, Kenya</div>
-                  </div>
+                
+                  
+
+                
+                  
                 </div>
               </div>
 
