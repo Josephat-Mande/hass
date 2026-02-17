@@ -594,7 +594,7 @@ export default function ProductsPage() {
               </div>
               <div className={`w-px h-6 ${isDarkMode ? "bg-gray-700" : "bg-gray-300"}`} />
               <div>
-                <span className={`text-2xl font-black ${isDarkMode ? "text-white" : "text-gray-900"}`}>1993</span>
+                <span className={`text-2xl font-black ${isDarkMode ? "text-white" : "text-gray-900"}`}>1997</span>
                 <span className={`text-xs ml-1 ${isDarkMode ? "text-gray-500" : "text-gray-400"}`}>Est.</span>
               </div>
             </div>
@@ -653,9 +653,9 @@ export default function ProductsPage() {
                 style={{ background: `linear-gradient(135deg, ${catMeta.color}, ${catMeta.accent})` }}>
                 Request Consultation →
               </a>
-              <a href="tel:+254720416144"
+              <a href="tel:+256414250655" target="_blank" rel="noreferrer"
                 className={`px-7 py-3 rounded-xl text-sm font-bold border transition-all ${isDarkMode ? "border-gray-600 text-gray-300 hover:bg-gray-700" : "border-gray-300 text-gray-700 hover:bg-gray-100"}`}>
-                +254 720 416 144
+                +256 (0)414 250 655
               </a>
             </div>
           </div>
