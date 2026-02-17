@@ -143,11 +143,14 @@ const About = () => {
   ];
 
   return (
+    
     <div className={`min-h-screen transition-colors duration-300 ${
       isDarkMode 
         ? 'bg-gradient-to-b from-gray-900 via-black to-gray-900' 
         : 'bg-gradient-to-b from-white via-gray-50 to-gray-100'
     }`}>
+      
+      
       {/* Theme Toggle */}
       <button
         onClick={() => setIsDarkMode(!isDarkMode)}
@@ -270,7 +273,7 @@ const About = () => {
                     <p className={`text-lg leading-relaxed ${
                       isDarkMode ? 'text-gray-300' : 'text-gray-700'
                     }`}>
-                      Hass Scientific & Medical Supplies (U) Ltd was incorporated in 1993.
+                      Hass Scientific & Medical Supplies (U) Ltd was incorporated in 1997.
 The company's head office is located in the up market Hurligham area along Argwings Kodhek Road at Hass Biotechnology Centre in Nairobi - Kenya, which is wholly owned by Hass Scientific & Medical Supplies (U) Ltd.
 
 It is an ultra modern centre with adequate facilities eg.coldroom, conference /demonstration room that support the effective promotion of diagnostic products and internal trainings.
@@ -309,7 +312,7 @@ At Hass Scientific & Medical Supplies (U) Ltd., we deal with the procurement and
                     <div className={`mt-4 flex items-center space-x-2 ${
                       isDarkMode ? 'text-blue-400' : 'text-blue-600'
                     }`}>
-                      <Zap className="w-5 h-5" />
+                      {/* <Zap className="w-5 h-5" /> */}
                       <span className="font-semibold">Our Mission</span>
                     </div>
                   </div>

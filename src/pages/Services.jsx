@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Wrench, Clock, Truck, Headphones, Shield, Zap, CheckCircle2, ArrowRight, Image } from 'lucide-react';
+import { Wrench, Clock, Truck, Headphones, Shield, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import PageLayout from '../components/PageLayout';
 
 const Services = () => {
   const { isDarkMode } = useTheme();
-  const [hoveblueService, setHoveblueService] = useState(null);
+  const [hoveredService, setHoveredService] = useState(null);
 
   const mainServices = [
     {
@@ -18,8 +18,9 @@ const Services = () => {
         "Calibration and validation",
         "Performance optimization"
       ],
-      Image: <Image src="./service.png" alt="Service Image" />,
-      bgColor: "bg-blue-50"
+      color: "from-blue-500 to-blue-700",
+      bgColor: "bg-blue-50",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
     },
     {
       icon: <Shield className="w-10 h-10" />,
@@ -31,8 +32,9 @@ const Services = () => {
         "Spare parts availability",
         "Extended warranty options"
       ],
-      Image: "from-teal-500 to-green-600",
-      bgColor: "bg-teal-50"
+      color: "from-teal-500 to-green-600",
+      bgColor: "bg-teal-50",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"
     },
     {
       icon: <Truck className="w-10 h-10" />,
@@ -44,8 +46,9 @@ const Services = () => {
         "Staff training programs",
         "Documentation and certification"
       ],
-      Image: "./installation.png",
-      bgColor: "bg-purple-50"
+      color: "from-purple-500 to-pink-600",
+      bgColor: "bg-purple-50",
+      image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
     },
     {
       icon: <Headphones className="w-10 h-10" />,
@@ -57,8 +60,9 @@ const Services = () => {
         "On-site troubleshooting",
         "Software updates"
       ],
-      color: "from-orange-500 to-blue-600",
-      bgColor: "bg-orange-50"
+      color: "from-orange-500 to-red-600",
+      bgColor: "bg-orange-50",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
     }
   ];
 
@@ -82,9 +86,34 @@ const Services = () => {
 
   return (
     <PageLayout>
-      <section className={`relative py-20 px-6 overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black' : 'bg-gradient-to-br from-gray-100 via-white to-gray-200'} transition-colors duration-300`}>
+      <section className="relative py-20 px-6 overflow-hidden">
+        {/* Background Image Layer */}
+        <div 
+          className="fixed inset-0 w-full h-full"
+          style={{ 
+            backgroundImage: 'url(https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            filter: 'blur(3px)',
+            transform: 'scale(1.1)',
+            opacity: 0.15,
+            zIndex: 0
+          }}
+        />
+
+        {/* Dark Overlay */}
+        <div 
+          className={`fixed inset-0 w-full h-full transition-colors duration-300 ${
+            isDarkMode 
+              ? 'bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95' 
+              : 'bg-gradient-to-br from-gray-50/95 via-white/90 to-gray-100/95'
+          }`}
+          style={{ zIndex: 1 }}
+        />
+
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="fixed inset-0 opacity-5" style={{ zIndex: 2 }}>
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle, #1e293b 1px, transparent 1px)`,
             backgroundSize: '40px 40px'
@@ -92,8 +121,8 @@ const Services = () => {
         </div>
 
         {/* Animated Background Blobs */}
-        <div className="absolute top-20 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" />
-        <div className="absolute bottom-20 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="fixed top-20 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ zIndex: 3 }} />
+        <div className="fixed bottom-20 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s', zIndex: 3 }} />
 
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header */}
@@ -114,25 +143,42 @@ const Services = () => {
             {mainServices.map((service, index) => (
               <div
                 key={index}
-                onMouseEnter={() => setHoveblueService(index)}
-                onMouseLeave={() => setHoveblueService(null)}
-                className={`group relative rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border overflow-hidden ${isDarkMode ? 'bg-gray-800/50 border-gray-700' : 'bg-white border-gray-100'} ${hoveblueService === index ? 'scale-105' : ''}`}
+                onMouseEnter={() => setHoveredService(index)}
+                onMouseLeave={() => setHoveredService(null)}
+                className={`group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border ${
+                  isDarkMode ? 'bg-gray-800/70 border-gray-700 backdrop-blur-sm' : 'bg-white/90 border-gray-100 backdrop-blur-sm'
+                } ${hoveredService === index ? 'scale-[1.02]' : ''}`}
               >
-                {/* Background Gradient on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.Image} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-
-                {/* Icon Circle */}
-                <div className={`relative inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
-                  <div className={`text-transparent bg-gradient-to-r ${service.Image} bg-clip-text`}>
-                    {service.icon}
+                {/* Service Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      e.target.src = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop';
+                    }}
+                  />
+                  {/* Image Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-60`} />
+                  
+                  {/* Icon on Image */}
+                  <div className="absolute top-6 left-6 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-white">
+                      {service.icon}
+                    </div>
+                  </div>
+                  
+                  {/* Title on Image */}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-bold text-white drop-shadow-lg">
+                      {service.title}
+                    </h3>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="relative">
-                  <h3 className={`text-2xl font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                    {service.title}
-                  </h3>
+                {/* Content Section */}
+                <div className="p-8">
                   <p className={`mb-6 leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                     {service.description}
                   </p>
@@ -144,19 +190,19 @@ const Services = () => {
                         key={fIndex} 
                         className={`flex items-start space-x-3 ${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}
                         style={{ 
-                          opacity: hoveblueService === index ? 1 : 0.8,
-                          transform: hoveblueService === index ? 'translateX(10px)' : 'translateX(0)',
+                          opacity: hoveredService === index ? 1 : 0.8,
+                          transform: hoveredService === index ? 'translateX(10px)' : 'translateX(0)',
                           transition: `all 0.3s ease ${fIndex * 0.1}s`
                         }}
                       >
-                        <CheckCircle2 className={`w-5 h-5 text-transparent bg-gradient-to-r ${service.color} bg-clip-text flex-shrink-0 mt-0.5`} />
+                        <CheckCircle2 className={`w-5 h-5 flex-shrink-0 mt-0.5 text-transparent bg-gradient-to-r ${service.color} bg-clip-text`} />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
 
                   {/* Learn More Button */}
-                  <button className="flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold px-4 py-2 rounded-lg group-hover:gap-3 transition-all duration-300">
+                  <button className={`flex items-center space-x-2 font-semibold px-6 py-3 rounded-lg group-hover:gap-4 transition-all duration-300 bg-gradient-to-r ${service.color} text-white hover:shadow-lg`}>
                     <span>Learn More</span>
                     <ArrowRight className="w-5 h-5" />
                   </button>
@@ -169,11 +215,13 @@ const Services = () => {
           </div>
 
           {/* Additional Services Bar */}
-          <div className={`rounded-2xl p-10 relative overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-800 to-gray-900' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
+          <div className={`rounded-2xl p-10 relative overflow-hidden backdrop-blur-sm ${
+            isDarkMode ? 'bg-gray-800/70 border border-gray-700' : 'bg-white/90 border border-gray-200'
+          }`}>
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0" style={{
-                backgroundImage: `linear-gradient(45deg, transparent 48%, white 48%, white 52%, transparent 52%)`,
+                backgroundImage: `linear-gradient(45deg, transparent 48%, currentColor 48%, currentColor 52%, transparent 52%)`,
                 backgroundSize: '20px 20px'
               }} />
             </div>
@@ -187,7 +235,9 @@ const Services = () => {
                 {additionalServices.map((item, index) => (
                   <div 
                     key={index}
-                    className={`group text-center p-6 rounded-xl transition-all duration-300 border ${isDarkMode ? 'bg-gray-800/50 border-gray-700 text-white' : 'bg-white border-gray-100 text-black'}`}
+                    className={`group text-center p-6 rounded-xl transition-all duration-300 border hover:scale-105 ${
+                      isDarkMode ? 'bg-gray-900/50 border-gray-700 text-white hover:bg-gray-900/70' : 'bg-white border-gray-200 text-black hover:bg-gray-50'
+                    }`}
                   >
                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-600 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
                       <div className="text-white">
@@ -197,7 +247,7 @@ const Services = () => {
                     <h4 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
                       {item.title}
                     </h4>
-                    <p className={`text-gray-300 ${isDarkMode ? '' : 'text-gray-700'}`}>
+                    <p className={isDarkMode ? 'text-gray-300' : 'text-gray-700'}>
                       {item.description}
                     </p>
                   </div>
@@ -210,10 +260,12 @@ const Services = () => {
                   Need immediate assistance or want to discuss a service contract?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
+                  <button onClick={() => window.open('tel:+256 (0)414 250 655', '_blank')} className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
                     Contact Support Team
                   </button>
-                  <button className={`px-8 py-4 border-2 rounded-lg font-semibold transition-all duration-300 ${isDarkMode ? 'border-white/30 text-white hover:bg-white/10 hover:border-white' : 'border-gray-300 text-black hover:bg-gray-100 hover:border-gray-400'}`}>
+                  <button  onClick={() => window.open('/service-guide.pdf', '_blank')} className={`px-8 py-4 border-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105 ${
+                    isDarkMode ? 'border-white/30 text-white hover:bg-white/10 hover:border-white' : 'border-gray-300 text-black hover:bg-gray-100 hover:border-gray-400'
+                  }`}>
                     Download Service Guide
                   </button>
                 </div>

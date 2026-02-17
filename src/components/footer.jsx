@@ -167,7 +167,7 @@ const Footer = () => {
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
                 <a 
-                  href="mailto:info@hassuganda.co.ug" 
+                  href="mailto:customerservice@hassuganda.co.ug" 
                   className={`group flex items-center space-x-3 p-3 rounded-xl transition-all duration-300 ${
                     isDarkMode 
                       ? 'hover:bg-gray-800/50 text-gray-300 hover:text-white' 
@@ -179,7 +179,7 @@ const Footer = () => {
                   }`}>
                     <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </div>
-                  <span className="font-medium">info@hassuganda.co.ug</span>
+                  <span className="font-medium">customerservice@hassuganda.co.ug</span>
                 </a>
 
                 <a 
@@ -195,7 +195,7 @@ const Footer = () => {
                   }`}>
                     <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </div>
-                  <span className="font-medium">256 (0)414 250 655</span>
+                  <span className="font-medium">256 (0)414 250 655 / +256 (0)753 250 655</span>
                 </a>
 
                 <div className={`flex items-start space-x-3 p-3 rounded-xl ${
@@ -208,8 +208,9 @@ const Footer = () => {
                   </div>
                   <div className="font-medium">
                     <div>Hass Biotechnology Centre</div>
-                    <div>Argwings Kodhek Road, Hurlingham</div>
-                    <div>Nairobi, Kenya</div>
+                    <div>Plot 2236, Tank Hill Road</div>
+                    <div>Muyenga - Kampala.</div>
+                    <div> P.O Box 1735, Kampala - Uganda.</div>
                   </div>
                 </div>
               </div>

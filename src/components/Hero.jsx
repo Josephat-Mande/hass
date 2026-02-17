@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronRight, Microscope, Activity, Zap, Shield, ArrowDown, Play, Sparkles, TrendingUp, CheckCircle } from 'lucide-react';
+import { ChevronRight, Microscope, Activity, Zap, Shield, ArrowDown, FileText, Sparkles, TrendingUp, CheckCircle } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 const Hero = () => {
@@ -85,9 +85,33 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Google Fonts Import for Engineering Font */}
+      <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+      
+      {/* FIXED: Background Image Layer - Now with proper z-index */}
+      <div 
+        className="fixed inset-0 w-full h-full"
+        style={{ 
+          backgroundImage: 'url(https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2000&auto=format&fit=crop)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(0px)',
+          transform: 'scale(1.1)',
+          opacity: 0.25,
+          zIndex: 0
+        }}
+      />
+
+      {/* Dark overlay for better text readability */}
+      <div 
+        className="fixed inset-0 w-full h-full bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95"
+        style={{ zIndex: 1 }}
+      />
+
       {/* Animated DNA Helix Background */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="fixed inset-0 opacity-10" style={{ zIndex: 2 }}>
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
@@ -105,34 +129,36 @@ const Hero = () => {
 
       {/* Dynamic Grid with Mouse Movement */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="fixed inset-0 opacity-5"
         style={{
           backgroundImage: `linear-gradient(${mousePosition.x * 30}deg, rgba(196, 30, 58, 0.3) 1px, transparent 1px),
                            linear-gradient(${90 + mousePosition.y * 30}deg, rgba(196, 30, 58, 0.3) 1px, transparent 1px)`,
           backgroundSize: '60px 60px',
-          transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)`
+          transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)`,
+          zIndex: 3
         }}
       />
 
       {/* Floating Orbs */}
       <div 
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20"
+        className="fixed top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20"
         style={{
           background: `radial-gradient(circle, ${brandblue} 0%, transparent 70%)`,
-          transform: `translate(${mousePosition.x * 50}px, ${mousePosition.y * 50}px)`
+          transform: `translate(${mousePosition.x * 50}px, ${mousePosition.y * 50}px)`,
+          zIndex: 4
         }}
       />
       <div 
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-15"
+        className="fixed bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-15"
         style={{
           background: `radial-gradient(circle, ${brandGray} 0%, transparent 70%)`,
-          transform: `translate(${-mousePosition.x * 30}px, ${-mousePosition.y * 30}px)`
+          transform: `translate(${-mousePosition.x * 30}px, ${-mousePosition.y * 30}px)`,
+          zIndex: 4
         }}
       />
 
-
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 min-h-[calc(100vh-100px)] flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           {/* Left Content */}
           <div className="space-y-8">
@@ -140,30 +166,29 @@ const Hero = () => {
             <div 
               className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-blue-600/20 to-blue-800/20 backdrop-blur-xl rounded-full border border-blue-500/30 animate-fade-in"
             >
-              
               <span className="text-blue-200 font-semibold text-sm">Leading East & Central Africa Since 1993</span>
             </div>
 
             {/* Main Heading with Dynamic Word */}
             <div className="space-y-4">
-              <h1 className="text-6xl md:text-7xl font-black text-white leading-tight">
+              <h1 className="text-6xl md:text-7xl font-black text-white leading-tight" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                 Biomedical
                 <br />
                 <span className="relative inline-block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-blue-800 animate-pulse">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-500 animate-pulse">
                     {dynamicWords[activeWord]}
                   </span>
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-transparent" />
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl">
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
                 Transforming healthcare through cutting-edge laboratory equipment and unwavering technical excellence
               </p>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/50">
+              <button onClick={() => window.location.href = '/services'} className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/50" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 <span className="relative flex items-center justify-center space-x-2">
                   <span>Explore Solutions</span>
@@ -171,14 +196,14 @@ const Hero = () => {
                 </span>
               </button>
               
-              <button className="group px-8 py-4 border-2 border-gray-600 rounded-xl font-bold text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all duration-300 flex items-center justify-center space-x-2">
-                <Play className="w-5 h-5" />
-                <span>Watch Demo</span>
+              <button onClick={() => window.location.href = '/contact'} className="group px-8 py-4 border-2 border-gray-600 rounded-xl font-bold text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all duration-300 flex items-center justify-center space-x-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
+                <FileText className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span>Request Quote</span>
               </button>
             </div>
 
             {/* Mini Stats */}
-            <div className="grid grid-cols-4 gap-4 pt-8">
+            <div className="grid grid-cols-4 gap-4 pt-8" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               {stats.map((stat, idx) => (
                 <div 
                   key={idx}
@@ -189,7 +214,7 @@ const Hero = () => {
                     {stat.icon}
                   </div>
                   <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-gray-400">{stat.label}</div>
+                  <div className="text-xs text-gray-400" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -236,8 +261,8 @@ const Hero = () => {
                         <div className="text-white mb-2 group-hover:scale-110 transition-transform">
                           {feature.icon}
                         </div>
-                        <div className="text-white font-bold text-sm mb-1">{feature.title}</div>
-                        <div className="text-white/70 text-xs">{feature.description}</div>
+                        <div className="text-white font-bold text-sm mb-1" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{feature.title}</div>
+                        <div className="text-white/70 text-xs" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{feature.description}</div>
                       </div>
                     </div>
                   );
@@ -274,7 +299,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-gray-400 text-sm">Scroll to explore</span>
+          <span className="text-gray-400 text-sm" style={{ fontFamily: "'Rajdhani', sans-serif" }}>Scroll to explore</span>
           <ArrowDown className="w-6 h-6 text-blue-500" />
         </div>
       </div>

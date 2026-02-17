@@ -60,6 +60,7 @@ const Contact = () => {
 
   return (
     <PageLayout>
+      
       <section className={`relative py-20 px-6 overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-black' : 'bg-gradient-to-br from-gray-100 via-white to-gray-200'} transition-colors duration-300`}>
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob" />
