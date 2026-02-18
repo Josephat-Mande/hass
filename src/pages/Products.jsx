@@ -18,12 +18,12 @@ const PRODUCTS = {
   "immuno-assay": [
     {
       id: "vidas-30",
-      name: "VIDAS® 30",
+      name: "VIDAS® Kube",
       manufacturer: "bioMérieux",
       badge: "AUTOMATED",
       tagline: "Fully automated ELFA immunoassay system",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/vidas_30_left_0-300x193.jpg",
-      description: "The VIDAS® 30 is a fully automated benchtop immunoassay analyser using the ELFA (Enzyme Linked Fluorescent Assay) technique. It provides reliable, reproducible results across a broad menu of infectious disease, endocrinology, and cardiac markers.",
+      image: "https://s7g10.scene7.com/is/image/biomerieux/vidas-kube?qlt=85&wid=1600&ts=1766424760929&dpr=off",
+      description: "The VIDAS® Kube is a fully automated benchtop immunoassay analyser using the ELFA (Enzyme Linked Fluorescent Assay) technique. It provides reliable, reproducible results across a broad menu of infectious disease, endocrinology, and cardiac markers.",
       features: ["30 simultaneous tests", "ELFA technology", "Open 24/7 – random access", "80+ assay menu", "Minimal hands-on time", "CE-IVD certified"],
       specs: { "Capacity": "30 tests simultaneously", "Technology": "ELFA (Enzyme Linked Fluorescent Assay)", "Menu": "80+ parameters", "Sample types": "Serum, plasma, urine, CSF", "Throughput": "Random access", "Certification": "CE-IVD" },
       youtube: "https://www.youtube.com/embed/SsMM2m_R2dM",
@@ -44,7 +44,24 @@ const PRODUCTS = {
       highlights: ["Emergency STAT", "6-position compact", "Simple operation"],
       useCases: ["Emergency labs", "Small hospitals", "POC testing"]
     },
+
+    {
+      id: "mini-vidas",
+      name: " VIDAS® PC",
+      manufacturer: "bioMérieux",
+      badge: "COMPACT",
+      tagline: "Compact immunoassay for urgent testing",
+      image: "https://hasscientific.com/wp-content/uploads/2020/05/vidas_30_left_0-300x193.jpg",
+      description: "The mini VIDAS® is a compact, semi-automated immunoassay system ideal for emergency testing and low-volume laboratories. Using the same proven ELFA technology as the VIDAS 30, it delivers trusted results from a small footprint.",
+      features: ["6 test positions", "ELFA technology", "Stat testing ready", "No sample pre-treatment", "Simple 2-step operation", "Wide assay menu"],
+      specs: { "Capacity": "6 simultaneous tests", "Technology": "ELFA", "Footprint": "Compact benchtop", "Sample": "Minimal volume required", "Mode": "Semi-automated", "Certification": "CE-IVD" },
+      youtube: "https://www.youtube.com/embed/SsMM2m_R2dM",
+      highlights: ["Emergency STAT", "6-position compact", "Simple operation"],
+      useCases: ["Emergency labs", "Small hospitals", "POC testing"]
+    },
   ],
+
+  
 
   "molecular": [
     {
@@ -110,9 +127,9 @@ const PRODUCTS = {
 
   "haematology": [
     {
-      id: "xp-300", name: "XP-300", manufacturer: "Sysmex", badge: "COMPACT",
+      id: "xp-300", name: "H-560", manufacturer: "Sysmex", badge: "COMPACT",
       tagline: "Reliable 3-part differential for any lab",
-      image: "https://hasscientific.com/wp-content/uploads/2018/11/Sysmex-XP-300-400x400-1-300x300.jpg",
+      image: "https://product.erbamannheim.com/upload/instrument/h560-side-257-x-257-4246.jpg",
       description: "The XP-300 is a compact 3-part differential haematology analyser for small to mid-sized labs. With 19 parameters and up to 60 samples/hr, it delivers reliable CBC results with minimal footprint and reagent consumption.",
       features: ["3-part differential CBC", "Up to 60 samples/hr", "19 reportable parameters", "Minimal maintenance", "Reagent optimisation", "USB & LAN connectivity"],
       specs: { "Throughput": "Up to 60 samples/hr", "Parameters": "19 reportable", "Sample Volume": "10 µL (whole blood)", "Differential": "3-part", "Connectivity": "USB, LAN", "Display": "LCD color screen" },
@@ -121,9 +138,9 @@ const PRODUCTS = {
       useCases: ["Clinics", "Small hospitals", "POC labs"]
     },
     {
-      id: "xn-350", name: "XN-350", manufacturer: "Sysmex", badge: "5-PART DIFF",
+      id: "xn-350", name: "H-360", manufacturer: "Sysmex", badge: "5-PART DIFF",
       tagline: "5-part differential intelligence, compact form",
-      image: "https://hasscientific.com/wp-content/uploads/2018/11/Sysmex-XN-350-400x400-1-300x300.jpg",
+      image: "https://product.erbamannheim.com/upload/instrument/h360-side-257-x-257-4076.jpg",
       description: "The XN-350 delivers cutting-edge 5-part differential analysis in a compact stand-alone configuration. With integrated IPU and touchscreen — no separate PC needed. Future-proof with scalable upgrades.",
       features: ["Compact 5-part differential", "Single sample open mode", "Fully integrated IPU + touchscreen", "25 µL aspiration volume", "Scalable upgrades", "Cyanide-free SLS haemoglobin"],
       specs: { "Throughput": "Up to 60 samples/hr", "Parameters": "30+ reportable", "Sample Volume": "25 µL (whole blood)", "Differential": "5-part DIFF", "Technology": "Fluorescence flow cytometry", "Display": "Integrated LCD touchscreen" },
@@ -132,9 +149,9 @@ const PRODUCTS = {
       useCases: ["District hospitals", "Independent labs", "Mid-volume settings"]
     },
     {
-      id: "xn-450", name: "XN-450", manufacturer: "Sysmex", badge: "RETICULOCYTE",
+      id: "xn-450", name: "Elite -580", manufacturer: "Sysmex", badge: "RETICULOCYTE",
       tagline: "Advanced parameters, clinical confidence",
-      image: "https://hasscientific.com/wp-content/uploads/2018/11/Sysmex-XN-450-400x400-1-300x300.jpg",
+      image: "https://product.erbamannheim.com/upload/instrument/elite---580---257-x-257-pix_1958.jpg",
       description: "The XN-450 bridges mid-volume labs with reticulocyte and extended analytical capabilities. Multi-mode operation supports CBC, DIFF, and RET analysis in a single run.",
       features: ["5-part DIFF with RET channel", "Reticulocyte parameter reporting", "Up to 80 samples/hr", "35+ reportable parameters", "4 operational modes", "Network + remote servicing"],
       specs: { "Throughput": "Up to 80 samples/hr", "Parameters": "35+ reportable", "Sample Volume": "25 µL", "Modes": "CBC, CBC+DIFF, CBC+DIFF+RET", "Technology": "Fluorescence + SLS", "Connectivity": "LAN, remote servicing" },
@@ -142,39 +159,39 @@ const PRODUCTS = {
       highlights: ["Reticulocyte reporting", "80 samples/hr", "4 modes"],
       useCases: ["Regional hospitals", "Specialty labs", "High-acuity settings"]
     },
-    {
-      id: "xn-550", name: "XN-550", manufacturer: "Sysmex", badge: "HIGH-THROUGHPUT",
-      tagline: "High-throughput with clinical-grade precision",
-      image: "https://hasscientific.com/wp-content/uploads/2018/11/Sysmex-XN-550-400x400-1-300x300.jpg",
-      description: "The XN-550 is engineered for busy laboratories requiring high-throughput CBC+DIFF analysis with advanced reporting and NRBC capability.",
-      features: ["Up to 100 samples/hr", "Extended 5-part differential", "40+ reportable parameters", "NRBC reporting", "5 operational modes", "Sampler + open mode"],
-      specs: { "Throughput": "Up to 100 samples/hr", "Parameters": "40+ reportable", "Sample Volume": "25 µL", "Modes": "5 (CBC to PLT-F)", "Technology": "Multi-angle fluorescence", "NRBC": "Included" },
-      youtube: "https://www.youtube.com/embed/rC_LSOY0f0w",
-      highlights: ["100 samples/hr", "NRBC reporting", "5 modes"],
-      useCases: ["Large hospitals", "Central labs", "High-volume reference labs"]
-    },
-    {
-      id: "xn-1000", name: "XN-1000", manufacturer: "Sysmex", badge: "FLAGSHIP",
-      tagline: "42 parameters. Uncompromising diagnostic depth",
-      image: "https://hasscientific.com/wp-content/uploads/2018/11/Sysmex-XN-1000-XN-10-400x400-1-300x300.jpg",
-      description: "The XN-1000 is the gold standard in standalone haematology analysis. 42 parameters, 4 modes, NRBC with every count, and 100 samples/hr make it the preferred choice for oncology and critical care.",
-      features: ["42 reportable parameters", "NRBC for every blood count", "4 operational modes", "Up to 100 samples/hr", "CBC+DIFF+RET configurations", "Full network + remote servicing"],
-      specs: { "Throughput": "Up to 100 samples/hr", "Parameters": "42 reportable", "Modes": "CBC, CBC+DIFF, CBC+DIFF+RET, CBC+RET", "Technology": "Fluorescence flow cytometry", "NRBC": "Standard with every CBC", "Connectivity": "LAN + remote servicing" },
-      youtube: "https://www.youtube.com/embed/M60ndKMPNT4",
-      highlights: ["42 parameters", "NRBC standard", "Network ready"],
-      useCases: ["Teaching hospitals", "Oncology centres", "Critical care labs"]
-    },
-    {
-      id: "xn-9000", name: "XN-9000", manufacturer: "Sysmex", badge: "AUTOMATED LINE",
-      tagline: "Fully automated. Infinite scalability.",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/Sysmex-XN-9000-400x400-1-300x300.jpg",
-      description: "The XN-9000 combines up to 6 XN modules with automated sample transport and digital morphology integration for over 500 samples/hour — a complete automated haematology laboratory.",
-      features: ["Up to 6 XN modules", "500+ samples/hr combined", "Full automation + transport", "93+ reportable parameters", "Digital morphology integration", "Bidirectional LIS connectivity"],
-      specs: { "Throughput": "500+ samples/hr", "Parameters": "93+ reportable", "Modules": "Up to 6 XN units", "Automation": "Full track + routing", "Morphology": "DI-60 compatible", "LIS": "Bidirectional HL7/ASTM" },
-      youtube: "https://www.youtube.com/embed/dJaI44mKn3I",
-      highlights: ["500+ samples/hr", "6-module system", "Full lab automation"],
-      useCases: ["Reference labs", "Hospital networks", "National programmes"]
-    },
+    // {
+    //   id: "xn-550", name: "XN-550", manufacturer: "Sysmex", badge: "HIGH-THROUGHPUT",
+    //   tagline: "High-throughput with clinical-grade precision",
+    //   image: "https://hasscientific.com/wp-content/uploads/2018/11/Sysmex-XN-550-400x400-1-300x300.jpg",
+    //   description: "The XN-550 is engineered for busy laboratories requiring high-throughput CBC+DIFF analysis with advanced reporting and NRBC capability.",
+    //   features: ["Up to 100 samples/hr", "Extended 5-part differential", "40+ reportable parameters", "NRBC reporting", "5 operational modes", "Sampler + open mode"],
+    //   specs: { "Throughput": "Up to 100 samples/hr", "Parameters": "40+ reportable", "Sample Volume": "25 µL", "Modes": "5 (CBC to PLT-F)", "Technology": "Multi-angle fluorescence", "NRBC": "Included" },
+    //   youtube: "https://www.youtube.com/embed/rC_LSOY0f0w",
+    //   highlights: ["100 samples/hr", "NRBC reporting", "5 modes"],
+    //   useCases: ["Large hospitals", "Central labs", "High-volume reference labs"]
+    // },
+    // {
+    //   id: "xn-1000", name: "XN-1000", manufacturer: "Sysmex", badge: "FLAGSHIP",
+    //   tagline: "42 parameters. Uncompromising diagnostic depth",
+    //   image: "https://hasscientific.com/wp-content/uploads/2018/11/Sysmex-XN-1000-XN-10-400x400-1-300x300.jpg",
+    //   description: "The XN-1000 is the gold standard in standalone haematology analysis. 42 parameters, 4 modes, NRBC with every count, and 100 samples/hr make it the preferred choice for oncology and critical care.",
+    //   features: ["42 reportable parameters", "NRBC for every blood count", "4 operational modes", "Up to 100 samples/hr", "CBC+DIFF+RET configurations", "Full network + remote servicing"],
+    //   specs: { "Throughput": "Up to 100 samples/hr", "Parameters": "42 reportable", "Modes": "CBC, CBC+DIFF, CBC+DIFF+RET, CBC+RET", "Technology": "Fluorescence flow cytometry", "NRBC": "Standard with every CBC", "Connectivity": "LAN + remote servicing" },
+    //   youtube: "https://www.youtube.com/embed/M60ndKMPNT4",
+    //   highlights: ["42 parameters", "NRBC standard", "Network ready"],
+    //   useCases: ["Teaching hospitals", "Oncology centres", "Critical care labs"]
+    // },
+    // {
+    //   id: "xn-9000", name: "XN-9000", manufacturer: "Sysmex", badge: "AUTOMATED LINE",
+    //   tagline: "Fully automated. Infinite scalability.",
+    //   image: "https://hasscientific.com/wp-content/uploads/2020/05/Sysmex-XN-9000-400x400-1-300x300.jpg",
+    //   description: "The XN-9000 combines up to 6 XN modules with automated sample transport and digital morphology integration for over 500 samples/hour — a complete automated haematology laboratory.",
+    //   features: ["Up to 6 XN modules", "500+ samples/hr combined", "Full automation + transport", "93+ reportable parameters", "Digital morphology integration", "Bidirectional LIS connectivity"],
+    //   specs: { "Throughput": "500+ samples/hr", "Parameters": "93+ reportable", "Modules": "Up to 6 XN units", "Automation": "Full track + routing", "Morphology": "DI-60 compatible", "LIS": "Bidirectional HL7/ASTM" },
+    //   youtube: "https://www.youtube.com/embed/dJaI44mKn3I",
+    //   highlights: ["500+ samples/hr", "6-module system", "Full lab automation"],
+    //   useCases: ["Reference labs", "Hospital networks", "National programmes"]
+    // },
   ],
 
   "coagulation": [
@@ -237,10 +254,10 @@ const PRODUCTS = {
       useCases: ["District hospitals", "Mid-volume labs", "Routine testing"]
     },
     {
-      id: "erba-xl-300", name: "ERBA XL300", manufacturer: "ERBA Mannheim", badge: "HIGH-VOLUME",
+      id: "erba-xl-300", name: "ERBA XL650", manufacturer: "ERBA Mannheim", badge: "HIGH-VOLUME",
       tagline: "High-performance chemistry for demanding labs",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/EBRA-XL-300-228x300.jpg",
-      description: "The ERBA XL300 is a high-throughput fully automated clinical chemistry system supporting routine and specialty assays with novel biomarkers, ideal for large hospital laboratories.",
+      image: "https://product.erbamannheim.com/upload/instrument/xl-640-banner_1368.jpg",
+      description: "The ERBA XL650 is a high-throughput fully automated clinical chemistry system supporting routine and specialty assays with novel biomarkers, ideal for large hospital laboratories.",
       features: ["300 tests/hr", "Novel biomarker testing", "Ready-to-use reagents", "Enhanced linearity", "Bidirectional LIS", "Advanced QC module"],
       specs: { "Throughput": "300 tests/hr", "Special tests": "Novel biomarkers", "Reagents": "Liquid stable, ready-to-use", "Linearity": "Extended", "LIS": "Bidirectional", "Certification": "CE-IVD" },
       youtube: "https://www.youtube.com/embed/7xKbISnHKnI",
