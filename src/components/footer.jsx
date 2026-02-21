@@ -33,6 +33,11 @@ const Footer = () => {
       { name: 'Technical Support',     href: '/services' },
       { name: 'Training',              href: '/services' },
     ],
+    OurLocations: [
+      { name: 'Kampala -TANK HILL MUYENGA : Plot 2236,MUYENGA, Uganda P.O BOX 1735', href: 'https://www.hassuganda.co.ug' },
+      { name: 'Nairobi- Argwings Kodhek Road, Kenya',  href: 'https://www.hasscientific.com' },
+      { name: 'Kigali- Kacyiru: Office A23 Above Planet, Rwanda', href: 'https://www.hassscientific.com' },
+    ],
   };
 
   const socialLinks = [

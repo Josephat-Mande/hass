@@ -27,7 +27,7 @@ const partners = [
     accentLight: "#eef6fa",
     border: "#b8dce8",
     description: "Innovative clinical chemistry analyzers and reagents trusted in thousands of laboratories worldwide.",
-    link: "https://www.erba-mannheim.com",
+    link: "https://www.erbamannheim.com",
     hq: "Mannheim, Germany",
   },
   {

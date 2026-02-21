@@ -66,7 +66,7 @@ const PRODUCTS = {
       manufacturer: "bioMérieux",
       badge: "RAPID PCR",
       tagline: "Syndromic testing in under 60 minutes",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/Biofire-Film-array-300x255.jpg",
+      image: "https://s7g10.scene7.com/is/image/biomerieux/FA2_Desktop_2?qlt=85&wid=1600&ts=1708370811541&dpr=off",
       description: "The BioFire FilmArray is a rapid multiplex PCR system that simultaneously tests for dozens of pathogens in a single closed pouch.",
       features: ["45–60 min results", "Multiplex PCR (20–40 targets per panel)", "Fully closed pouch system", "No open amplification risk", "Multiple syndromic panels", "Minimal hands-on time"],
       specs: { "Time to result": "45–60 minutes", "Technology": "Nested multiplex PCR", "Panels": "Respiratory, Blood Culture ID, GI, Meningitis, NP", "Pouch": "Fully closed, self-contained", "Sample": "1–200 µL", "Certification": "CE-IVD, FDA cleared" },
@@ -122,31 +122,31 @@ const PRODUCTS = {
   "haematology": [
     {
       id: "xp-300", name: "H-560", manufacturer: "Sysmex", badge: "COMPACT",
-      tagline: "Reliable 3-part differential for any lab",
+      tagline: "Automated 5 part differential hematology analyzer",
       image: "https://product.erbamannheim.com/upload/instrument/h560-side-257-x-257-4246.jpg",
-      description: "The H-560 is a compact 3-part differential haematology analyser for small to mid-sized labs.",
-      features: ["3-part differential CBC", "Up to 60 samples/hr", "19 reportable parameters", "Minimal maintenance", "Reagent optimisation", "USB & LAN connectivity"],
+      description: "The H-560 is a compact 5-part differential haematology analyser for small to mid-sized labs.",
+      features: ["5-part differential CBC", "Up to 60 samples/hr", "19 reportable parameters", "Minimal maintenance", "Reagent optimisation", "USB & LAN connectivity"],
       specs: { "Throughput": "Up to 60 samples/hr", "Parameters": "19 reportable", "Sample Volume": "10 µL (whole blood)", "Differential": "3-part", "Connectivity": "USB, LAN", "Display": "LCD color screen" },
       youtube: "https://www.youtube.com/embed/5rl4N8OFvXg",
       highlights: ["Compact footprint", "Low reagent consumption", "Easy operation"],
       useCases: ["Clinics", "Small hospitals", "POC labs"]
     },
     {
-      id: "xn-350", name: "H-360", manufacturer: "Sysmex", badge: "5-PART DIFF",
-      tagline: "5-part differential intelligence, compact form",
+      id: "xn-350", name: "H-360", manufacturer: "Sysmex", badge: "3-PART DIFF",
+      tagline: "3 part differential hematology analyzer, compact form",
       image: "https://product.erbamannheim.com/upload/instrument/h360-side-257-x-257-4076.jpg",
-      description: "The H-360 delivers cutting-edge 5-part differential analysis in a compact stand-alone configuration.",
-      features: ["Compact 5-part differential", "Single sample open mode", "Fully integrated IPU + touchscreen", "25 µL aspiration volume", "Scalable upgrades", "Cyanide-free SLS haemoglobin"],
+      description: "The H-360 delivers cutting-edge 3-part differential analysis in a compact stand-alone configuration.",
+      features: ["Compact 3-part differential", "Single sample open mode", "Fully integrated IPU + touchscreen", "25 µL aspiration volume", "Scalable upgrades", "Cyanide-free SLS haemoglobin"],
       specs: { "Throughput": "Up to 60 samples/hr", "Parameters": "30+ reportable", "Sample Volume": "25 µL (whole blood)", "Differential": "5-part DIFF", "Technology": "Fluorescence flow cytometry", "Display": "Integrated LCD touchscreen" },
       youtube: "https://www.youtube.com/embed/rC_LSOY0f0w",
       highlights: ["No PC required", "Fluorescence FCM", "Future-proof upgrades"],
       useCases: ["District hospitals", "Independent labs", "Mid-volume settings"]
     },
     {
-      id: "xn-450", name: "Elite-580", manufacturer: "Sysmex", badge: "RETICULOCYTE",
+      id: "xn-450", name: "Erba H-7100", manufacturer: "Sysmex", badge: "RETICULOCYTE",
       tagline: "Advanced parameters, clinical confidence",
-      image: "https://product.erbamannheim.com/upload/instrument/elite---580---257-x-257-pix_1958.jpg",
-      description: "The Elite-580 bridges mid-volume labs with reticulocyte and extended analytical capabilities.",
+      image: "https://5.imimg.com/data5/SELLER/Default/2025/5/510246347/LZ/DA/MD/5085395/erba-h-7100-advanced-hematology-analyzer.jpg",
+      description: "The Erba H-7100 bridges mid-volume labs with reticulocyte and extended analytical capabilities.",
       features: ["5-part DIFF with RET channel", "Reticulocyte parameter reporting", "Up to 80 samples/hr", "35+ reportable parameters", "4 operational modes", "Network + remote servicing"],
       specs: { "Throughput": "Up to 80 samples/hr", "Parameters": "35+ reportable", "Sample Volume": "25 µL", "Modes": "CBC, CBC+DIFF, CBC+DIFF+RET", "Technology": "Fluorescence + SLS", "Connectivity": "LAN, remote servicing" },
       youtube: "https://www.youtube.com/embed/5rl4N8OFvXg",
@@ -156,33 +156,33 @@ const PRODUCTS = {
   ],
   "coagulation": [
     {
-      id: "ca-101", name: "CA-101", manufacturer: "Sysmex", badge: "ENTRY",
+      id: "ecl-760", name: "ECL 760", manufacturer: "Erba", badge: "ENTRY",
       tagline: "Reliable coagulation for smaller labs",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/Sysmex-CA-101-400x400-1-300x300.jpg",
-      description: "The CA-101 is a semi-automated coagulation analyser designed for small to medium laboratories.",
-      features: ["Semi-automated coagulation", "PT, APTT, Fibrinogen", "Optical turbidimetric detection", "Up to 60 tests/hr", "Minimal footprint", "Simple operation"],
-      specs: { "Throughput": "Up to 60 tests/hr", "Tests": "PT, APTT, Fibrinogen, TT", "Detection": "Optical turbidimetry", "Mode": "Semi-automated", "Display": "LCD screen", "Sample": "Citrated plasma" },
+      image: "https://product.erbamannheim.com/upload/instrument/ecl-760-new-01-5677.jpg",
+      description: "The ECL 760 is an advanced fully-automated random access analyser designed for small to medium laboratories.",
+      features: ["Fully automated coagulation", "PT, APTT, Fibrinogen", "Optical turbidimetric detection", "Up to 60 tests/hr", "Minimal footprint", "Simple operation"],
+      specs: { "Throughput": "Up to 60 tests/hr", "Tests": "PT, APTT, Fibrinogen, TT", "Detection": "Optical turbidimetry", "Mode": "Fully automated", "Display": "Touch screen", "Sample": "Citrated plasma" },
       youtube: "https://www.youtube.com/embed/REkVBXMwxdU",
-      highlights: ["Semi-automated", "Routine coag panel", "Compact design"],
+      highlights: ["Fully automated", "Routine coag panel", "Compact design"],
       useCases: ["Small labs", "Clinics", "District hospitals"]
     },
     {
-      id: "ca-104", name: "CA-104", manufacturer: "Sysmex", badge: "ADVANCED",
+      id: "ecl-412", name: "ECL 412", manufacturer: "Erba", badge: "ADVANCED",
       tagline: "Extended coagulation with specialty testing",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/Sysmex-CA-104-400x400-2-300x300.jpg",
-      description: "The CA-104 extends the coagulation menu with specialty tests including D-Dimer, Factor assays, and Lupus anticoagulant detection.",
-      features: ["Routine + specialty tests", "D-Dimer capability", "Factor assay support", "Lupus anticoagulant", "80+ tests/hr", "Expanded reagent compatibility"],
+      image: "https://product.erbamannheim.com/upload/instrument/ecl-412-new-01-6064.jpg",
+      description: "ECL 412 is a four channel semi automatic coagulation analyzer. It is compact, ergonomically designed unit packed with many advanced features, whose benefits are readily usable by the end-user.",
+      features: ["Clotting Tests such as PT, aPTT, Fibrinogen, ", "D-Dimer capability", "Protein S performed using Light scatter principle", "Lupus anticoagulant", "80+ tests/hr", "Expanded reagent compatibility"],
       specs: { "Throughput": "Up to 80 tests/hr", "Tests": "PT, APTT, Fibrinogen, D-Dimer, Factors", "Detection": "Optical + mechanical", "Special": "Lupus anticoagulant", "Sample": "Citrated plasma", "Certification": "CE-IVD" },
       youtube: "https://www.youtube.com/embed/REkVBXMwxdU",
-      highlights: ["D-Dimer included", "Factor assays", "Expanded menu"],
-      useCases: ["Regional hospitals", "Thrombosis clinics", "Specialty labs"]
+      highlights: ["D-Dimer included", "Factor assays", "Antithrombin III"],
+      useCases: ["It is used in Research Facilities to perform PT and aPTT on animal samples such as rat, mouse, rabbit, hamsters etc", "Thrombosis clinics", "Specialty labs"]
     },
     {
-      id: "ca-660", name: "CA-660", manufacturer: "Sysmex", badge: "HIGH-THROUGHPUT",
+      id: "ecl-105", name: "ECL 105", manufacturer: "Erba", badge: "HIGH-THROUGHPUT",
       tagline: "High-throughput coagulation automation",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/Sysmex-CA-660-400x400-2-300x300.jpg",
-      description: "The CA-660 is a fully automated, high-throughput coagulation system capable of processing 400+ tests per hour.",
-      features: ["400+ tests/hr", "Fully automated random access", "Routine + special haemostasis", "Bidirectional LIS", "Multiple sample loading", "Barcode reader integrated"],
+      image: "https://product.erbamannheim.com/upload/instrument/ecl-105-new-01-7475.jpg",
+      description: "ECL 105 is a small, ergonomically designed coagulation analyzer packed with many advanced features and benefits",
+      features: ["Clotting assays by light scattering at 640 nm", "Immuno-turbidimetric assays at 800 nm", "Automatic start with standard pipettes", "3.5‘‘ Resistive colour touch-screen", "Possible connection to a bar code reader or an external keyboard", "Possible connection to LIS"],
       specs: { "Throughput": "400+ tests/hr", "Tests": "Full coagulation + haemostasis panel", "Access": "Random access", "Detection": "Optical turbidimetry", "LIS": "Bidirectional", "Certification": "CE-IVD" },
       youtube: "https://www.youtube.com/embed/REkVBXMwxdU",
       highlights: ["400+ tests/hr", "Full random access", "Bidirectional LIS"],
@@ -213,7 +213,7 @@ const PRODUCTS = {
       useCases: ["District hospitals", "Mid-volume labs", "Routine testing"]
     },
     {
-      id: "erba-xl-300", name: "ERBA XL650", manufacturer: "ERBA Mannheim", badge: "HIGH-VOLUME",
+      id: "erba-xl-300", name: "ERBA XL640", manufacturer: "ERBA Mannheim", badge: "HIGH-VOLUME",
       tagline: "High-performance chemistry for demanding labs",
       image: "https://product.erbamannheim.com/upload/instrument/xl-640-banner_1368.jpg",
       description: "The ERBA XL650 is a high-throughput fully automated clinical chemistry system supporting routine and specialty assays.",
@@ -237,37 +237,37 @@ const PRODUCTS = {
   ],
   "urinalysis": [
     {
-      id: "uc-1000", name: "UC-1000", manufacturer: "Sysmex", badge: "AUTOMATED",
-      tagline: "Automated urine chemistry analysis",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/Sysmex-UC-1000-400x400-1-300x300.jpg",
-      description: "The UC-1000 is a fully automated urine strip reader offering fast, reliable chemical urinalysis.",
-      features: ["Up to 500 strips/hr", "22 chemical parameters", "Digital image capture", "Operator-independent results", "Automatic QC", "Bidirectional LIS connectivity"],
-      specs: { "Throughput": "Up to 500 strips/hr", "Parameters": "22 chemical", "Detection": "Digital image capture", "QC": "Automatic", "LIS": "Bidirectional", "Certification": "CE-IVD" },
+      id: "laura", name: "Laura", manufacturer: "Erba", badge: "SEMI-AUTOMATED",
+      tagline: "Semi-automated Urine Strip Reader",
+      image: "https://product.erbamannheim.com/upload/instrument/laura-01_8643.jpg",
+      description: "Urine strip analyser LAURA is a semi-automated urine strip reader with a throughput of 400 tests per hour  - with continuous loading that’s a report every 9 seconds.  It is designed as an efficient and powerful solution to fulfil requirements of small to medium-sized laboratories with workload of hundreds samples per day.",
+      features: ["Evaluation of 12 clinically significant parameters: specific gravity (SG), leucocytes (LEU), nitirtes (NIT), pH, protein (PRO), glucose (GLU), ketones (KET), urobilinogen (UBG), bilirubin (BIL), blood (BLD), creatinine (CRE), microalbumin (MA)", "Automatic calculation of MA/CRE", "Strip type flexibility", "Advanced QC management - QC Timing, QC Reminder", "Automatic QC", "Manual entry of sample color and turbidity with customizable category names"],
+      specs: { "Throughput": "400 tests /hr", "System": "Continuous loading Semi-automated Urine test strip analyzer", "User Interface": "5” TFT display (320 x 240 pixels)", "QC": "Automatic", "Physical Dimensions ": "430 x  290 x 170 mm", "Certification": "CE" },
       youtube: "https://www.youtube.com/embed/ZJ5b0QiO2Ws",
       highlights: ["500 strips/hr", "22 parameters", "Digital image"],
       useCases: ["Hospital labs", "Outpatient clinics", "Screening programmes"]
     },
     {
-      id: "uc-3500", name: "UC-3500", manufacturer: "Sysmex", badge: "ADVANCED",
-      tagline: "Integrated urine chemistry + particle analysis",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/Sysmex-UC-3500-400x400-2-300x300.jpg",
-      description: "The UC-3500 combines automated urine chemistry with particle analysis for a comprehensive urinalysis solution.",
-      features: ["Combined chemistry + sediment", "Reflex testing capability", "Digital particle images", "Reduced manual microscopy", "Up to 120 samples/hr", "LIS integrated"],
-      specs: { "Throughput": "Up to 120 samples/hr", "Analysis": "Chemistry + particle combined", "Reflex": "Automatic reflex testing", "Particles": "Digital image classification", "LIS": "Bidirectional", "Certification": "CE-IVD" },
+      id: "laura-m", name: "Laura -M", manufacturer: "Erba", badge: "ADVANCED",
+      tagline: "Urine analysis - quick and simple",
+      image: "https://product.erbamannheim.com/upload/instrument/laura-m-01_7908.jpg",
+      description: "LAURA M is quick and simple solution for the analysis of urine, which is designed for use in clinical laboratories. Objective evaluation of the urine samples by LAURA Mreader helps to eliminate any subjective interpretation of the colour reaction of the diagnostic pads and therefore remarkably contributes to the correct diagnostic of the patients. User only dips the test strip into the urine sample and places it in the insert area. ",
+      features: ["High throughput", "High memory capacity", "Easy operation", "Sleek and ergonomic design", "Possibility of SW update", "Sophisticated monitoring of strip position"],
+      specs: { "Semi-quantitative reflectance photometer": "yes", "Wavelengths": "470, 525 and 625 nm", "Evaluation time": "60s", "Capacity": "600 strips per hour", "Power source": "AC 100 – 240 V / 50 – 60 Hz", "Touch screen": " colour LCD display (320 x 240 dot-matrix)" },
       youtube: "https://www.youtube.com/embed/ZJ5b0QiO2Ws",
       highlights: ["Chemistry + particles", "Reflex testing", "120 samples/hr"],
       useCases: ["Regional hospitals", "Nephrology units", "Mid-volume labs"]
     },
     {
-      id: "uf-4000", name: "UF-4000", manufacturer: "Sysmex", badge: "PARTICLE EXPERT",
-      tagline: "High-definition fluorescence particle analysis",
-      image: "https://hasscientific.com/wp-content/uploads/2020/05/UF-4000-300x300.jpg",
-      description: "The UF-4000 is a dedicated fluorescence flow cytometry urine particle analyser providing highly differentiated sediment classification.",
-      features: ["Fluorescence flow cytometry", "High-definition particle images", "Up to 70% microscopy reduction", "120 samples/hr", "Bacteria detection", "Bidirectional LIS"],
-      specs: { "Throughput": "120 samples/hr", "Technology": "Fluorescence flow cytometry", "Particles": "10 classes reported", "Bacteria": "Quantitative detection", "LIS": "Bidirectional", "Certification": "CE-IVD" },
+      id: "laura-smart", name: "Laura-Smart", manufacturer: "Erba", badge: "PARTICLE EXPERT",
+      tagline: "Semi-automated Urine Strip Reader",
+      image: "https://product.erbamannheim.com/upload/instrument/laura-smart-01_9752.jpg",
+      description: "Laura Smart is a semi-automated compact urine strip reader with a throughput of 60 – 240 tests per hour. LAURA Smart reader enables the elimination of any subjective interpretation of the colour reaction of the diagnostic pad and therefore remarkably contributes to the correct diagnostic of the patient. It’s designed as an effective and powerful solution for small laboratories, ambulances of general practitioners, family doctors or specialists.",
+      features: ["Automatic calculation of MA/CRE", "Strip type flexibility", "External keyboard and barcode reader connectivity", "Two measuring modes:Standard (60 samples/h) and Smart Timing (240 samples/h) ", "Evaluation of 12 clinically significant parameters:specific gravity (SG), leucocytes (LEU), nitirtes (NIT), pH, protein (PRO), glucose (GLU), ketones (KET), urobilinogen (UBG), bilirubin (BIL),", "Bidirectional LIS"],
+      specs: { "Semi-quantitative reflectance photometer": "Optical unit: LEDs and colour detector", "Wavelengths: 470, 540, 650 nm": "Incubation period: 55 s", "Capacity: 60 strips per hour in Standard mode or 240 strips per hour with in Smart Timing® mode": "Touchscreen: color TFT LCD display (320 x 240 pixels)", "Host interface: RS232, USB": "USB 2.0", "Possibility to connect external keyboard or a barcode scanner via PS/2": "Yes", "LIS": "Bidirectional", "Certification": "CE-IVD" },
       youtube: "https://www.youtube.com/embed/ZJ5b0QiO2Ws",
-      highlights: ["Fluorescence FCM", "70% less microscopy", "Bacteria detection"],
-      useCases: ["High-volume labs", "Nephrology centres", "Research labs"]
+      highlights: ["Automatic calculation of MA/CRE", "Strip type flexibility", "Two measuring modes"],
+      useCases: ["Small labs", "Ambulances", "Family doctors"]
     },
   ],
 };
@@ -410,7 +410,7 @@ function ProductModal({ product, catMeta, onClose }) {
             className="px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-500 border border-slate-200 hover:bg-slate-100 transition-all"
           >Close</button>
           <a
-            href="https://hasscientific.com/enquiry/" target="_blank" rel="noreferrer"
+            href="/contact"  rel="noreferrer"
             className="px-6 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90 hover:scale-105"
             style={{ background: `linear-gradient(135deg, ${color}, ${catMeta.accent})` }}
           >Enquire Now →</a>

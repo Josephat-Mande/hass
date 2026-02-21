@@ -30,14 +30,14 @@ const productCategories = [
     name: 'Haematology',
     path: '/products/haematology',
     icon: <Droplets className="w-4 h-4" />,
-    desc: 'Sysmex XN Series analysers',
+    desc: 'Erba analysers',
     color: '#c41e3a',
   },
   {
     name: 'Coagulation',
     path: '/products/coagulation',
     icon: <TestTube2 className="w-4 h-4" />,
-    desc: 'Sysmex CA Series systems',
+    desc: 'Erba systems',
     color: '#d97706',
   },
   {
@@ -51,7 +51,7 @@ const productCategories = [
     name: 'Urinalysis',
     path: '/products/urinalysis',
     icon: <Beaker className="w-4 h-4" />,
-    desc: 'Sysmex UC Series urine analysers',
+    desc: 'Erba urine analysers',
     color: '#16a34a',
   },
 ];

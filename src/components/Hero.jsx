@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronRight, Microscope, Activity, Zap, Shield, ArrowDown, FileText, Sparkles, TrendingUp, CheckCircle } from 'lucide-react';
+import { ChevronRight, Microscope, Activity, Timer,  ArrowDown, FileText, Dna, TrendingUp, CheckCircle,  TestTube } from 'lucide-react';
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -51,10 +51,10 @@ const Hero = () => {
   ];
 
   const features = [
-    { icon: <Microscope className="w-8 h-8" />, title: "Clinical Chemistry", description: "Advanced photometric analyzers" },
-    { icon: <Activity className="w-8 h-8" />, title: "Microbiology", description: "Rapid detection systems" },
-    { icon: <Zap className="w-8 h-8" />, title: "Immunology", description: "Disease screening tech" },
-    { icon: <Shield className="w-8 h-8" />, title: "24/7 Support", description: "Guaranteed uptime" }
+    { icon: <TestTube className="w-8 h-8" />, title: "Clinical Chemistry", link: "/products/chemistry", description: "Advanced photometric analyzers" },
+    { icon: <Microscope className="w-8 h-8" />, title: "Microbiology", link: "/products/microbiology", description: "Rapid detection systems" },
+    { icon: <Dna className="w-8 h-8" />, title: "Immunology", link: "/products/immuno-assay", description: "Disease screening tech" },
+    { icon: <Timer className="w-8 h-8" />, title: "24/7 Support", link: "/contact", description: "Guaranteed uptime" }
   ];
 
   return (
@@ -271,7 +271,7 @@ const Hero = () => {
                         transition: 'transform 0.05s linear'
                       }}
                     >
-                      <div
+                      <div onClick={() => window.location.href = feature.link || '/products'}
                         className="group w-32 h-32 rounded-2xl p-4 flex flex-col items-center justify-center text-center hover:scale-110 transition-all duration-300 cursor-pointer bg-white shadow-lg border border-gray-100"
                         style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
                       >
