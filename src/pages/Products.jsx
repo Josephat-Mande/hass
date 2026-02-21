@@ -121,29 +121,29 @@ const PRODUCTS = {
   ],
   "haematology": [
     {
-      id: "xp-300", name: "H-560", manufacturer: "Sysmex", badge: "COMPACT",
+      id: "H-560", name: "H-560", manufacturer: "Erba", badge: "COMPACT",
       tagline: "Automated 5 part differential hematology analyzer",
       image: "https://product.erbamannheim.com/upload/instrument/h560-side-257-x-257-4246.jpg",
       description: "The H-560 is a compact 5-part differential haematology analyser for small to mid-sized labs.",
-      features: ["5-part differential CBC", "Up to 60 samples/hr", "19 reportable parameters", "Minimal maintenance", "Reagent optimisation", "USB & LAN connectivity"],
-      specs: { "Throughput": "Up to 60 samples/hr", "Parameters": "19 reportable", "Sample Volume": "10 µL (whole blood)", "Differential": "3-part", "Connectivity": "USB, LAN", "Display": "LCD color screen" },
+      features: ["26 reportable parameters including P-LCC , P-LCR", "Three angle laser flow cytometry for WBC count and differential", "Electrical impedance method for RBC and Platelet enumeration", "Minimal maintenance", "15 µl sample volume", "USB & LAN connectivity"],
+      specs: { "Throughput": "Up to 60 samples/hr", "Parameters": "19 reportable", "Sample Volume": "10 µL (whole blood)", "Differential": "3-part", "Connectivity": "USB, LAN", "Display": "Large coloured LCD touch screen of 10.4 inch" },
       youtube: "https://www.youtube.com/embed/5rl4N8OFvXg",
       highlights: ["Compact footprint", "Low reagent consumption", "Easy operation"],
       useCases: ["Clinics", "Small hospitals", "POC labs"]
     },
     {
-      id: "xn-350", name: "H-360", manufacturer: "Sysmex", badge: "3-PART DIFF",
+      id: "H-360", name: "H-360", manufacturer: "Erba", badge: "3-PART DIFF",
       tagline: "3 part differential hematology analyzer, compact form",
       image: "https://product.erbamannheim.com/upload/instrument/h360-side-257-x-257-4076.jpg",
       description: "The H-360 delivers cutting-edge 3-part differential analysis in a compact stand-alone configuration.",
-      features: ["Compact 3-part differential", "Single sample open mode", "Fully integrated IPU + touchscreen", "25 µL aspiration volume", "Scalable upgrades", "Cyanide-free SLS haemoglobin"],
+      features: ["22 Reportable parameters including P-LCC, P-LCR", "Electrical impedance method for Cell count", "Fully integrated IPU + touchscreen", "9 µL aspiration volume", "3 counting modes -Whole blood, Capillary and pre-dilution", "Cyanide-free SLS haemoglobin"],
       specs: { "Throughput": "Up to 60 samples/hr", "Parameters": "30+ reportable", "Sample Volume": "25 µL (whole blood)", "Differential": "5-part DIFF", "Technology": "Fluorescence flow cytometry", "Display": "Integrated LCD touchscreen" },
       youtube: "https://www.youtube.com/embed/rC_LSOY0f0w",
       highlights: ["No PC required", "Fluorescence FCM", "Future-proof upgrades"],
       useCases: ["District hospitals", "Independent labs", "Mid-volume settings"]
     },
     {
-      id: "xn-450", name: "Erba H-7100", manufacturer: "Sysmex", badge: "RETICULOCYTE",
+      id: "xn-450", name: "Erba H-7100", manufacturer: "Erba", badge: "RETICULOCYTE",
       tagline: "Advanced parameters, clinical confidence",
       image: "https://5.imimg.com/data5/SELLER/Default/2025/5/510246347/LZ/DA/MD/5085395/erba-h-7100-advanced-hematology-analyzer.jpg",
       description: "The Erba H-7100 bridges mid-volume labs with reticulocyte and extended analytical capabilities.",
@@ -674,7 +674,7 @@ export default function ProductsPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://hasscientific.com/enquiry/" target="_blank" rel="noreferrer"
+                  href="/contact" target="_blank" rel="noreferrer"
                   className="px-8 py-3.5 rounded-xl text-sm font-bold text-white transition-all hover:scale-105 flex items-center gap-2 justify-center"
                   style={{ background: `linear-gradient(135deg, ${catMeta.color}, ${catMeta.accent})`, boxShadow: `0 8px 24px ${catMeta.color}40` }}
                 >
