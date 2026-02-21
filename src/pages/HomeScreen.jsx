@@ -16,8 +16,8 @@ function HomeScreen() {
       } transition-colors duration-300`}>
         <Hero />
         <About />
-        <Products />
-        <Testimonials />
+        {/* <Products /> */}
+        {/* <Testimonials /> */}
       </div>
     </PageLayout>
   );

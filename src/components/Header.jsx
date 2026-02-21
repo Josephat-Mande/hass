@@ -103,8 +103,8 @@ function Header() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Partners', path: '/partners' },
+    { name: 'What We Do', path: '/services' },
+    { name: 'Our Partners', path: '/partners' },
   ];
 
   return (

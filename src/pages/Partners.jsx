@@ -1,265 +1,353 @@
 import React, { useState } from 'react';
-import { useTheme } from '../context/ThemeContext';
 import PageLayout from '../components/PageLayout';
 import { Building2, Award, Globe, Handshake, ArrowRight, ExternalLink } from 'lucide-react';
 
-const Partners = () => {
-  const { isDarkMode } = useTheme();
-  const [hoveredPartner, setHoveredPartner] = useState(null);
+const brandBlue = '#1a3a6b';
+const brandRed  = '#c41e3a';
 
-  const partners = [
-    {
-      name: "BIOMÉRIEUX",
-      category: "Clinical Chemistry, Bacteriology, Microbiology, ImmunoAssay",
-      logo: "circle", // Placeholder for logo
-      bgColor: "from-pink-300 to-yellow-300",
-      textColor: "text-purple-900",
-      logoColors: ["#E91E8C", "#9B59B6", "#F39C12"],
-      description: "Leading in clinical diagnostics and microbiology solutions",
-      link: "https://www.biomerieux.com/en",
-    },
-    {
-      name: "ERBA MANNHEIM",
-      category: "Clinical Chemistry",
-      logo: "erba", // Placeholder for logo
-      bgColor: "from-gray-600 to-gray-800",
-      textColor: "text-white",
-      logoColors: ["#1A5F7A"],
-      description: "Innovative clinical chemistry analyzers and reagents",
-      link: "https://www.erba-mannheim.com/en"
-      
-    },
-    {
-      name: "BECTON DICKINSON",
-      category: "CD4 Counts, CD8 Counts, Blood Collection tubes etc.",
-      logo: "bd", // Placeholder for logo
-      bgColor: "from-gray-700 to-gray-900",
-      textColor: "text-white",
-      logoColors: ["#0046BE", "#8B4513"],
-      slogan: "Helping all people live healthy lives",
-      link: "https://www.bd.com/en",
-     description: "Global medical technology company"
-    },
-    {
-      name: "SFRI",
-      category: "Haematology",
-      logo: "sfri", // Placeholder for logo
-      bgColor: "from-gray-600 to-gray-800",
-      textColor: "text-white",
-      logoColors: ["#FF6B35"],
-      description: "Specialized hematology diagnostic solutions",
-      link: "https://www.sfri.com/en"
-      
-    },
-    {
-      name: "RUNLAB",
-      category: "Manufacturer of laboratory plastic consumables",
-      logo: "runlab", // Placeholder for logo
-      bgColor: "from-gray-600 to-gray-800",
-      textColor: "text-white",
-      logoColors: ["#D4A574"],
-      description: "Quality laboratory consumables and plasticware",
-      link: "https://www.runlab.com/en"
-      
-    },
-    {
-      name: "HUMASIS",
-      category: "Specializes in studying the rapid test kit with its differentiated technology",
-      logo: "humasis", // Placeholder for logo
-      bgColor: "from-gray-700 to-gray-900",
-      textColor: "text-white",
-      logoColors: ["#4A90E2"],
-      description: "Rapid diagnostic test kit innovation",
-      link: "https://www.humasis.com/en"
-      
-    }
-  ];
+const partners = [
+  {
+    name: "bioMérieux",
+    category: "Clinical Chemistry · Bacteriology · Microbiology · ImmunoAssay",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/BioM%C3%A9rieux_logo.svg/2560px-BioM%C3%A9rieux_logo.svg.png",
+    logoBg: "#ffffff",
+    accent: "#E91E8C",
+    accentLight: "#fdf0f7",
+    border: "#f9c6e6",
+    description: "World leader in in vitro diagnostics, pioneering microbiology and immunoassay solutions for over 60 years.",
+    link: "https://www.biomerieux.com",
+    hq: "Marcy-l'Étoile, France",
+  },
+  {
+    name: "ERBA Mannheim",
+    category: "Clinical Chemistry",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/ERBA_Mannheim_logo.svg/2560px-ERBA_Mannheim_logo.svg.png",
+    logoBg: "#ffffff",
+    accent: "#1A5F7A",
+    accentLight: "#eef6fa",
+    border: "#b8dce8",
+    description: "Innovative clinical chemistry analyzers and reagents trusted in thousands of laboratories worldwide.",
+    link: "https://www.erba-mannheim.com",
+    hq: "Mannheim, Germany",
+  },
+  {
+    name: "Becton Dickinson",
+    category: "CD4 · CD8 Counts · Blood Collection Tubes",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Becton_Dickinson_logo.svg/2560px-Becton_Dickinson_logo.svg.png",
+    logoBg: "#ffffff",
+    accent: "#0046BE",
+    accentLight: "#eef2ff",
+    border: "#bfcfee",
+    description: "Global medical technology leader advancing the world of health with diagnostics, devices, and data solutions.",
+    link: "https://www.bd.com",
+    hq: "Franklin Lakes, NJ, USA",
+  },
+  {
+    name: "SFRI",
+    category: "Haematology",
+    logo: "https://hasscientific.com/wp-content/uploads/2020/05/SFRI-logo.png",
+    logoBg: "#ffffff",
+    accent: "#FF6B35",
+    accentLight: "#fff5f1",
+    border: "#ffd0bc",
+    description: "Specialized haematology diagnostic solutions with a focus on precision, reliability, and innovation.",
+    link: "https://www.sfri.fr",
+    hq: "Saint-Jean-d'Illac, France",
+  },
+  {
+    name: "Runlab",
+    category: "Laboratory Plastic Consumables",
+    logo: "https://hasscientific.com/wp-content/uploads/2020/05/runlab-logo.png",
+    logoBg: "#ffffff",
+    accent: "#6d7c47",
+    accentLight: "#f5f7f0",
+    border: "#d4debb",
+    description: "High-quality laboratory plastic consumables and pipette tips engineered for precision workflows.",
+    link: "https://www.runlab.com",
+    hq: "Spain",
+  },
+  {
+    name: "HUMASIS",
+    category: "Rapid Diagnostic Test Kits",
+    logo: "https://hasscientific.com/wp-content/uploads/2020/05/humasis-logo.png",
+    logoBg: "#ffffff",
+    accent: "#4A90E2",
+    accentLight: "#eef4fd",
+    border: "#bcd4f4",
+    description: "Pioneering rapid diagnostic test kits with differentiated technology for point-of-care testing.",
+    link: "https://www.humasis.com",
+    hq: "Gyeonggi-do, South Korea",
+  },
+];
 
-  const stats = [
-    { icon: <Building2 className="w-8 h-8" />, value: "5+", label: "Global Partners" },
-    { icon: <Award className="w-8 h-8" />, value: "30+", label: "Years Experience" },
-    { icon: <Globe className="w-8 h-8" />, value: "20+", label: "Countries Served" },
-    { icon: <Handshake className="w-8 h-8" />, value: "100%", label: "Satisfaction Rate" }
-  ];
+const stats = [
+  { icon: <Building2 className="w-6 h-6" />, value: "6+",   label: "Global Partners",   color: brandBlue },
+  { icon: <Award className="w-6 h-6" />,     value: "30+",  label: "Years Experience",  color: brandRed  },
+  { icon: <Globe className="w-6 h-6" />,     value: "20+",  label: "Countries Served",  color: "#059669" },
+  { icon: <Handshake className="w-6 h-6" />, value: "100%", label: "Satisfaction Rate", color: "#7c3aed" },
+];
+
+/* ─── PARTNER CARD ──────────────────────────────────────────────────────── */
+function PartnerCard({ partner, index }) {
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <PageLayout>
-      <section className="relative py-20 px-6 overflow-hidden min-h-screen">
-        {/* Background Image Layer */}
-        <div 
-          className="fixed inset-0 w-full h-full"
-          style={{ 
-            backgroundImage: 'url(https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2000&auto=format&fit=crop)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'blur(0px)',
-            transform: 'scale(1.1)',
-            opacity: 0.15,
-            zIndex: 0
+    <a
+      href={partner.link}
+      target="_blank"
+      rel="noreferrer"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="group block rounded-3xl overflow-hidden border bg-white transition-all duration-400 cursor-pointer relative"
+      style={{
+        borderColor: hovered ? partner.accent + '60' : '#e2e8f0',
+        transform: hovered ? 'translateY(-8px)' : 'none',
+        boxShadow: hovered
+          ? `0 24px 60px ${partner.accent}18, 0 8px 20px rgba(0,0,0,0.06)`
+          : '0 2px 8px rgba(0,0,0,0.05)',
+        transition: 'all 0.4s cubic-bezier(.23,1,.32,1)',
+      }}
+    >
+      {/* Top color band */}
+      <div
+        className="h-1.5 w-full transition-all duration-400"
+        style={{
+          background: `linear-gradient(90deg, ${partner.accent}, ${partner.accent}88)`,
+          transform: hovered ? 'scaleX(1)' : 'scaleX(0.3)',
+          transformOrigin: 'left',
+          opacity: hovered ? 1 : 0.5,
+        }}
+      />
+
+      {/* Logo area */}
+      <div
+        className="flex items-center justify-center px-10 transition-all duration-400 relative overflow-hidden"
+        style={{
+          height: 160,
+          background: hovered ? partner.accentLight : '#f8fafc',
+        }}
+      >
+        {/* Radial glow on hover */}
+        <div
+          className="absolute inset-0 transition-opacity duration-400"
+          style={{
+            background: `radial-gradient(ellipse at center, ${partner.accent}15 0%, transparent 70%)`,
+            opacity: hovered ? 1 : 0,
           }}
         />
-
-        {/* Dark Overlay */}
-        <div 
-          className={`fixed inset-0 w-full h-full transition-colors duration-300 ${
-            isDarkMode 
-              ? 'bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95' 
-              : 'bg-gradient-to-br from-gray-50/95 via-white/90 to-gray-100/95'
-          }`}
-          style={{ zIndex: 1 }}
+        <img
+          src={partner.logo}
+          alt={`${partner.name} logo`}
+          className="max-h-16 max-w-[180px] object-contain relative z-10 transition-all duration-400"
+          style={{ transform: hovered ? 'scale(1.08)' : 'scale(1)' }}
+          onError={(e) => {
+            e.target.style.display = 'none';
+            e.target.nextSibling.style.display = 'flex';
+          }}
         />
+        {/* Fallback text logo */}
+        <div
+          className="absolute inset-0 items-center justify-center text-2xl font-black hidden"
+          style={{ color: partner.accent, fontFamily: "'Orbitron', sans-serif" }}
+        >
+          {partner.name.split(' ')[0]}
+        </div>
+      </div>
 
-        {/* Background Pattern */}
-        <div className="fixed inset-0 opacity-5" style={{ zIndex: 2 }}>
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle, #c41e3a 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }} />
+      {/* Content */}
+      <div className="p-6 flex flex-col gap-3">
+        {/* Name + HQ */}
+        <div>
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3
+              className="text-xl font-black text-slate-800 leading-tight"
+              style={{ fontFamily: "'Orbitron', sans-serif" }}
+            >
+              {partner.name}
+            </h3>
+            <ExternalLink
+              className="w-4 h-4 flex-shrink-0 mt-0.5 transition-all duration-300"
+              style={{
+                color: partner.accent,
+                opacity: hovered ? 1 : 0,
+                transform: hovered ? 'translate(0, 0)' : 'translate(-4px, 4px)',
+              }}
+            />
+          </div>
+          <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: partner.accent }}>
+            {partner.hq}
+          </p>
         </div>
 
-        {/* Animated Background Blobs */}
-        <div className="fixed top-20 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ zIndex: 3 }} />
-        <div className="fixed bottom-20 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s', zIndex: 3 }} />
+        {/* Category pills */}
+        <div className="flex flex-wrap gap-1.5">
+          {partner.category.split(' · ').map((cat, i) => (
+            <span
+              key={i}
+              className="px-2.5 py-1 rounded-full text-xs font-semibold transition-all duration-300"
+              style={{
+                background: hovered ? `${partner.accent}12` : '#f1f5f9',
+                color: hovered ? partner.accent : '#64748b',
+                border: `1px solid ${hovered ? partner.accent + '30' : 'transparent'}`,
+              }}
+            >
+              {cat}
+            </span>
+          ))}
+        </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className={`inline-block px-4 py-2 rounded-full font-semibold text-sm mb-4 ${
-              isDarkMode ? 'bg-white/10 text-white' : 'bg-gray-200 text-black'
-            }`}>
-              Our Partners
-            </div>
-            <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+        {/* Description */}
+        <p className="text-sm text-slate-500 leading-relaxed" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
+          {partner.description}
+        </p>
+
+        {/* CTA link */}
+        <div
+          className="flex items-center gap-2 text-sm font-bold mt-1 transition-all duration-300"
+          style={{ color: partner.accent, transform: hovered ? 'translateX(4px)' : 'none' }}
+        >
+          <span>Visit Website</span>
+          <ArrowRight className="w-4 h-4 transition-transform duration-300" style={{ transform: hovered ? 'translateX(4px)' : 'none' }} />
+        </div>
+      </div>
+
+      {/* Bottom border sweep on hover */}
+      <div
+        className="absolute bottom-0 left-0 h-0.5 transition-all duration-500"
+        style={{
+          width: hovered ? '100%' : '0%',
+          background: `linear-gradient(90deg, ${partner.accent}, transparent)`,
+        }}
+      />
+    </a>
+  );
+}
+
+/* ─── MAIN COMPONENT ─────────────────────────────────────────────────────── */
+const Partners = () => {
+  return (
+    <PageLayout>
+      <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+      <div className="bg-slate-50 min-h-screen" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
+
+        {/* ── HERO ─────────────────────────────────────────────────────── */}
+        <div className="relative overflow-hidden bg-white border-b border-slate-100">
+          {/* Biomedical image faint background */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'url(https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2000&auto=format&fit=crop)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              opacity: 0.04,
+            }}
+          />
+          {/* Diagonal tint */}
+          <div className="absolute inset-0" style={{ background: `linear-gradient(120deg, ${brandBlue}05 0%, transparent 60%)` }} />
+
+          {/* Ghost watermark */}
+          <div className="absolute right-8 top-1/2 -translate-y-1/2 select-none pointer-events-none overflow-hidden">
+            <span className="font-black opacity-[0.025]" style={{ fontSize: 200, fontFamily: "'Orbitron', sans-serif", color: brandBlue, lineHeight: 1 }}>
+              ∞
+            </span>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-8 py-20 relative z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border text-sm font-semibold" style={{ borderColor: `${brandRed}30`, background: `${brandRed}08`, color: brandRed }}>
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: brandRed }} />
               Trusted Global Partnerships
-            </h1>
-            <p className={`text-xl max-w-3xl mx-auto leading-relaxed ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              Collaborating with world-leading manufacturers to deliver cutting-edge biomedical solutions across East & Central Africa
-            </p>
-          </div>
+            </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => (
-              <div 
-                key={index}
-                className={`text-center p-6 rounded-xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 ${
-                  isDarkMode ? 'bg-gray-800/50 border-gray-700' : 'bg-white/80 border-gray-200'
-                }`}
-              >
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-gradient-to-r from-blue-600 to-blue-800`}>
-                  <div className="text-white">
-                    {stat.icon}
-                  </div>
-                </div>
-                <div className={`text-3xl font-bold mb-1 ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                  {stat.value}
-                </div>
-                <div className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {stat.label}
-                </div>
+            <div className="grid lg:grid-cols-2 gap-12 items-end">
+              <div>
+                <h1
+                  className="font-black leading-none mb-5 text-slate-800"
+                  style={{ fontFamily: "'Orbitron', sans-serif", fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
+                >
+                  World-Class<br />
+                  <span style={{ color: brandBlue }}>Manufacturer</span><br />
+                  <span style={{ color: brandRed }}>Partners</span>
+                </h1>
+                <p className="text-slate-500 text-lg leading-relaxed max-w-lg">
+                  Collaborating with global leaders in diagnostics to deliver cutting-edge biomedical solutions across East & Central Africa.
+                </p>
               </div>
-            ))}
-          </div>
 
-          {/* Partners Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                onMouseEnter={() => setHoveredPartner(index)}
-                onMouseLeave={() => setHoveredPartner(null)}
-                className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
-              >
-                {/* Card Background with Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${partner.bgColor} opacity-90`} />
-                
-                {/* Decorative Circle/Logo Background */}
-                <div className="absolute -top-20 -left-20 w-64 h-64 rounded-full opacity-30"
-                  style={{
-                    background: `radial-gradient(circle, ${partner.logoColors[0]} 0%, transparent 70%)`,
-                    transform: hoveredPartner === index ? 'scale(1.2)' : 'scale(1)',
-                    transition: 'transform 0.5s ease'
-                  }}
-                />
-                
-                {partner.logoColors[1] && (
-                  <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full opacity-30"
-                    style={{
-                      background: `radial-gradient(circle, ${partner.logoColors[1]} 0%, transparent 70%)`,
-                      transform: hoveredPartner === index ? 'scale(1.2)' : 'scale(1)',
-                      transition: 'transform 0.5s ease'
-                    }}
-                  />
-                )}
-
-                {/* Content */}
-                <div className="relative p-8 h-80 flex flex-col justify-between">
-                  {/* Top Section - Brand Name */}
-                  <div>
-                    <div className="mb-6">
-                      <h3 className={`text-3xl font-black mb-3 ${partner.textColor} tracking-tight`}>
-                        {partner.name}
-                      </h3>
-                      <div className="h-1 w-16 bg-white/50 rounded-full" />
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-4">
+                {stats.map((s, i) => (
+                  <div
+                    key={i}
+                    className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-2 mb-2" style={{ color: s.color }}>
+                      {s.icon}
                     </div>
-                    
-                    {/* Category/Specialty */}
-                    <p className={`text-base leading-relaxed ${partner.textColor} opacity-90 font-medium`}>
-                      {partner.category}
-                    </p>
+                    <div className="text-2xl font-black text-slate-800" style={{ fontFamily: "'Orbitron', sans-serif" }}>{s.value}</div>
+                    <div className="text-xs text-slate-400 font-semibold uppercase tracking-wide mt-0.5">{s.label}</div>
                   </div>
-
-                  {/* Bottom Section - Slogan/CTA */}
-                  <div>
-                    {partner.slogan && (
-                      <p className={`text-sm italic mb-4 ${partner.textColor} opacity-75`}>
-                        "{partner.slogan}"
-                      </p>
-                    )}
-                    
-                    <button 
-                    onClick={() => window.open(partner.link, '_blank')}
-                      className={`flex items-center space-x-2 hover:cursor-pointer ${partner.textColor} font-semibold group-hover:gap-3 transition-all duration-300`}
-                    >
-                      <span className="text-sm">Learn More</span>
-                      <ExternalLink className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-
-                {/* Hover Effect Border */}
-                <div className={`absolute inset-0 border-4 border-white/0 group-hover:border-white/30 rounded-2xl transition-all duration-300`} />
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className={`rounded-2xl p-12 backdrop-blur-sm border text-center ${
-            isDarkMode ? 'bg-gray-800/70 border-gray-700' : 'bg-white/90 border-gray-200'
-          }`}>
-            <div className="max-w-3xl mx-auto">
-              <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                Become a Partner
-              </h2>
-              <p className={`text-lg mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                Join our network of leading biomedical equipment manufacturers and distributors. Together, we're transforming healthcare across Africa.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button onClick={() => window.open('/contact', '_blank')} className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
-                  <span>Partner With Us</span>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                {/* <button className={`px-8 py-4 border-2 rounded-lg font-semibold transition-all duration-300 hover:scale-105 ${
-                  isDarkMode ? 'border-white/30 text-white hover:bg-white/10 hover:border-white' : 'border-gray-300 text-black hover:bg-gray-100 hover:border-gray-400'
-                }`}>
-                  Download Partnership Guide
-                </button> */}
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </section>
+
+        {/* ── PARTNERS GRID ─────────────────────────────────────────────── */}
+        <div className="max-w-7xl mx-auto px-8 py-20">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="h-px flex-1" style={{ background: `linear-gradient(90deg, ${brandBlue}40, transparent)` }} />
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-400 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full" style={{ background: brandBlue }} />
+              {partners.length} Partners · Click to visit
+            </span>
+            <div className="h-px flex-1" style={{ background: `linear-gradient(270deg, ${brandRed}40, transparent)` }} />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {partners.map((partner, i) => (
+              <PartnerCard key={i} partner={partner} index={i} />
+            ))}
+          </div>
+        </div>
+
+        {/* ── BECOME A PARTNER — dark CTA ───────────────────────────────── */}
+        <div className="mx-8 mb-16 rounded-3xl relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${brandBlue}, #0f2549)` }}>
+          {/* Decorative blobs */}
+          <div className="absolute -top-16 -right-16 w-80 h-80 rounded-full opacity-10 blur-3xl" style={{ background: brandRed }} />
+          <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full opacity-10 blur-3xl" style={{ background: '#2563eb' }} />
+          {/* Dot grid */}
+          <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`, backgroundSize: '28px 28px' }} />
+
+          <div className="relative z-10 max-w-2xl mx-auto px-8 py-20 text-center">
+            <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: brandRed }}>
+              Expand Our Network
+            </span>
+            <h2
+              className="text-3xl md:text-4xl font-black text-white mb-4"
+              style={{ fontFamily: "'Orbitron', sans-serif" }}
+            >
+              Become a Partner
+            </h2>
+            <p className="text-blue-200 text-lg mb-10 leading-relaxed">
+              Join our network of leading biomedical equipment manufacturers and distributors. Together, we're transforming healthcare across Africa.
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-3 px-10 py-4 rounded-xl font-bold text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              style={{
+                background: `linear-gradient(135deg, ${brandRed}, #9b1527)`,
+                boxShadow: `0 8px 24px ${brandRed}40`,
+                fontFamily: "'Rajdhani', sans-serif",
+              }}
+            >
+              Partner With Us
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+      </div>
     </PageLayout>
   );
 };

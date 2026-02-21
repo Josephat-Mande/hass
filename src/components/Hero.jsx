@@ -1,18 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronRight, Microscope, Activity, Zap, Shield, ArrowDown, FileText, Sparkles, TrendingUp, CheckCircle } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 
 const Hero = () => {
-  const { isDarkMode } = useTheme();
   const [scrollY, setScrollY] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeWord, setActiveWord] = useState(0);
-  const heroRef = useRef(null);
   const [particleOffset, setParticleOffset] = useState(0);
 
-  // Brand colors from Hass Uganda 
-  const brandblue = '#c41e3a';
-  const brandGray = '#2c3e50';
+  const brandRed = '#c41e3a';
+  const brandBlue = '#1a3a6b';
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -22,10 +18,8 @@ const Hero = () => {
         y: e.clientY / window.innerHeight 
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('mousemove', handleMouseMove);
@@ -41,254 +35,287 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
-    const animate = () => {
+    const animation = setInterval(() => {
       setParticleOffset(prev => (prev + 0.5) % 360);
-    };
-    const animation = setInterval(animate, 50);
+    }, 50);
     return () => clearInterval(animation);
   }, []);
 
   const dynamicWords = ['Innovation', 'Precision', 'Excellence', 'Technology'];
 
   const stats = [
-    { icon: <TrendingUp className="w-6 h-6" />, value: "30+", label: "Years Leading", color: "from-blue-500 to-blue-700" },
-    { icon: <Microscope className="w-6 h-6" />, value: "500+", label: "Labs Equipped", color: "from-gray-600 to-gray-800" },
-    { icon: <Activity className="w-6 h-6" />, value: "200+", label: "Hospitals", color: "from-blue-600 to-blue-800" },
-    { icon: <CheckCircle className="w-6 h-6" />, value: "1000+", label: "Happy Clients", color: "from-gray-700 to-gray-900" }
+    { icon: <TrendingUp className="w-6 h-6" />, value: "30+", label: "Years Leading" },
+    { icon: <Microscope className="w-6 h-6" />, value: "500+", label: "Labs Equipped" },
+    { icon: <Activity className="w-6 h-6" />, value: "200+", label: "Hospitals" },
+    { icon: <CheckCircle className="w-6 h-6" />, value: "1000+", label: "Happy Clients" }
   ];
 
   const features = [
-    {
-      icon: <Microscope className="w-8 h-8" />,
-      title: "Clinical Chemistry",
-      description: "Advanced photometric analyzers",
-      color: "from-blue-500 to-blue-700"
-    },
-    {
-      icon: <Activity className="w-8 h-8" />,
-      title: "Microbiology",
-      description: "Rapid detection systems",
-      color: "from-gray-600 to-gray-800"
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Immunology",
-      description: "Disease screening tech",
-      color: "from-blue-600 to-blue-800"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "24/7 Support",
-      description: "Guaranteed uptime",
-      color: "from-gray-700 to-gray-900"
-    }
+    { icon: <Microscope className="w-8 h-8" />, title: "Clinical Chemistry", description: "Advanced photometric analyzers" },
+    { icon: <Activity className="w-8 h-8" />, title: "Microbiology", description: "Rapid detection systems" },
+    { icon: <Zap className="w-8 h-8" />, title: "Immunology", description: "Disease screening tech" },
+    { icon: <Shield className="w-8 h-8" />, title: "24/7 Support", description: "Guaranteed uptime" }
   ];
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Google Fonts Import for Engineering Font */}
+    <div className="relative min-h-screen overflow-hidden bg-slate-50">
       <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      
-      {/* FIXED: Background Image Layer - Now with proper z-index */}
-      <div 
+
+      {/* Background Image — biomedical lab / DNA / microscopy */}
+      <div
         className="fixed inset-0 w-full h-full"
-        style={{ 
-          backgroundImage: 'url(https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2000&auto=format&fit=crop)',
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2000&auto=format&fit=crop)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
-          filter: 'blur(0px)',
-          transform: 'scale(1.1)',
-          opacity: 0.25,
+          transform: 'scale(1.05)',
           zIndex: 0
         }}
       />
 
-      {/* Dark overlay for better text readability */}
-      <div 
-        className="fixed inset-0 w-full h-full bg-gradient-to-br from-gray-900/95 via-gray-800/90 to-black/95"
-        style={{ zIndex: 1 }}
+      {/* Light white wash overlay so text stays readable */}
+      <div
+        className="fixed inset-0 w-full h-full"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(240,245,255,0.88) 40%, rgba(255,248,248,0.85) 100%)',
+          zIndex: 1
+        }}
       />
 
-      {/* Animated DNA Helix Background */}
-      <div className="fixed inset-0 opacity-10" style={{ zIndex: 2 }}>
+      {/* Subtle grid pattern */}
+      <div
+        className="fixed inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `linear-gradient(${mousePosition.x * 30}deg, ${brandBlue} 1px, transparent 1px),
+                           linear-gradient(${90 + mousePosition.y * 30}deg, ${brandBlue} 1px, transparent 1px)`,
+          backgroundSize: '60px 60px',
+          transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`,
+          zIndex: 2
+        }}
+      />
+
+      {/* Soft color orbs */}
+      <div
+        className="fixed top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl"
+        style={{
+          background: `radial-gradient(circle, rgba(196,30,58,0.12) 0%, transparent 70%)`,
+          transform: `translate(${mousePosition.x * 40}px, ${mousePosition.y * 40}px)`,
+          zIndex: 3
+        }}
+      />
+      <div
+        className="fixed bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl"
+        style={{
+          background: `radial-gradient(circle, rgba(26,58,107,0.1) 0%, transparent 70%)`,
+          transform: `translate(${-mousePosition.x * 25}px, ${-mousePosition.y * 25}px)`,
+          zIndex: 3
+        }}
+      />
+
+      {/* Animated DNA dots */}
+      {/* <div className="fixed inset-0 opacity-20" style={{ zIndex: 4 }}>
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
             className="absolute w-2 h-2 rounded-full"
             style={{
               left: `${5 + i * 5}%`,
-              top: `${50 + Math.sin((particleOffset + i * 18) * Math.PI / 180) * 40}%`,
-              background: i % 2 === 0 ? brandblue : brandGray,
+              top: `${50 + Math.sin((particleOffset + i * 18) * Math.PI / 180) * 35}%`,
+              background: i % 2 === 0 ? brandRed : brandBlue,
               transform: `scale(${1 + Math.sin((particleOffset + i * 18) * Math.PI / 180) * 0.5})`,
               transition: 'all 0.05s linear'
             }}
           />
         ))}
-      </div>
+      </div> */}
 
-      {/* Dynamic Grid with Mouse Movement */}
-      <div 
-        className="fixed inset-0 opacity-5"
-        style={{
-          backgroundImage: `linear-gradient(${mousePosition.x * 30}deg, rgba(196, 30, 58, 0.3) 1px, transparent 1px),
-                           linear-gradient(${90 + mousePosition.y * 30}deg, rgba(196, 30, 58, 0.3) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-          transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)`,
-          zIndex: 3
-        }}
-      />
-
-      {/* Floating Orbs */}
-      <div 
-        className="fixed top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20"
-        style={{
-          background: `radial-gradient(circle, ${brandblue} 0%, transparent 70%)`,
-          transform: `translate(${mousePosition.x * 50}px, ${mousePosition.y * 50}px)`,
-          zIndex: 4
-        }}
-      />
-      <div 
-        className="fixed bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-15"
-        style={{
-          background: `radial-gradient(circle, ${brandGray} 0%, transparent 70%)`,
-          transform: `translate(${-mousePosition.x * 30}px, ${-mousePosition.y * 30}px)`,
-          zIndex: 4
-        }}
-      />
-
-      {/* Hero Content */}
+      {/* HERO CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
-          {/* Left Content */}
+
+          {/* LEFT */}
           <div className="space-y-8">
             {/* Badge */}
-            <div 
-              className="inline-flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-blue-600/20 to-blue-800/20 backdrop-blur-xl rounded-full border border-blue-500/30 animate-fade-in"
-            >
-              <span className="text-blue-200 font-semibold text-sm">Leading East & Central Africa Since 1993</span>
+            <div className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full border border-red-200 bg-white/80 backdrop-blur-sm shadow-sm animate-fade-in">
+              <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: brandRed }} />
+              <span className="font-semibold text-sm" style={{ color: brandRed, fontFamily: "'Rajdhani', sans-serif" }}>
+                Leading East & Central Africa Since 1993
+              </span>
             </div>
 
-            {/* Main Heading with Dynamic Word */}
+            {/* Heading */}
             <div className="space-y-4">
-              <h1 className="text-6xl md:text-7xl font-black text-white leading-tight" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+              <h1
+                className="text-6xl md:text-7xl font-black leading-tight"
+                style={{ fontFamily: "'Orbitron', sans-serif", color: brandBlue }}
+              >
                 Biomedical
                 <br />
                 <span className="relative inline-block">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-500 animate-pulse">
+                  <span
+                    className="animate-pulse"
+                    style={{
+                      color: brandRed,
+                      WebkitTextStroke: '1px rgba(196,30,58,0.2)'
+                    }}
+                  >
                     {dynamicWords[activeWord]}
                   </span>
-                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-transparent" />
+                  <div
+                    className="absolute -bottom-2 left-0 w-full h-1 rounded-full"
+                    style={{ background: `linear-gradient(90deg, ${brandRed}, transparent)` }}
+                  />
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
+              <p
+                className="text-xl md:text-2xl leading-relaxed max-w-xl"
+                style={{ fontFamily: "'Rajdhani', sans-serif", color: '#4a5568' }}
+              >
                 Transforming healthcare through cutting-edge laboratory equipment and unwavering technical excellence
               </p>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={() => window.location.href = '/services'} className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/50" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <button
+                onClick={() => window.location.href = '/services'}
+                className="group relative px-8 py-4 rounded-xl font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                style={{
+                  background: `linear-gradient(135deg, ${brandBlue}, #0f2549)`,
+                  boxShadow: `0 8px 30px rgba(26,58,107,0.25)`,
+                  fontFamily: "'Rajdhani', sans-serif"
+                }}
+              >
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `linear-gradient(135deg, ${brandRed}, #9b1527)` }} />
                 <span className="relative flex items-center justify-center space-x-2">
                   <span>Explore Solutions</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </span>
               </button>
-              
-              <button onClick={() => window.location.href = '/contact'} className="group px-8 py-4 border-2 border-gray-600 rounded-xl font-bold text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all duration-300 flex items-center justify-center space-x-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
+
+              <button
+                onClick={() => window.location.href = '/contact'}
+                className="group px-8 py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center space-x-2 bg-white/80 backdrop-blur-sm hover:shadow-lg"
+                style={{
+                  border: `2px solid ${brandBlue}`,
+                  color: brandBlue,
+                  fontFamily: "'Rajdhani', sans-serif"
+                }}
+              >
                 <FileText className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>Request Quote</span>
               </button>
             </div>
 
-            {/* Mini Stats */}
-            <div className="grid grid-cols-4 gap-4 pt-8" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+            {/* Stats */}
+            <div className="grid grid-cols-4 gap-4 pt-8">
               {stats.map((stat, idx) => (
-                <div 
+                <div
                   key={idx}
-                  className="text-center group cursor-pointer"
-                  style={{ animationDelay: `${idx * 0.1}s` }}
+                  className="text-center group cursor-pointer bg-white/70 backdrop-blur-sm rounded-2xl p-3 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-white"
                 >
-                  <div className={`inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br ${stat.color} rounded-lg mb-2 group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-lg mb-2 group-hover:scale-110 transition-transform duration-300 text-white"
+                    style={{ background: idx % 2 === 0 ? brandRed : brandBlue }}
+                  >
                     {stat.icon}
                   </div>
-                  <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-xs text-gray-400" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{stat.label}</div>
+                  <div
+                    className="text-2xl font-black"
+                    style={{ fontFamily: "'Orbitron', sans-serif", color: brandBlue, fontSize: '1.1rem' }}
+                  >
+                    {stat.value}
+                  </div>
+                  <div className="text-xs mt-0.5" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right - 3D Interactive Display */}
+          {/* RIGHT — Orbiting Cards */}
           <div className="relative h-[600px] hidden lg:block">
-            {/* Central Hologram Effect */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative w-96 h-96">
-                {/* Rotating Ring */}
-                <div 
-                  className="absolute inset-0 rounded-full border-4 border-blue-600/30"
+                {/* Rings */}
+                <div
+                  className="absolute inset-0 rounded-full"
                   style={{
+                    border: `3px solid rgba(26,58,107,0.15)`,
                     animation: 'rotate 20s linear infinite',
-                    boxShadow: `0 0 60px rgba(196, 30, 58, 0.3)`
+                    boxShadow: `0 0 40px rgba(196,30,58,0.08)`
                   }}
                 />
-                <div 
-                  className="absolute inset-8 rounded-full border-2 border-gray-600/30"
+                <div
+                  className="absolute inset-8 rounded-full"
                   style={{
-                    animation: 'rotate-reverse 15s linear infinite',
-                    boxShadow: `0 0 40px rgba(44, 62, 80, 0.3)`
+                    border: `2px solid rgba(196,30,58,0.1)`,
+                    animation: 'rotate-reverse 15s linear infinite'
                   }}
                 />
 
-                {/* Feature Cards Orbiting */}
+                {/* Orbiting Feature Cards */}
                 {features.map((feature, idx) => {
                   const angle = (idx * 90 + particleOffset) * (Math.PI / 180);
                   const radius = 180;
                   const x = Math.cos(angle) * radius;
                   const y = Math.sin(angle) * radius;
-                  
                   return (
                     <div
                       key={idx}
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                      className="absolute top-1/2 left-1/2"
                       style={{
                         transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
                         transition: 'transform 0.05s linear'
                       }}
                     >
-                      <div className={`group w-32 h-32 bg-gradient-to-br ${feature.color} rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-2xl backdrop-blur-xl border border-white/10 hover:scale-110 transition-all duration-300 cursor-pointer`}>
-                        <div className="text-white mb-2 group-hover:scale-110 transition-transform">
+                      <div
+                        className="group w-32 h-32 rounded-2xl p-4 flex flex-col items-center justify-center text-center hover:scale-110 transition-all duration-300 cursor-pointer bg-white shadow-lg border border-gray-100"
+                        style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}
+                      >
+                        <div className="mb-2 group-hover:scale-110 transition-transform" style={{ color: idx % 2 === 0 ? brandRed : brandBlue }}>
                           {feature.icon}
                         </div>
-                        <div className="text-white font-bold text-sm mb-1" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{feature.title}</div>
-                        <div className="text-white/70 text-xs" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{feature.description}</div>
+                        <div className="font-bold text-sm mb-1" style={{ color: brandBlue, fontFamily: "'Rajdhani', sans-serif" }}>
+                          {feature.title}
+                        </div>
+                        <div className="text-xs" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>
+                          {feature.description}
+                        </div>
                       </div>
                     </div>
                   );
                 })}
 
-                {/* Center Logo */}
+                {/* Center */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-600/50 transform hover:rotate-12 transition-transform duration-300">
+                  <div
+                    className="w-24 h-24 rounded-2xl flex items-center justify-center shadow-xl transform hover:rotate-12 transition-transform duration-300"
+                    style={{
+                      background: `linear-gradient(135deg, ${brandBlue}, #0f2549)`,
+                      boxShadow: `0 12px 40px rgba(26,58,107,0.3)`
+                    }}
+                  >
                     <Microscope className="w-12 h-12 text-white" />
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Particle Field */}
-            {[...Array(30)].map((_, i) => (
+            {/* Floating particles */}
+            {[...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 rounded-full animate-float"
+                className="absolute w-1.5 h-1.5 rounded-full animate-float"
                 style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  background: i % 2 === 0 ? brandblue : brandGray,
+                  left: `${10 + Math.random() * 80}%`,
+                  top: `${10 + Math.random() * 80}%`,
+                  background: i % 2 === 0 ? brandRed : brandBlue,
                   animationDelay: `${Math.random() * 3}s`,
                   animationDuration: `${3 + Math.random() * 4}s`,
-                  opacity: 0.3
+                  opacity: 0.2
                 }}
               />
             ))}
@@ -299,8 +326,8 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-gray-400 text-sm" style={{ fontFamily: "'Rajdhani', sans-serif" }}>Scroll to explore</span>
-          <ArrowDown className="w-6 h-6 text-blue-500" />
+          <span className="text-sm" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>Scroll to explore</span>
+          <ArrowDown className="w-6 h-6" style={{ color: brandBlue }} />
         </div>
       </div>
 
@@ -309,29 +336,20 @@ const Hero = () => {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
-        
         @keyframes rotate-reverse {
           from { transform: rotate(360deg); }
           to { transform: rotate(0deg); }
         }
-        
         @keyframes float {
-          0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
-          50% { transform: translateY(-20px) scale(1.2); opacity: 0.6; }
+          0%, 100% { transform: translateY(0px) scale(1); opacity: 0.2; }
+          50% { transform: translateY(-20px) scale(1.2); opacity: 0.5; }
         }
-        
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(10px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        
-        .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-        
-        .animate-float {
-          animation: float ease-in-out infinite;
-        }
+        .animate-fade-in { animation: fade-in 1s ease-out; }
+        .animate-float { animation: float ease-in-out infinite; }
       `}</style>
     </div>
   );
