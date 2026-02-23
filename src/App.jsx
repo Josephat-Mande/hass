@@ -6,6 +6,7 @@ import HomeScreen from './pages/HomeScreen';
 import Products from './pages/Products';
 import Services from './pages/Services';
 import Partners from './pages/Partners';
+import Clients from './pages/Clients';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Testimonials from './pages/Testimonials';
@@ -62,6 +63,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/clients" element={<Clients />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />

@@ -6,48 +6,7 @@ import PageLayout from '../components/PageLayout';
 const brandBlue = '#1a3a6b';
 const brandRed = '#c41e3a';
 
-const mainServices = [
-  {
-    icon: Wrench,
-    title: "Full Equipment Maintenance",
-    tagline: "Zero downtime. Maximum output.",
-    description: "24/7 on-site maintenance by fully trained engineers and application specialists. Our preventive care programmes keep diagnostic systems at peak performance, year-round.",
-    features: ["Preventive maintenance programmes", "Emergency repair services", "Calibration & validation", "Performance optimisation"],
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1400&auto=format&fit=crop",
-    accent: brandBlue,
-    stat: "99.2%", statLabel: "avg. uptime rate"
-  },
-  {
-    icon: Shield,
-    title: "Guaranteed Uptime",
-    tagline: "Contractual peace of mind.",
-    description: "Comprehensive service contracts with guaranteed response times for critical diagnostic equipment. We're on call so your lab never has to stop.",
-    features: ["24-hour uptime guarantee", "Priority support access", "Spare parts availability", "Extended warranty options"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1400&auto=format&fit=crop",
-    accent: "#059669",
-    stat: "4hr", statLabel: "max response time"
-  },
-  {
-    icon: Truck,
-    title: "Installation & Commissioning",
-    tagline: "From delivery to diagnostic-ready.",
-    description: "Professional installation, commissioning, and relocation by local field specialists who know Uganda's laboratory landscape — from Kampala to Arua.",
-    features: ["Site assessment & preparation", "Equipment installation", "Staff training programmes", "Documentation & certification"],
-    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=1400&auto=format&fit=crop",
-    accent: "#7c3aed",
-    stat: "6", statLabel: "regions covered"
-  },
-  {
-    icon: Headphones,
-    title: "Technical Support",
-    tagline: "Expert help, whenever you need it.",
-    description: "Round-the-clock technical assistance from experienced application specialists. Remote diagnostics to on-site troubleshooting — we resolve issues fast.",
-    features: ["Phone & email support", "Remote diagnostics", "On-site troubleshooting", "Software updates & training"],
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1400&auto=format&fit=crop",
-    accent: brandRed,
-    stat: "24/7", statLabel: "support availability"
-  }
-];
+ 
 
 const whyUs = [
   { icon: Clock,        title: "Rapid Response",  desc: "Field engineers dispatched within hours, not days" },
@@ -83,67 +42,67 @@ function ServiceStrip({ service, index }) {
   const isEven = index % 2 === 0;
   const Icon = service.icon;
 
-  return (
-    <div
-      ref={ref}
-      className="relative flex flex-col lg:flex-row min-h-[480px] overflow-hidden rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:shadow-xl hover:border-slate-300"
-      style={{
-        flexDirection: isEven ? undefined : 'row-reverse',
-        opacity: inView ? 1 : 0,
-        transform: inView ? 'translateY(0)' : 'translateY(36px)',
-        transition: 'opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease',
-        transitionDelay: `${index * 0.08}s`,
-      }}
-    >
+//   return (
+    // <div
+    //   ref={ref}
+    //   className="relative flex flex-col lg:flex-row min-h-[480px] overflow-hidden rounded-3xl border border-slate-200 bg-white transition-all duration-500 hover:shadow-xl hover:border-slate-300"
+    //   style={{
+    //     flexDirection: isEven ? undefined : 'row-reverse',
+    //     opacity: inView ? 1 : 0,
+    //     transform: inView ? 'translateY(0)' : 'translateY(36px)',
+    //     transition: 'opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease',
+    //     transitionDelay: `${index * 0.08}s`,
+    //   }}
+    // >
       {/* Image pane */}
-      <div className="relative lg:w-1/2 h-64 lg:h-auto overflow-hidden">
+      {/* <div className="relative lg:w-1/2 h-64 lg:h-auto overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
           className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-        />
+        /> */}
         {/* Subtle tint — lighter on the page */}
-        <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${service.accent}bb 0%, ${service.accent}33 100%)` }} />
+        {/* <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${service.accent}bb 0%, ${service.accent}33 100%)` }} /> */}
 
         {/* Big stat */}
-        <div className="absolute bottom-6 left-6">
+        {/* <div className="absolute bottom-6 left-6">
           <div className="text-white text-5xl font-black leading-none drop-shadow-lg" style={{ fontFamily: "'Orbitron', sans-serif" }}>
             {service.stat}
           </div>
           <div className="text-white/80 text-sm uppercase tracking-widest mt-1" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
             {service.statLabel}
           </div>
-        </div>
+        </div> */}
 
         {/* Icon circle */}
-        <div
+        {/* <div
           className="absolute top-6 right-6 w-14 h-14 rounded-2xl flex items-center justify-center"
           style={{ background: 'rgba(255,255,255,0.25)', border: '1px solid rgba(255,255,255,0.4)', backdropFilter: 'blur(10px)' }}
         >
           <Icon className="w-7 h-7 text-white" />
         </div>
-      </div>
+      </div> */}
 
       {/* Content pane */}
-      <div className="lg:w-1/2 p-10 flex flex-col justify-center gap-5">
+      {/* <div className="lg:w-1/2 p-10 flex flex-col justify-center gap-5"> */}
         {/* Eyebrow */}
-        <div className="flex items-center gap-3">
+        {/* <div className="flex items-center gap-3">
           <div className="h-px w-8" style={{ background: service.accent }} />
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: service.accent, fontFamily: "'Rajdhani', sans-serif" }}>
             {service.tagline}
           </span>
-        </div>
+        </div> */}
 
-        <h3 className="text-3xl font-black leading-tight text-slate-800" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+        {/* <h3 className="text-3xl font-black leading-tight text-slate-800" style={{ fontFamily: "'Orbitron', sans-serif" }}>
           {service.title}
         </h3>
 
         <p className="text-base leading-relaxed text-slate-500" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
           {service.description}
-        </p>
+        </p> */}
 
         {/* Feature list */}
-        <ul className="space-y-3">
+        {/* <ul className="space-y-3">
           {service.features.map((f, i) => (
             <li key={i} className="flex items-center gap-3 group">
               <div
@@ -153,19 +112,19 @@ function ServiceStrip({ service, index }) {
               <span className="text-lg text-slate-600" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{f}</span>
             </li>
           ))}
-        </ul>
+        </ul> */}
 
-        <a
+        {/* <a
           href="/contact"
           target="_blank" rel="noreferrer"
           className="inline-flex items-center gap-2 self-start px-6 py-3 rounded-xl text-lg font-bold text-white transition-all duration-300 hover:gap-4 hover:scale-105 hover:shadow-lg"
           style={{ background: service.accent, fontFamily: "'Rajdhani', sans-serif" }}
         >
           Get This Service <ArrowRight className="w-4 h-4" />
-        </a>
-      </div>
-    </div>
-  );
+        </a> */}
+      {/* </div> */}
+    // </div>
+//   );
 }
 
 /* ─── MAIN COMPONENT ─────────────────────────────────────────────────────── */
@@ -189,24 +148,24 @@ const Services = () => {
         @keyframes ping-slow { 0%{transform:scale(1);opacity:.8} 70%{transform:scale(2.2);opacity:0} 100%{transform:scale(1);opacity:0} }
       `}</style>
 
-      <div className="bg-slate-50 min-h-screen" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
+      {/* <div className="bg-slate-50 min-h-screen" style={{ fontFamily: "'Rajdhani', sans-serif" }}> */}
 
         {/* ── HERO — light with biomedical image ───────────────────────── */}
-        <section className="relative overflow-hidden" style={{ minHeight: '75vh' }}>
+        {/* <section className="relative overflow-hidden" style={{ minHeight: '75vh' }}> */}
           {/* Background image */}
-          <div className="absolute inset-0">
+          {/* <div className="absolute inset-0">
             <img
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
               alt="Lab background"
               className="w-full h-full object-cover"
               style={{ transform: 'scale(1.05)' }}
-            />
+            /> */}
             {/* Light wash — matches Hero & About */}
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.93) 0%, rgba(240,245,255,0.88) 45%, rgba(255,248,248,0.82) 100%)' }} />
-          </div>
+            {/* <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.93) 0%, rgba(240,245,255,0.88) 45%, rgba(255,248,248,0.82) 100%)' }} />
+          </div> */}
 
           {/* Mouse-reactive color orbs */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute rounded-full blur-3xl" style={{ width: 500, height: 500, top: '-10%', left: '-5%', background: `rgba(26,58,107,0.08)`, transform: `translate(${mousePos.x * 30}px, ${mousePos.y * 30}px)` }} />
             <div className="absolute rounded-full blur-3xl" style={{ width: 400, height: 400, bottom: '0%', right: '-5%', background: `rgba(196,30,58,0.07)`, transform: `translate(${-mousePos.x * 20}px, ${-mousePos.y * 20}px)` }} />
           </div>
@@ -215,10 +174,10 @@ const Services = () => {
             ref={heroRef}
             className="relative z-10 max-w-7xl mx-auto px-8 py-24 grid lg:grid-cols-2 gap-16 items-center"
             style={{ minHeight: '75vh' }}
-          >
+          > */}
             {/* Left copy */}
-            <div style={{ animation: heroInView ? 'slideRight .8s ease forwards' : 'none', opacity: heroInView ? 1 : 0 }}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border text-lg font-semibold" style={{ borderColor: `${brandRed}30`, background: `${brandRed}08`, color: brandRed }}>
+            {/* <div style={{ animation: heroInView ? 'slideRight .8s ease forwards' : 'none', opacity: heroInView ? 1 : 0 }}> */}
+              {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border text-lg font-semibold" style={{ borderColor: `${brandRed}30`, background: `${brandRed}08`, color: brandRed }}>
                 <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: brandRed }} />
                 Hass Scientific · Service & Support
               </div>
@@ -246,10 +205,10 @@ const Services = () => {
                   Email Us
                 </a>
               </div>
-            </div>
+            </div> */}
 
             {/* Right — stat cards */}
-            <div className="grid grid-cols-2 gap-4" style={{ animation: heroInView ? 'fadeUp .8s .2s ease both' : 'none' }}>
+            {/* <div className="grid grid-cols-2 gap-4" style={{ animation: heroInView ? 'fadeUp .8s .2s ease both' : 'none' }}>
               {[
                 { n: "99.2%", label: "Equipment Uptime", sub: "across all sites", color: brandBlue },
                 { n: "4 hrs", label: "Max Response",      sub: "guaranteed SLA",  color: brandRed },
@@ -266,12 +225,12 @@ const Services = () => {
                   <div className="text-sm mt-0.5 text-slate-400">{s.sub}</div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
+            </div> */}
+          {/* </div> */}
+        {/* </section> */}
 
         {/* ── SERVICE STRIPS ────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-8 py-24 space-y-8">
+        {/* <section className="max-w-7xl mx-auto px-8 py-24 space-y-8">
           <div className="text-center mb-16">
             <span className="text-sm font-bold uppercase tracking-widest mb-3 block" style={{ color: brandRed }}>What We Offer</span>
             <h2 className="text-4xl md:text-5xl font-black text-slate-800" style={{ fontFamily: "'Orbitron', sans-serif" }}>
@@ -281,14 +240,14 @@ const Services = () => {
           {mainServices.map((svc, i) => (
             <ServiceStrip key={i} service={svc} index={i} />
           ))}
-        </section>
+        </section> */}
 
         {/* ── WHY US — dark navy strip (matches About location strip) ──── */}
-        <section className="relative py-24 overflow-hidden" style={{ background: `linear-gradient(135deg, ${brandBlue}, #0f2549)` }}>
+        {/* <section className="relative py-24 overflow-hidden" style={{ background: `linear-gradient(135deg, ${brandBlue}, #0f2549)` }}> */}
           {/* Dot grid */}
-          <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`, backgroundSize: '32px 32px' }} />
+          {/* <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`, backgroundSize: '32px 32px' }} /> */}
           {/* Glow blob */}
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full opacity-10 blur-3xl" style={{ background: brandRed }} />
+          {/* <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full opacity-10 blur-3xl" style={{ background: brandRed }} />
 
           <div className="relative z-10 max-w-7xl mx-auto px-8">
             <div className="text-center mb-16">
@@ -297,10 +256,10 @@ const Services = () => {
                 Why Choose Hass?
               </h2>
               <p className="text-blue-200 text-lg mt-3">Trusted by Uganda's leading health institutions</p>
-            </div>
+            </div> */}
 
             {/* Value props */}
-            <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {/* <div className="grid md:grid-cols-3 gap-6 mb-16">
               {whyUs.map((w, i) => {
                 const Icon = w.icon;
                 return (
@@ -318,10 +277,10 @@ const Services = () => {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
 
             {/* Client strip */}
-            <div id="clients" className="border-t border-white/10 pt-10 text-center">
+            <div id="clients" className="border-t border-white/10 pt-0 text-center">
               <p className="text-white/40 text-sm uppercase tracking-widest mb-6">Our clients across Uganda</p>
               <div className="flex flex-wrap justify-center gap-3">
                 {["IHK Kampala", "Nakasero Hospital", "Case Hospital", "Mbarara UUTH", "Lira RRH", "Kampala Independent ","Aga Khan", "Kampala  "].map((c) => (
@@ -330,8 +289,8 @@ const Services = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
+          {/* </div> */}
+        {/* </section> */}
 
         {/* ── LOCATIONS ─────────────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-8 py-24">
@@ -522,7 +481,7 @@ const Services = () => {
           </div>
         </section>
 
-      </div>
+      {/* </div> */}
     </PageLayout>
   );
 };

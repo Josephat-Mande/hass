@@ -123,7 +123,7 @@ const Footer = () => {
                 <div className="text-lg text-slate-500 leading-relaxed">
                   Hass Scientific and Medical Supplies Ltd<br />
                   Plot 2236, Tank Hill Road, Muyenga<br />
-                  P.O Box 1735, Kampala – Uganda
+                  P.O Box 30088, Kampala – Uganda
                 </div>
               </div>
             </div>

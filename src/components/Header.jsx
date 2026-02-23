@@ -105,7 +105,7 @@ function Header() {
     { name: 'About Us', path: '/about' },
     { name: 'What We Do', path: '/services' },
     { name: 'Our Partners', path: '/partners' },
-    { name: 'Our Clients', path: '/services/#clients' },
+    { name: 'Our Clients', path: '/clients' },
   ];
 
   return (
@@ -145,7 +145,7 @@ function Header() {
               <div className={`text-xl font-bold tracking-tight leading-none ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                 HASS
               </div>
-              <div className={`text-[10px] leading-tight mt-0.5 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+              <div className={`text-[12px] leading-tight mt-0.5 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                 Scientific & Medical Supplies (U) Ltd
               </div>
             </div>
@@ -182,7 +182,7 @@ function Header() {
             >
               <Link
                 to="/products"
-                className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                className={`flex items-center gap-1.5 px-4 py-2 text-lg font-medium rounded-lg transition-all duration-200 ${
                   isProductsActive
                     ? isDarkMode ? 'text-red-400 bg-red-900/20' : 'text-red-700 bg-red-50'
                     : isDarkMode ? 'text-gray-300 hover:text-white hover:bg-gray-800' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
