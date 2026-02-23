@@ -33,7 +33,7 @@ const Footer = () => {
       { name: 'Technical Support',     href: '/services' },
       { name: 'Training',              href: '/services' },
     ],
-    OurLocations: [
+    "Our Locations": [
       { name: 'Kampala -TANK HILL MUYENGA : Plot 2236,MUYENGA, Uganda P.O BOX 1735', href: 'https://www.hassuganda.co.ug' },
       { name: 'Nairobi- Argwings Kodhek Road, Kenya',  href: 'https://www.hasscientific.com' },
       { name: 'Kigali- Kacyiru: Office A23 Above Planet, Rwanda', href: 'https://www.hassscientific.com' },
@@ -82,7 +82,7 @@ const Footer = () => {
               <img src="/hass-logo.png" alt="HASS Logo" className="w-14 h-14 object-contain" />
               <div>
                 <h3 className="text-2xl font-black leading-none" style={{ fontFamily: "'Orbitron', sans-serif", color: brandBlue }}>HASS</h3>
-                <p className="text-sm font-semibold" style={{ color: brandRed }}>Scientific & Medical</p>
+                <p className="text-lg font-semibold" style={{ color: brandRed }}>Scientific & Medical</p>
               </div>
             </div>
 
@@ -99,7 +99,7 @@ const Footer = () => {
                 <div className="p-2 rounded-lg flex-shrink-0" style={{ background: `${brandBlue}10`, color: brandBlue }}>
                   <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-sm text-slate-600 group-hover:text-slate-800 transition-colors leading-relaxed">
+                <span className="text-lg text-slate-600 group-hover:text-slate-800 transition-colors leading-relaxed">
                   customerservice@hassuganda.co.ug<br />sales@hassuganda.co.ug
                 </span>
               </a>
@@ -111,7 +111,7 @@ const Footer = () => {
                 <div className="p-2 rounded-lg flex-shrink-0" style={{ background: `${brandRed}10`, color: brandRed }}>
                   <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-sm text-slate-600 group-hover:text-slate-800 transition-colors">
+                <span className="text-lg text-slate-600 group-hover:text-slate-800 transition-colors">
                   +256 (0)414 250 655 / +256 (0)753 250 655
                 </span>
               </a>
@@ -120,7 +120,7 @@ const Footer = () => {
                 <div className="p-2 rounded-lg flex-shrink-0" style={{ background: `${brandBlue}10`, color: brandBlue }}>
                   <MapPin className="w-4 h-4" />
                 </div>
-                <div className="text-sm text-slate-500 leading-relaxed">
+                <div className="text-lg text-slate-500 leading-relaxed">
                   Hass Scientific and Medical Supplies Ltd<br />
                   Plot 2236, Tank Hill Road, Muyenga<br />
                   P.O Box 1735, Kampala – Uganda
@@ -171,7 +171,7 @@ const Footer = () => {
                           href={link.href}
                           onMouseEnter={() => setHoveredLink(key)}
                           onMouseLeave={() => setHoveredLink(null)}
-                          className="flex items-center gap-1.5 text-sm text-blue-500 hover:text-slate-800 transition-all duration-200 group"
+                          className="flex items-center gap-1.5 text-lg text-blue-500 hover:text-slate-800 transition-all duration-200 group"
                         >
                           <ChevronRight
                             className="w-3.5 h-3.5 transition-all duration-200 flex-shrink-0"
@@ -224,7 +224,7 @@ const Footer = () => {
             {subscribed ? (
               <div className="flex items-center gap-3 px-5 py-4 rounded-xl bg-white/10 border border-white/20">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-white font-semibold text-sm">You're subscribed — thank you!</span>
+                <span className="text-white font-semibold text-lg">You're subscribed — thank you!</span>
               </div>
             ) : (
               <div className="flex gap-2">
@@ -234,11 +234,11 @@ const Footer = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSubscribe()}
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3.5 rounded-xl text-sm bg-white/10 text-white placeholder-white/50 border border-white/20 focus:outline-none focus:border-white/50 transition-all"
+                  className="flex-1 px-4 py-3.5 rounded-xl text-lg bg-white/10 text-white placeholder-white/50 border border-white/20 focus:outline-none focus:border-white/50 transition-all"
                 />
                 <button
                   onClick={handleSubscribe}
-                  className="group px-5 py-3.5 bg-white rounded-xl font-bold text-sm hover:bg-slate-100 transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                  className="group px-5 py-3.5 bg-white rounded-xl font-bold text-lg hover:bg-slate-100 transition-all duration-300 hover:scale-105 flex items-center gap-2"
                   style={{ color: brandBlue }}
                 >
                   <span>Subscribe</span>
@@ -251,12 +251,12 @@ const Footer = () => {
 
         {/* ── BOTTOM BAR ──────────────────────────────────────────────── */}
         <div className="border-t border-slate-100 py-7 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-slate-400 flex items-center gap-2">
+          <p className="text-lg text-slate-400 flex items-center gap-2">
             © {currentYear} Hass Scientific & Medical Supplies (U) Ltd.
             <Heart className="w-3.5 h-3.5 animate-pulse" style={{ color: brandRed }} />
             All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-slate-400">
+          <div className="flex items-center gap-6 text-lg text-slate-400">
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((t, i) => (
               <a key={i} href={`#${t.toLowerCase().replace(/ /g, '-')}`}
                 className="hover:text-slate-700 hover:underline underline-offset-4 transition-colors duration-200">{t}</a>

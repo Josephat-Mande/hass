@@ -139,7 +139,7 @@ const Hero = () => {
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full border border-red-200 bg-white/80 backdrop-blur-sm shadow-sm animate-fade-in">
               <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: brandRed }} />
-              <span className="font-semibold text-sm" style={{ color: brandRed, fontFamily: "'Rajdhani', sans-serif" }}>
+              <span className="font-semibold text-lg" style={{ color: brandRed, fontFamily: "'Rajdhani', sans-serif" }}>
                 Leading East & Central Africa Since 1993
               </span>
             </div>
@@ -227,7 +227,7 @@ const Hero = () => {
                   >
                     {stat.value}
                   </div>
-                  <div className="text-xs mt-0.5" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>
+                  <div className="text-sm mt-0.5" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>
                     {stat.label}
                   </div>
                 </div>
@@ -278,10 +278,10 @@ const Hero = () => {
                         <div className="mb-2 group-hover:scale-110 transition-transform" style={{ color: idx % 2 === 0 ? brandRed : brandBlue }}>
                           {feature.icon}
                         </div>
-                        <div className="font-bold text-sm mb-1" style={{ color: brandBlue, fontFamily: "'Rajdhani', sans-serif" }}>
+                        <div className="font-bold text-lg mb-1" style={{ color: brandBlue, fontFamily: "'Rajdhani', sans-serif" }}>
                           {feature.title}
                         </div>
-                        <div className="text-xs" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>
+                        <div className="text-sm" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>
                           {feature.description}
                         </div>
                       </div>
@@ -326,7 +326,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>Scroll to explore</span>
+          <span className="text-lg" style={{ color: '#718096', fontFamily: "'Rajdhani', sans-serif" }}>Scroll to explore</span>
           <ArrowDown className="w-6 h-6" style={{ color: brandBlue }} />
         </div>
       </div>

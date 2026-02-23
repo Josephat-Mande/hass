@@ -315,15 +315,15 @@ function ProductModal({ product, catMeta, onClose }) {
           </div>
           <div className="flex-1 p-7">
             <div className="flex justify-between items-start mb-4">
-              <span className="px-3 py-1 rounded-full text-xs font-bold text-white" style={{ background: color }}>
+              <span className="px-3 py-1 rounded-full text-sm font-bold text-white" style={{ background: color }}>
                 {product.badge}
               </span>
               <button
                 onClick={onClose}
-                className="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-all text-sm font-bold"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-all text-lg font-bold"
               >✕</button>
             </div>
-            <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `${color}99` }}>{product.manufacturer}</p>
+            <p className="text-sm font-bold uppercase tracking-widest mb-1" style={{ color: `${color}99` }}>{product.manufacturer}</p>
             <h2 className="text-2xl font-black text-slate-800 mb-2">{product.name}</h2>
             <p className="text-sm leading-relaxed text-slate-500">{product.description}</p>
           </div>
@@ -335,7 +335,7 @@ function ProductModal({ product, catMeta, onClose }) {
             <button
               key={t}
               onClick={() => setTab(t)}
-              className="px-5 py-3.5 text-xs font-bold uppercase tracking-widest border-b-2 transition-all"
+              className="px-5 py-3.5 text-sm font-bold uppercase tracking-widest border-b-2 transition-all"
               style={tab === t
                 ? { color, borderColor: color }
                 : { color: "#94a3b8", borderColor: "transparent" }}
@@ -348,12 +348,12 @@ function ProductModal({ product, catMeta, onClose }) {
           {tab === "overview" && (
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-slate-400">Key Features</h4>
+                <h4 className="text-lg font-bold uppercase tracking-widest mb-4 text-slate-400">Key Features</h4>
                 <ul className="space-y-2.5">
                   {product.features.map((f, i) => (
                     <li key={i} className="flex items-start gap-2.5">
                       <span className="mt-0.5 text-xs flex-shrink-0" style={{ color }}>◆</span>
-                      <span className="text-sm text-slate-600">{f}</span>
+                      <span className="text-lg text-slate-600">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -384,8 +384,8 @@ function ProductModal({ product, catMeta, onClose }) {
             <div className="rounded-2xl overflow-hidden border border-slate-200">
               {Object.entries(product.specs).map(([k, v], i) => (
                 <div key={i} className={`flex justify-between px-5 py-3.5 ${i % 2 === 0 ? "bg-slate-50" : "bg-white"}`}>
-                  <span className="text-xs font-bold uppercase tracking-wide text-slate-400">{k}</span>
-                  <span className="text-sm font-semibold text-right max-w-xs text-slate-700">{v}</span>
+                  <span className="text-sm font-bold uppercase tracking-wide text-slate-400">{k}</span>
+                  <span className="text-lg font-semibold text-right max-w-xs text-slate-700">{v}</span>
                 </div>
               ))}
             </div>
@@ -407,11 +407,11 @@ function ProductModal({ product, catMeta, onClose }) {
         <div className="px-7 py-5 border-t border-slate-100 bg-slate-50 flex justify-end gap-3 rounded-b-3xl">
           <button
             onClick={onClose}
-            className="px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-500 border border-slate-200 hover:bg-slate-100 transition-all"
+            className="px-5 py-2.5 rounded-xl text-lg font-semibold text-slate-500 border border-slate-200 hover:bg-slate-100 transition-all"
           >Close</button>
           <a
             href="/contact"  rel="noreferrer"
-            className="px-6 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90 hover:scale-105"
+            className="px-6 py-2.5 rounded-xl text-lg font-bold text-white transition-all hover:opacity-90 hover:scale-105"
             style={{ background: `linear-gradient(135deg, ${color}, ${catMeta.accent})` }}
           >Enquire Now →</a>
         </div>
@@ -474,7 +474,7 @@ function ProductCard({ product, catMeta, onClick }) {
         {/* Features */}
         <ul className="space-y-1.5 flex-1">
           {product.features.slice(0, 3).map((f, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm">
+            <li key={i} className="flex items-start gap-2 text-lg">
               <span style={{ color }} className="flex-shrink-0 mt-0.5 text-xs">◆</span>
               <span className="text-slate-600">{f}</span>
             </li>
@@ -491,7 +491,7 @@ function ProductCard({ product, catMeta, onClick }) {
 
         {/* CTA */}
         <button
-          className="w-full py-2.5 rounded-xl text-sm font-bold border-2 transition-all duration-200 flex items-center justify-center gap-2"
+          className="w-full py-2.5 rounded-xl text-lg font-bold border-2 transition-all duration-200 flex items-center justify-center gap-2"
           style={hovered
             ? { background: color, color: "#fff", borderColor: color }
             : { background: "transparent", color, borderColor: `${color}50` }}
@@ -675,7 +675,7 @@ export default function ProductsPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact" target="_blank" rel="noreferrer"
-                  className="px-8 py-3.5 rounded-xl text-sm font-bold text-white transition-all hover:scale-105 flex items-center gap-2 justify-center"
+                  className="px-8 py-3.5 rounded-xl text-lg font-bold text-white transition-all hover:scale-105 flex items-center gap-2 justify-center"
                   style={{ background: `linear-gradient(135deg, ${catMeta.color}, ${catMeta.accent})`, boxShadow: `0 8px 24px ${catMeta.color}40` }}
                 >
                   <Mail className="w-4 h-4" />
@@ -683,7 +683,7 @@ export default function ProductsPage() {
                 </a>
                 <a
                   href="tel:+256414250655"
-                  className="px-8 py-3.5 rounded-xl text-sm font-bold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center gap-2 justify-center"
+                  className="px-8 py-3.5 rounded-xl text-lg font-bold text-white border border-white/20 hover:bg-white/10 transition-all flex items-center gap-2 justify-center"
                 >
                   <Phone className="w-4 h-4" />
                   +256 (0)414 250 655

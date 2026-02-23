@@ -24,7 +24,7 @@ const contactInfo = [
   {
     icon: <MapPin className="w-5 h-5" />,
     title: "Uganda Office",
-    details: ["Plot 2236, Tank Hill Road,", "Muyenga – Kampala", "P.O Box 1735, Kampala"],
+    details: ["Plot 2236, Tank Hill Road,", "Muyenga – Kampala", "P.O Box 30088, Kampala"],
     color: brandBlue,
     href: "https://maps.google.com/?q=Muyenga+Kampala+Uganda",
   },
@@ -38,9 +38,9 @@ const contactInfo = [
   {
     icon: <Mail className="w-5 h-5" />,
     title: "Email Us",
-    details: ["info@hassuganda.co.ug", "sales@hassuganda.co.ug", "support@hassuganda.co.ug"],
+    details: ["icustomerservice@hassuganda.co.ug", "sales@hassuganda.co.ug"],
     color: "#059669",
-    href: "mailto:info@hassuganda.co.ug",
+    href: "mailto:customerservice@hassuganda.co.ug",
   },
   {
     icon: <Clock className="w-5 h-5" />,

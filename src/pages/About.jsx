@@ -136,7 +136,7 @@ const About = () => {
                         {s.icon}
                       </div>
                       <div className="text-3xl font-black" style={{ fontFamily: "'Orbitron', sans-serif", color: brandBlue }}>{s.value}</div>
-                      <div className="text-xs text-slate-400 font-semibold tracking-wide uppercase mt-1">{s.label}</div>
+                      <div className="text-sm text-slate-400 font-semibold tracking-wide uppercase mt-1">{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -153,7 +153,7 @@ const About = () => {
             <div className="lg:col-span-2 lg:pt-2">
               <div className="flex items-center gap-3 lg:flex-col lg:items-start">
                 <div className="w-8 h-px lg:w-px lg:h-16" style={{ background: brandRed }} />
-                <span className="text-xs font-bold tracking-widest uppercase" style={{ color: brandRed, writingMode: 'horizontal-lr' }}>Our Story</span>
+                <span className="text-sm font-bold tracking-widest uppercase" style={{ color: brandRed, writingMode: 'horizontal-lr' }}>Our Story</span>
               </div>
             </div>
 
@@ -182,12 +182,12 @@ const About = () => {
                   To supply world-class diagnostic reagents and equipment across Africa.
                 </p>
                 <div className="mt-6 pt-6 border-t border-white/20">
-                  <p className="text-blue-200 text-sm font-bold tracking-widest uppercase">Our Mission</p>
+                  <p className="text-blue-200 text-lg font-bold tracking-widest uppercase">Our Mission</p>
                 </div>
               </div>
 
               {/* Floating tag */}
-              <div className="absolute -top-4 -left-4 px-4 py-2 rounded-full text-xs font-bold text-white shadow-lg" style={{ background: brandRed }}>
+              <div className="absolute -top-4 -left-4 px-4 py-2 rounded-full text-sm font-bold text-white shadow-lg" style={{ background: brandRed }}>
                 Est. 1997
               </div>
             </div>
@@ -205,7 +205,7 @@ const About = () => {
             <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
                 <div>
-                  <span className="text-xs font-bold tracking-widest uppercase mb-3 block" style={{ color: brandRed }}>What We Offer</span>
+                  <span className="text-lg font-bold tracking-widest uppercase mb-3 block" style={{ color: brandRed }}>What We Offer</span>
                   <h2 className="text-4xl font-black leading-tight" style={{ fontFamily: "'Orbitron', sans-serif", color: brandBlue }}>
                     Services &<br />Solutions
                   </h2>
@@ -247,7 +247,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-8 py-28">
           <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="text-center mb-20">
-              <span className="text-xs font-bold tracking-widest uppercase mb-3 block" style={{ color: brandRed }}>What Drives Us</span>
+              <span className="text-sm font-bold tracking-widest uppercase mb-3 block" style={{ color: brandRed }}>What Drives Us</span>
               <h2 className="text-4xl font-black" style={{ fontFamily: "'Orbitron', sans-serif", color: brandBlue }}>Core Values</h2>
             </div>
 
@@ -304,7 +304,7 @@ const About = () => {
           <div className="relative max-w-7xl mx-auto px-8 py-20">
             <div className="grid md:grid-cols-3 gap-12 items-center">
               <div className="md:col-span-2">
-                <span className="text-xs font-bold tracking-widest uppercase mb-4 block" style={{ color: `${brandRed}` }}>Where To Find Us</span>
+                <span className="text-sm font-bold tracking-widest uppercase mb-4 block" style={{ color: `${brandRed}` }}>Where To Find Us</span>
                 <h2 className="text-4xl font-black text-white mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                   Strategically<br />Located
                 </h2>
@@ -323,7 +323,7 @@ const About = () => {
                     <span className="text-2xl">{loc.flag}</span>
                     <div>
                       <div className="text-white font-bold">{loc.city}</div>
-                      <div className="text-blue-300 text-sm">{loc.role}</div>
+                      <div className="text-blue-300 text-lg">{loc.role}</div>
                     </div>
                   </div>
                 ))}

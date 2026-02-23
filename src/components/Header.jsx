@@ -105,6 +105,7 @@ function Header() {
     { name: 'About Us', path: '/about' },
     { name: 'What We Do', path: '/services' },
     { name: 'Our Partners', path: '/partners' },
+    { name: 'Our Clients', path: '/services/#clients' },
   ];
 
   return (
@@ -158,7 +159,7 @@ function Header() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 group ${
+                  className={`relative px-4 py-2 text-lg font-medium rounded-lg transition-all duration-200 group ${
                     active
                       ? isDarkMode ? 'text-red-400 bg-red-900/20' : 'text-red-700 bg-red-50'
                       : isDarkMode ? 'text-gray-300 hover:text-white hover:bg-gray-800' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
@@ -232,10 +233,10 @@ function Header() {
                             {cat.icon}
                           </div>
                           <div>
-                            <div className={`text-sm font-semibold leading-tight ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
+                            <div className={`text-lg font-semibold leading-tight ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
                               {cat.name}
                             </div>
-                            <div className={`text-xs mt-0.5 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                            <div className={`text-sm mt-0.5 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                               {cat.desc}
                             </div>
                           </div>
@@ -299,7 +300,7 @@ function Header() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                  className={`block px-4 py-2.5 rounded-lg text-lg font-medium transition-colors ${
                     isDarkMode ? 'text-gray-300 hover:bg-gray-800 hover:text-white' : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >

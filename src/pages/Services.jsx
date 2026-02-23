@@ -56,12 +56,13 @@ const whyUs = [
 ];
 
 const locations = [
-  { city: "Kampala", sites: ["International Hospital Kampala (IHK)", "Nakasero Hospital"], machines: ["Sysmex XN-1000", "VITEK® 2 Compact", "VIDAS® 30", "ERBA XL300", "BioFire FilmArray"], x: 49, y: 62, featured: true },
-  { city: "Mbale",   sites: ["Mbale Regional Referral Hospital"],        machines: ["Sysmex XN-550", "BACT/ALERT® 3D", "ERBA XL 200"],            x: 72, y: 48, featured: false },
-  { city: "Mbarara", sites: ["Mbarara University Teaching Hospital"],     machines: ["Sysmex XN-350", "CA-101 Coagulation", "ERBA LYTE"],          x: 38, y: 78, featured: false },
-  { city: "Lira",    sites: ["Lira Regional Referral Hospital"],          machines: ["Sysmex XP-300", "ERBA XL 200", "UC-1000 Urinalysis"],        x: 55, y: 33, featured: false },
-  { city: "Gulu",    sites: ["Gulu Regional Referral Hospital"],          machines: ["Sysmex XN-450", "BACT/ALERT® 3D", "mini VIDAS®"],           x: 50, y: 22, featured: false },
-  { city: "Arua",    sites: ["Arua Regional Referral Hospital"],          machines: ["Sysmex XP-300", "ERBA XL 200", "CA-101 Coagulation"],        x: 24, y: 18, featured: false }
+  { city: "Kampala", sites: ["International Hospital Kampala (IHK)", "Nakasero Hospital","Nsambya Hospital","UMC VIctoria","Aga Khan","Grace Laboratories","Mengo Hospital","Lubaga Hospital","Case Hospital","Examina Diagnostic Center","Mulago National Refferal","Kiruddu National Refferal","TMR international","Platinum Hospital","Star Modern Diagnostics","C-Care Group","Norvik Hospital","Makerere University"], machines: [ "VITEK® 2 Compact", "VIDAS® Kube", "XL 200","H-360","H-560","  H-7100", "XL 180", "Bact Alert" ,"BioFire FilmArray","Erba Lyte ","EC90"], x: 49, y: 62, featured: true },
+  { city: "Mbale",   sites: ["Mbale Regional Referral Hospital","Cure Childrens Hospital","Grace ","Mbale Parents Hospital","Teso Healthcare Soroti","Mothers Pride","Fitzman Medical center Moroto","Kapchorwa"],        machines: ["Vitek2 Compact","H-560","H-360",  " XL 180"],            x: 72, y: 48, featured: false },
+  { city: "Mbarara", sites: ["Mbarara Regional Refferal Hospital","MBC Diagnostic Center"],     machines: ["Vitek 2 Compact", "Mini Vidas"],          x: 38, y: 78, featured: false },
+  { city: "Lira",    sites: ["Lira University Hospital","Avento Speciality Hospital","Canaan Medical Ceneter"],          machines: ["Erba Lyte", "ERBA XL 640","XL 180", ],        x: 55, y: 33, featured: false },
+  { city: "Gulu",    sites: ["Gulu Independent Hospital"],          machines: ["XL 180"],           x: 50, y: 22, featured: false },
+  { city: "Entebbe",    sites: ["MRC /UVRI","JCRC","Emmanuel Medical Center","Bethany Women Hospital","Namulundu Medical Center","Nalluja Medical Center"],          machines: [ "VITEK® 2 Compact", "Mini VIDAS®", "XL 200","H-360","H-560","", "XL 180", "EasyMag NucliSens" ],        x: 24, y: 18, featured: false },
+  { city: "Jinja",    sites: ["Jinja Regional Referral Hospital","Grace Laboratories","St. Benedicts's Health Center 3","Nile International Hospital"],          machines: ["H-360","H-560","Vitek 2 Compact", "XL 180"],           x: 10, y: 12, featured: false },
 ];
 
 /* ─── HOOK ──────────────────────────────────────────────────────────────── */
@@ -109,7 +110,7 @@ function ServiceStrip({ service, index }) {
           <div className="text-white text-5xl font-black leading-none drop-shadow-lg" style={{ fontFamily: "'Orbitron', sans-serif" }}>
             {service.stat}
           </div>
-          <div className="text-white/80 text-xs uppercase tracking-widest mt-1" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
+          <div className="text-white/80 text-sm uppercase tracking-widest mt-1" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
             {service.statLabel}
           </div>
         </div>
@@ -128,7 +129,7 @@ function ServiceStrip({ service, index }) {
         {/* Eyebrow */}
         <div className="flex items-center gap-3">
           <div className="h-px w-8" style={{ background: service.accent }} />
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: service.accent, fontFamily: "'Rajdhani', sans-serif" }}>
+          <span className="text-sm font-bold uppercase tracking-widest" style={{ color: service.accent, fontFamily: "'Rajdhani', sans-serif" }}>
             {service.tagline}
           </span>
         </div>
@@ -149,7 +150,7 @@ function ServiceStrip({ service, index }) {
                 className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all duration-300 group-hover:scale-150"
                 style={{ background: service.accent }}
               />
-              <span className="text-sm text-slate-600" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{f}</span>
+              <span className="text-lg text-slate-600" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{f}</span>
             </li>
           ))}
         </ul>
@@ -157,7 +158,7 @@ function ServiceStrip({ service, index }) {
         <a
           href="/contact"
           target="_blank" rel="noreferrer"
-          className="inline-flex items-center gap-2 self-start px-6 py-3 rounded-xl text-sm font-bold text-white transition-all duration-300 hover:gap-4 hover:scale-105 hover:shadow-lg"
+          className="inline-flex items-center gap-2 self-start px-6 py-3 rounded-xl text-lg font-bold text-white transition-all duration-300 hover:gap-4 hover:scale-105 hover:shadow-lg"
           style={{ background: service.accent, fontFamily: "'Rajdhani', sans-serif" }}
         >
           Get This Service <ArrowRight className="w-4 h-4" />
@@ -217,7 +218,7 @@ const Services = () => {
           >
             {/* Left copy */}
             <div style={{ animation: heroInView ? 'slideRight .8s ease forwards' : 'none', opacity: heroInView ? 1 : 0 }}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border text-sm font-semibold" style={{ borderColor: `${brandRed}30`, background: `${brandRed}08`, color: brandRed }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 border text-lg font-semibold" style={{ borderColor: `${brandRed}30`, background: `${brandRed}08`, color: brandRed }}>
                 <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: brandRed }} />
                 Hass Scientific · Service & Support
               </div>
@@ -234,13 +235,13 @@ const Services = () => {
 
               <div className="flex flex-wrap gap-4">
                 <a href="tel:+256414250655"
-                  className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                   style={{ background: `linear-gradient(135deg, ${brandRed}, #9b1527)`, boxShadow: `0 8px 24px ${brandRed}30` }}>
                   <Phone className="w-4 h-4" />
                   Call Support
                 </a>
                 <a href="mailto:cservice@hasscientific.com"
-                  className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-sm text-slate-700 bg-blue-800 border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300">
+                  className="flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-lg text-slate-700 bg-blue-800 border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all duration-300">
                   <Mail className="w-4 h-4" />
                   Email Us
                 </a>
@@ -261,8 +262,8 @@ const Services = () => {
                   style={{ animationDelay: `${.1 * i + .3}s` }}
                 >
                   <div className="text-3xl font-black mb-1" style={{ fontFamily: "'Orbitron', sans-serif", color: s.color }}>{s.n}</div>
-                  <div className="font-bold text-sm text-slate-700">{s.label}</div>
-                  <div className="text-xs mt-0.5 text-slate-400">{s.sub}</div>
+                  <div className="font-bold text-lg text-slate-700">{s.label}</div>
+                  <div className="text-sm mt-0.5 text-slate-400">{s.sub}</div>
                 </div>
               ))}
             </div>
@@ -272,7 +273,7 @@ const Services = () => {
         {/* ── SERVICE STRIPS ────────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-8 py-24 space-y-8">
           <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: brandRed }}>What We Offer</span>
+            <span className="text-sm font-bold uppercase tracking-widest mb-3 block" style={{ color: brandRed }}>What We Offer</span>
             <h2 className="text-4xl md:text-5xl font-black text-slate-800" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               Comprehensive Support
             </h2>
@@ -291,7 +292,7 @@ const Services = () => {
 
           <div className="relative z-10 max-w-7xl mx-auto px-8">
             <div className="text-center mb-16">
-              <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: brandRed }}>Our Advantage</span>
+              <span className="text-sm font-bold uppercase tracking-widest mb-3 block" style={{ color: brandRed }}>Our Advantage</span>
               <h2 className="text-4xl md:text-5xl font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                 Why Choose Hass?
               </h2>
@@ -313,18 +314,18 @@ const Services = () => {
                       <Icon className="w-7 h-7 text-white" />
                     </div>
                     <h4 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "'Orbitron', sans-serif" }}>{w.title}</h4>
-                    <p className="text-blue-200 text-sm leading-relaxed">{w.desc}</p>
+                    <p className="text-blue-200 text-lg leading-relaxed">{w.desc}</p>
                   </div>
                 );
               })}
             </div>
 
             {/* Client strip */}
-            <div className="border-t border-white/10 pt-10 text-center">
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-6">Our clients across Uganda</p>
+            <div id="clients" className="border-t border-white/10 pt-10 text-center">
+              <p className="text-white/40 text-sm uppercase tracking-widest mb-6">Our clients across Uganda</p>
               <div className="flex flex-wrap justify-center gap-3">
-                {["IHK Kampala", "Nakasero Hospital", "Mbale RRH", "Mbarara UUTH", "Lira RRH", "Gulu RRH", "Arua RRH"].map((c) => (
-                  <span key={c} className="px-4 py-2 rounded-full border border-white/15 text-white/70 text-xs font-medium"
+                {["IHK Kampala", "Nakasero Hospital", "Case Hospital", "Mbarara UUTH", "Lira RRH", "Kampala Independent ","Aga Khan", "Kampala  "].map((c) => (
+                  <span key={c} className="px-4 py-2 rounded-full border border-white/15 text-white/70 text-sm font-medium"
                     style={{ background: 'rgba(255,255,255,0.06)' }}>{c}</span>
                 ))}
               </div>
@@ -335,7 +336,7 @@ const Services = () => {
         {/* ── LOCATIONS ─────────────────────────────────────────────────── */}
         <section className="max-w-7xl mx-auto px-8 py-24">
           <div className="mb-14">
-            <span className="text-xs font-bold uppercase tracking-widest mb-3 block" style={{ color: brandRed }}>Installation Bases</span>
+            <span className="text-sm font-bold uppercase tracking-widest mb-3 block" style={{ color: brandRed }}>Installation Bases</span>
             <h2 className="font-black text-slate-800" style={{ fontFamily: "'Orbitron', sans-serif", fontSize: 'clamp(1.8rem,4vw,3rem)' }}>
               Uganda Coverage<br />
               <span style={{ color: brandRed }}>Network</span>
@@ -407,8 +408,8 @@ const Services = () => {
                       </div>
                       {/* City label */}
                       <span
-                        className={`absolute left-1/2 -translate-x-1/2 top-full mt-1.5 whitespace-nowrap text-xs font-bold px-2 py-0.5 rounded-lg bg-white text-slate-700 shadow-sm border border-slate-200 transition-all duration-200 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
-                        style={{ fontSize: 10 }}
+                        className={`absolute left-1/2 -translate-x-1/2 top-full mt-1.5 whitespace-nowrap text-sm font-bold px-2 py-0.5 rounded-lg bg-white text-slate-700 shadow-sm border border-slate-200 transition-all duration-200 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                        style={{ fontSize: 12 }}
                       >{loc.city}</span>
                     </button>
                   );
@@ -416,13 +417,13 @@ const Services = () => {
               </div>
 
               {/* Legend */}
-              <div className="absolute bottom-5 left-5 flex flex-col gap-2 px-4 py-3 rounded-xl border border-slate-200 bg-white/90 text-xs text-slate-600 shadow-sm">
+              <div className="absolute bottom-5 left-5 flex flex-col gap-2 px-4 py-3 rounded-xl border border-slate-200 bg-white/90 text-sm text-slate-600 shadow-sm">
                 <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: brandRed }} /> Flagship base</div>
                 <div className="flex items-center gap-2"><span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: brandBlue }} /> Regional base</div>
               </div>
 
               {/* Uganda label */}
-              <div className="absolute top-4 right-4 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest bg-white text-slate-400 border border-slate-200 shadow-sm">
+              <div className="absolute top-4 right-4 px-3 py-1.5 rounded-lg text-sm font-bold uppercase tracking-widest bg-white text-slate-400 border border-slate-200 shadow-sm">
                 Uganda
               </div>
             </div>
@@ -453,20 +454,20 @@ const Services = () => {
                             <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: loc.featured ? brandRed : brandBlue }} />
                             <span className="font-bold text-slate-800">{loc.city}</span>
                             {loc.featured && (
-                              <span className="px-2 py-0.5 text-white text-xs rounded-full font-bold" style={{ background: brandRed }}>HQ</span>
+                              <span className="px-2 py-0.5 text-white text-sm rounded-full font-bold" style={{ background: brandRed }}>HQ</span>
                             )}
                           </div>
                           <ChevronRight className={`w-4 h-4 transition-transform text-slate-400 ${isActive ? 'rotate-90' : ''}`} />
                         </div>
 
-                        <div className="text-xs text-slate-400 mb-1">{loc.sites.join(' · ')}</div>
+                        <div className="text-sm text-slate-400 mb-1">{loc.sites.join(' · ')}</div>
 
                         {isActive && (
                           <div className="mt-3 pt-3 border-t border-slate-100">
-                            <p className="text-xs font-bold uppercase tracking-widest mb-2 text-slate-400">Installed Equipment</p>
+                            <p className="text-sm font-bold uppercase tracking-widest mb-2 text-slate-400">Installed Equipment</p>
                             <div className="flex flex-wrap gap-1.5">
                               {loc.machines.map((m) => (
-                                <span key={m} className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-50 border border-slate-200 text-slate-600">{m}</span>
+                                <span key={m} className="px-2.5 py-1 rounded-lg text-sm font-medium bg-slate-50 border border-slate-200 text-slate-600">{m}</span>
                               ))}
                             </div>
                           </div>
@@ -494,7 +495,7 @@ const Services = () => {
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full opacity-10 blur-3xl" style={{ background: brandRed }} />
 
           <div className="relative z-10 max-w-3xl mx-auto px-8 py-20 text-center">
-            <span className="text-xs font-bold uppercase tracking-widest mb-4 block" style={{ color: brandRed }}>Ready to get started?</span>
+            <span className="text-sm font-bold uppercase tracking-widest mb-4 block" style={{ color: brandRed }}>Ready to get started?</span>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               Let's Keep Your<br />Lab Running
             </h2>
@@ -504,7 +505,7 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+256414250655"
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-xl"
                 style={{ background: `linear-gradient(135deg, ${brandRed}, #9b1527)`, boxShadow: `0 8px 24px ${brandRed}40` }}
               >
                 <Phone className="w-4 h-4" />
@@ -512,7 +513,7 @@ const Services = () => {
               </a>
               <a
                 href="mailto:cservice@hasscientific.com"
-                className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-sm text-white border border-white/20 hover:bg-white/10 transition-all duration-300"
+                className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-lg text-white border border-white/20 hover:bg-white/10 transition-all duration-300"
               >
                 <Mail className="w-4 h-4" />
                 Email Our Team
