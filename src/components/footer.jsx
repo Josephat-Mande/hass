@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Facebook, Twitter, Linkedin, Instagram,
+  Facebook, Twitter, Linkedin, Instagram, 
   Mail, Phone, MapPin, ChevronRight,
   Award, Shield, Clock, Send, ArrowUp, Heart
 } from 'lucide-react';
@@ -41,7 +41,7 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <Facebook className="w-4 h-4" />,  href: 'https://www.facebook.com/pages/Hass-Scientific-Medical-Supplies', hoverBg: '#1877f2', label: 'Facebook'  },
+    { icon: <Facebook className="  w-4 h-4" />,  href: 'https://www.facebook.com/pages/Hass-Scientific-Medical-Supplies', hoverBg: '#1877f2', label: 'Facebook'  },
     { icon: <Twitter className="w-4 h-4" />,   href: 'https://www.twitter.com/HassScientific',                          hoverBg: '#0ea5e9', label: 'Twitter'   },
     { icon: <Linkedin className="w-4 h-4" />,  href: 'https://www.linkedin.com/company/hass-scientific-medical-supplies', hoverBg: '#0a66c2', label: 'LinkedIn'  },
     { icon: <Instagram className="w-4 h-4" />, href: 'https://www.instagram.com/HassScientific',                        hoverBg: '#e1306c', label: 'Instagram' },
@@ -139,10 +139,10 @@ const Footer = () => {
                     title={s.label}
                     target="_blank"
                     rel="noreferrer"
-                    className="group w-9 h-9 rounded-xl flex items-center justify-center text-slate-500 border border-slate-200 bg-inherit hover:text-white hover:border-transparent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
-                    style={{ '--hover-bg': s.hoverBg }}
-                    onMouseEnter={e => e.currentTarget.style.background = s.hoverBg}
-                    onMouseLeave={e => e.currentTarget.style.background = 'blue-600'}
+                    className="group w-9 h-9 rounded-xl flex items-center justify-center text-slate-700 border border-slate-200 bg-slate-100 hover:text-white hover:border-transparent transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                    style={{ backgroundColor: '#17181A' }}
+                    onMouseEnter={e => e.currentTarget.style.backgroundColor = s.hoverBg}
+                    onMouseLeave={e => e.currentTarget.style.backgroundColor = '#17181A'}
                   >
                     {s.icon}
                   </a>
@@ -238,11 +238,11 @@ const Footer = () => {
                 />
                 <button
                   onClick={handleSubscribe}
-                  className="group px-5 py-3.5 bg-white rounded-xl font-bold text-lg hover:bg-slate-100 transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                  className="group px-5 py-3.5 bg-white  rounded-xl font-bold text-lg hover:bg-slate-100 transition-all duration-300 hover:scale-105 flex items-center gap-2"
                   style={{ color: brandBlue }}
                 >
-                  <span>Subscribe</span>
-                  <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  <span className="text-white">Subscribe</span>
+                  <Send className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
                 </button>
               </div>
             )}
@@ -256,14 +256,29 @@ const Footer = () => {
             <Heart className="w-3.5 h-3.5 animate-pulse" style={{ color: brandRed }} />
             All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-lg text-slate-400">
+          {/* <div className="flex items-center gap-6 text-lg text-slate-400">
             {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((t, i) => (
               <a key={i} href={`#${t.toLowerCase().replace(/ /g, '-')}`}
                 className="hover:text-slate-700 hover:underline underline-offset-4 transition-colors duration-200">{t}</a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
+
+      {/* WhatsApp contact */}
+      <a
+        href="https://wa.me/254710277935?text=Hello%20Hass%20Scientific%2C%20I%27d%20like%20to%20get%20in%20touch."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-24 right-8 w-12 h-12 rounded-2xl flex items-center justify-center text-white shadow-xl hover:scale-110 hover:shadow-2xl transition-all duration-300 z-50"
+        style={{ backgroundColor: '#25D366', boxShadow: '0 8px 24px #25D36640' }}
+        title="Chat with us on WhatsApp: +254 710 277 935"
+        aria-label="Chat with us on WhatsApp at +254 710 277 935"
+      >
+        <svg aria-hidden="true" viewBox="0 0 32 32" className="w-6 h-6" fill="currentColor">
+          <path d="M16.04 3C8.87 3 3.04 8.79 3.04 15.92c0 2.28.6 4.5 1.74 6.45L3 29l6.83-1.78a13.1 13.1 0 0 0 6.2 1.57h.01c7.16 0 13-5.8 13-12.92 0-3.45-1.36-6.7-3.83-9.14A12.94 12.94 0 0 0 16.04 3Zm0 23.6h-.01a10.85 10.85 0 0 1-5.52-1.5l-.4-.23-4.05 1.06 1.08-3.93-.26-.4a10.69 10.69 0 0 1-1.65-5.68c0-5.93 4.86-10.76 10.82-10.76 2.89 0 5.61 1.12 7.65 3.16a10.68 10.68 0 0 1 3.17 7.62c0 5.93-4.86 10.76-10.83 10.76Zm5.94-8.06c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.51-.16-.72.16-.22.32-.83 1.05-1.02 1.26-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.61-1.9-1.8-2.22-.2-.32-.02-.5.14-.66.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.72-1.73-.99-2.37-.26-.62-.53-.53-.72-.54l-.62-.01c-.22 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.67 0 1.58 1.16 3.1 1.32 3.31.16.21 2.28 3.47 5.52 4.87.77.33 1.37.53 1.84.68.77.24 1.47.2 2.02.12.62-.1 1.9-.77 2.17-1.52.27-.74.27-1.38.19-1.52-.08-.13-.29-.21-.61-.37Z" />
+        </svg>
+      </a>
 
       {/* Scroll-to-top */}
       <button

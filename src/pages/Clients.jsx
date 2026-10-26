@@ -281,7 +281,7 @@ const Services = () => {
 
             {/* Client strip */}
             <div id="clients" className="border-t border-white/10 pt-0 text-center">
-              <p className="text-white/40 text-sm uppercase tracking-widest mb-6">Our clients across Uganda</p>
+              <p className="text-white/90 text-sm uppercase tracking-widest mb-6">Our clients across Uganda</p>
               <div className="flex flex-wrap justify-center gap-3">
                 {["IHK Kampala", "Nakasero Hospital", "Case Hospital", "Mbarara UUTH", "Lira RRH", "Kampala Independent ","Aga Khan", "Kampala  "].map((c) => (
                   <span key={c} className="px-4 py-2 rounded-full border border-white/15 text-white/70 text-sm font-medium"
@@ -296,7 +296,7 @@ const Services = () => {
         <section className="max-w-7xl mx-auto px-8 py-24">
           <div className="mb-14">
             <span className="text-sm font-bold uppercase tracking-widest mb-3 block" style={{ color: brandRed }}>Installation Base</span>
-            <h2 className="font-black text-slate-800" style={{ fontFamily: "'Orbitron', sans-serif", fontSize: 'clamp(1.8rem,4vw,3rem)' }}>
+            <h2 className="font-black text-white" style={{ fontFamily: "'Orbitron', sans-serif", fontSize: 'clamp(1.8rem,4vw,3rem)' }}>
               Uganda Coverage<br />
               <span style={{ color: brandRed }}>Network</span>
             </h2>
@@ -411,15 +411,15 @@ const Services = () => {
                         <div className="flex items-center justify-between mb-1">
                           <div className="flex items-center gap-2">
                             <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: loc.featured ? brandRed : brandBlue }} />
-                            <span className="font-bold text-slate-800">{loc.city}</span>
+                            <span className="font-bold" style={{ color: loc.featured ? brandRed : brandRed }}>{loc.city}</span>
                             {loc.featured && (
                               <span className="px-2 py-0.5 text-white text-sm rounded-full font-bold" style={{ background: brandRed }}>HQ</span>
                             )}
                           </div>
-                          <ChevronRight className={`w-4 h-4 transition-transform text-slate-400 ${isActive ? 'rotate-90' : ''}`} />
+                          <ChevronRight className={`w-4 h-4 transition-transform text-red-400 ${isActive ? 'rotate-90' : ''}`} />
                         </div>
 
-                        <div className="text-sm text-slate-400 mb-1">{loc.sites.join(' · ')}</div>
+                        <div className="text-sm text-white mb-1">{loc.sites.join(' · ')}</div>
 
                         {isActive && (
                           <div className="mt-3 pt-3 border-t border-slate-100">

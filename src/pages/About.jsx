@@ -293,7 +293,7 @@ const About = () => {
           <div
             className="absolute inset-0 opacity-10"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1614935151651-0bea6508db6b?q=80&w=2000&auto=format&fit=crop)',
+              backgroundImage: 'url(./gracelab.png)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
@@ -315,12 +315,12 @@ const About = () => {
 
               <div className="flex flex-col gap-4">
                 {[
-                  { city: 'Nairobi, Kenya', role: 'Headquarters', flag: '🇰🇪' },
-                  { city: 'Kampala, Uganda', role: 'Regional Branch', flag: '🇺🇬' },
-                  { city: 'Kigali, Rwanda', role: 'Regional Branch', flag: '🇷🇼' },
+                  { city: 'Nairobi, Kenya', role: 'Headquarters', flag: '/kenya-flag.png' },
+                  { city: 'Kampala, Uganda', role: 'Regional Branch', flag: '/uganda-flag.png' },
+                  { city: 'Kigali, Rwanda', role: 'Regional Branch', flag: '/rwanda-flag.png' },
                 ].map((loc, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                    <span className="text-2xl">{loc.flag}</span>
+                    <img src={loc.flag} alt={`${loc.city.split(', ')[1]} flag`} className="w-9 h-6 rounded-sm shadow-sm flex-shrink-0 object-cover" />
                     <div>
                       <div className="text-white font-bold">{loc.city}</div>
                       <div className="text-blue-300 text-lg">{loc.role}</div>

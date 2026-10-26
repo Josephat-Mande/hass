@@ -16,7 +16,7 @@ const productCategories = [
     name: 'Molecular',
     path: '/products/molecular',
     icon: <Dna className="w-4 h-4" />,
-    desc: 'BioFire FilmArray diagnostics',
+    desc: 'EMAG® & BioFire® FilmArray®',
     color: '#7c3aed',
   },
   {
@@ -270,7 +270,7 @@ function Header() {
 
             <Link
               to="/contact"
-              className="ml-2 px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-600/40 transition-all duration-300 hover:scale-105"
+              className="ml-2 px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm rounded-lg font-semibold hover:from-red-600 hover:to-red-800 hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Contact Us
             </Link>
@@ -332,7 +332,7 @@ function Header() {
               <div className="pt-2 pb-1">
                 <Link
                   to="/contact"
-                  className="block w-full text-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm rounded-lg font-semibold"
+                  className="block w-full text-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-red-600 hover:to-red-800 text-white text-sm rounded-lg font-semibold transition-all duration-300"
                 >
                   Contact Us
                 </Link>
